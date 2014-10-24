@@ -1,3 +1,27 @@
 /* -----------------------------------------
    Custom.css - put your own changes here 
 ----------------------------------------- */
+
+.jtable{
+    font-size: 14px;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.jtable-toolbar-item-add-record
+{
+    background-color: #1BBC9B;
+}
+.jtable-toolbar-item-text
+{
+    font-size: 13px;
+    color: white;
+}
+div.jtable-main-container table.jtable tbody > tr > td .jtable-edit-command-button {
+    background: url('../js/libs/jTable/themes/lightcolor/edit.png') no-repeat;
+    width: 16px;
+    height: 16px;
+}
+div.jtable-main-container table.jtable tbody > tr > td .jtable-delete-command-button {
+    background: url('../js/libs/jTable/themes/lightcolor/delete.png') no-repeat;
+    width: 16px;
+    height: 16px;
+}

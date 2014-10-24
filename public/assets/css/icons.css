@@ -12,7 +12,7 @@ Icon packs
     font-style: normal;
 }
 
-@font-face {
+/*@font-face {
   font-family: 'fontAwesome';
   src: url('../fonts/fontawesome-webfont.eot?v=4.1.0');
   src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'),
@@ -21,7 +21,7 @@ Icon packs
     url('../fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
-}
+}*/
 
 .fa {
   display: inline-block;
@@ -3905,6 +3905,9 @@ Icon packs
   font-size: 1.33333333em;
   line-height: 0.75em;
   vertical-align: -15%;
+}
+.fa-1x {
+    font-size: 1.5em;
 }
 .fa-2x {
   font-size: 2em;

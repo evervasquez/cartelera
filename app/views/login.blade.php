@@ -48,7 +48,7 @@
                 =>'login','role'=>'form','class'=>'form-horizontal mt10')) }}
                 <div class="form-group">
                     <div class="col-lg-12">
-                        <input type="text" name="username" id="username" class="form-control left-icon"
+                        <input type="text" name="usuario" id="usuario" class="form-control left-icon"
                                autofocus placeholder="Tu usuario ...">
                         <i class="im-user s16 left-input-icon"></i>
                     </div>

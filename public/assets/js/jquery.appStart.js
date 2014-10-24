@@ -157,7 +157,7 @@
             //panels
             this.panels();
             //quick search
-            this.quickSearch();
+            //this.quickSearch();
             //responsive sidebar button handle 
             this.resSidebarButton();
             //fixed header
@@ -421,18 +421,22 @@
             var navLi = nav.find('li');
             var navLink = nav.find('a');
             var navSub = nav.find('li>ul.sub');
-
             //generate unique id for each link
             /*navLink.each(function(index) {
                 $(this).attr('id', 'spr_menu_link_' + index);
             }); */
 
+            console.log(nav.closest().length);
             //put hasSub class
-            navSub.closest('li').addClass('hasSub');
 
             //put notExpand class
+            navSub.closest().addClass('hasSub');
+
             if(!navSub.prev('a').hasClass('notExpand')) {
                 navSub.prev('a').addClass('notExpand');
+                console.log('no esta esta');
+            }else{
+                console.log('si esta esta');
             }
 
             if(plugin.settings.sideNav.showArrows) {
@@ -1018,7 +1022,7 @@ this.bind("mousewheel",fn):this.trigger("mousewheel")},unmousewheel:function(fn)
             var oexpsubs = $('.expand-subs');
             var osearch = $('.search-in-menu');
             var oclose = $('#close-search-nav');
-            var omute = $('.mute-sounds');
+            //var omute = $('.mute-sounds');
             var lfull = $('.launch-fullscreen');
 
             //search

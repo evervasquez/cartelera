@@ -12,15 +12,25 @@
     <!-- Import google fonts - Heading first/ text second -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
     <!-- Css files -->
-    {{ HTML::style('assets/css/plugins/font-awesome/css/font-awesome.css'); }}
-
+    <script type="text/javascript">
+        var $path_base = "<?php echo url('/')?>";
+    </script>
     <!-- Icons -->
     {{ HTML::style('assets/css/icons.css'); }}
+    {{ HTML::style('assets/css/plugins/font-awesome/css/font-awesome.css'); }}
+
     {{ HTML::style('assets/css/bootstrap.css'); }}
-    {{ HTML::style('assets/css/jquery.ui.all.css'); }}
+    {{-- HTML::style('assets/css/jquery.ui.all.css'); --}}
+
+    {{ HTML::style('assets/js/libs/jTable/themes/lightcolor/gray/jtable.css'); }}
+    {{ HTML::style('assets/js/libs/jTable/themes/jqueryui/jquery-ui.css'); }}
+
     {{ HTML::style('assets/css/plugins.css'); }}
     {{ HTML::style('assets/css/main.css'); }}
     {{ HTML::style('assets/css/custom.css'); }}
+
+    {{ HTML::script('assets/js/jquery-2.1.1.min.js') }}
+    {{ HTML::script('assets/js/main.js') }}
 
     <!-- Fav and touch icons -->
     <link rel="icon" href="assets/img/cartelera.ico" type="image/png">
@@ -197,132 +207,8 @@
         <!-- Start .sidebar-scrollarea -->
         <div class="sidebar-scrollarea">
             <h5 class="sidebar-title">Navigation</h5>
-            <ul id="sideNav" class="nav nav-pills nav-stacked">
-                <li><a href="index.html"><i class="fa fa-dashboard"></i> <span class="txt">Dashboard</span></a>
-                </li>
-                <li><a href="charts.html"><i class="fa fa-gears"></i> <span class="txt">Mantenimiento</span><span class="label">10</span></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-bookmark"></i> <span class="txt">Forms</span></a>
-                    <ul class="sub">
-                        <li><a href="form-layout.html"><i class="fa fa-arrow-left"></i> <span class="txt">Form layout</span></a>
-                        </li>
-                        <li><a href="form-elements.html"><i class="im-arrow-right3"></i> <span class="txt">From elements</span></a>
-                        </li>
-                        <li><a href="form-wizard.html"><i class="im-arrow-right3"></i> <span class="txt">Form wizard</span></a>
-                        </li>
-                        <li><a href="form-validation.html"><i class="im-arrow-right3"></i> <span class="txt">Form validation</span></a>
-                        </li>
-                        <li><a href="form-wysiwyg.html"><i class="im-arrow-right3"></i> <span class="txt">Wysiwyg editor</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="im-table2"></i> <span class="txt">Tables</span></a>
-                    <ul class="sub">
-                        <li><a href="tables.html"><i class="im-arrow-right3"></i> <span class="txt">Static tables</span></a>
-                        </li>
-                        <li><a href="tables-data.html"><i class="im-arrow-right3"></i> <span class="txt">Data tables</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="im-cube"></i> <span class="txt">UI Elements</span></a>
-                    <ul class="sub">
-                        <li><a href="icons.html"><i class="im-arrow-right3"></i> <span class="txt">Icons</span></a>
-                        </li>
-                        <li><a href="panels.html"><i class="im-arrow-right3"></i> <span class="txt">Panels</span></a>
-                        </li>
-                        <li><a href="buttons.html"><i class="im-arrow-right3"></i> <span class="txt">Buttons</span></a>
-                        </li>
-                        <li><a href="typo.html"><i class="im-arrow-right3"></i> <span class="txt">Typography</span></a>
-                        </li>
-                        <li><a href="notifications.html"><i class="im-arrow-right3"></i> <span class="txt">Notifications</span></a>
-                        </li>
-                        <li><a href="tabs.html"><i class="im-arrow-right3"></i> <span class="txt">Tabs &amp; Accordions</span></a>
-                        </li>
-                        <li><a href="modals.html"><i class="im-arrow-right3"></i> <span class="txt">Modals</span></a>
-                        </li>
-                        <li><a href="sliders.html"><i class="im-arrow-right3"></i> <span class="txt">Sliders</span></a>
-                        </li>
-                        <li><a href="progressbars.html"><i class="im-arrow-right3"></i> <span class="txt">Progressbars</span></a>
-                        </li>
-                        <li><a href="calendar.html"><i class="im-arrow-right3"></i> <span class="txt">Calendar</span></a>
-                        </li>
-                        <li><a href="grid.html"><i class="im-arrow-right3"></i> <span class="txt">Grid</span></a>
-                        </li>
-                        <li><a href="lists.html"><i class="im-arrow-right3"></i> <span class="txt">Lists</span></a>
-                        </li>
-                        <li><a href="elements.html"><i class="im-arrow-right3"></i> <span class="txt">Other</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="im-envelop2"></i> <span class="txt">Email</span></a>
-                    <ul class="sub">
-                        <li><a href="email-inbox.html"><i class="im-arrow-right3"></i> <span class="txt">Inbox</span></a>
-                        </li>
-                        <li><a href="email-write.html"><i class="im-arrow-right3"></i> <span class="txt">Send email</span></a>
-                        </li>
-                        <li><a href="email-read.html"><i class="im-arrow-right3"></i> <span class="txt">Read email</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="file.html"><i class="im-upload5"></i> <span class="txt">File manager</span></a>
-                </li>
-                <li><a href="gallery.html"><i class="im-images"></i> <span class="txt">Gallery</span></a>
-                </li>
-                <li><a href="widgets.html"><i class="im-stack3"></i> <span class="txt">Widgets</span></a>
-                </li>
-                <li>
-                    <a href="#"><i class="im-map4"></i> <span class="txt">Maps</span></a>
-                    <ul class="sub">
-                        <li><a href="maps-google.html"><i class="im-arrow-right3"></i> <span class="txt">Google maps</span></a>
-                        </li>
-                        <li><a href="maps-vector.html"><i class="im-arrow-right3"></i> <span class="txt">Vector maps</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="im-file8"></i> <span class="txt">Pages</span></a>
-                    <ul class="sub">
-                        <li><a href="login.html"><i class="im-arrow-right3"></i> <span class="txt">Login page</span></a>
-                        </li>
-                        <li><a href="lockscreen.html"><i class="im-arrow-right3"></i> <span class="txt">Lock screen</span></a>
-                        </li>
-                        <li><a href="timeline.html"><i class="im-arrow-right3"></i> <span class="txt">Timeline</span></a>
-                        </li>
-                        <li><a href="profile.html"><i class="im-arrow-right3"></i> <span class="txt">Profile page</span></a>
-                        </li>
-                        <li><a href="invoice.html"><i class="im-arrow-right3"></i> <span class="txt">Invoice page</span></a>
-                        </li>
-                        <li><a href="search.html"><i class="im-arrow-right3"></i> <span class="txt">Search page</span></a>
-                        </li>
-                        <li><a href="blank.html"><i class="im-arrow-right3"></i> <span class="txt">Blank page</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="im-file-remove2"></i> <span class="txt">Error pages</span></a>
-                    <ul class="sub">
-                        <li><a href="400.html"><i class="im-arrow-right3"></i> <span class="txt">400 Error</span></a>
-                        </li>
-                        <li><a href="401.html"><i class="im-arrow-right3"></i> <span class="txt">401 Error</span></a>
-                        </li>
-                        <li><a href="403.html"><i class="im-arrow-right3"></i> <span class="txt">403 Error</span></a>
-                        </li>
-                        <li><a href="404.html"><i class="im-arrow-right3"></i> <span class="txt">404 Error</span></a>
-                        </li>
-                        <li><a href="405.html"><i class="im-arrow-right3"></i> <span class="txt">405 Error</span></a>
-                        </li>
-                        <li><a href="500.html"><i class="im-arrow-right3"></i> <span class="txt">500 Error</span></a>
-                        </li>
-                        <li><a href="503.html"><i class="im-arrow-right3"></i> <span class="txt">503 Error</span></a>
-                        </li>
-                        <li><a href="offline.html"><i class="im-arrow-right3"></i> <span class="txt">Offline</span></a>
-                        </li>
-                    </ul>
-                </li>
+            <ul id="sideNav" class="nav nav-pills nav-stacked show-arrows">
+
             </ul>
             <div class="clearfix"></div>
         </div>
@@ -516,7 +402,8 @@
 <!-- Start .content-inner -->
 <div class="content-inner">
 <!-- Start .row -->
-<div class="row">
+@section('content')
+
 <div class="shortcut-buttons">
     <!-- Start .shortcut buttons -->
     <a href="#" class="shortcut-btn">
@@ -557,7 +444,8 @@
         <span class="shortcut-text">Add User</span>
     </a>
 </div>
-</div>
+
+@show
 <!-- col-lg-4 end here -->
 </div>
 <!-- End .row -->
@@ -567,10 +455,7 @@
 <!-- End .content-wrapper -->
 <div class="clearfix"></div>
 </div>
-<!-- End #content -->
-<!-- Javascripts -->
 <!-- Important javascript libs(put in all pages) -->
-{{ HTML::script('http://code.jquery.com/jquery-2.1.1.min.js') }}
 
 <script>
     window.jQuery || document.write('<script src="assets/js/libs/jquery-2.1.1.min.js">\x3C/script>')
@@ -611,6 +496,7 @@
 
 <!-- Prompt modal -->
 {{ HTML::script('assets/js/libs/ui/bootbox/bootbox.js') }}
+{{ HTML::script('assets/js/libs/jqueryui/js/jquery-ui.min.js') }}
 
 <!-- Other plugins ( load only nessesary plugins for every page) -->
 {{ HTML::script('assets/js/jquery.icheck.js') }}
@@ -623,6 +509,8 @@
 {{ HTML::script('assets/js/jquery.appStart.js') }}
 {{ HTML::script('assets/js/app.js') }}
 {{ HTML::script('assets/js/dashboard.js') }}
+{{-- HTML::script('assets/js/libs/jTable/jquery.jtable.js') --}}
+{{-- HTML::script('assets/js/libs/jTable/localization/jquery.jtable.es.js') --}}
 
 </body>
 </html>

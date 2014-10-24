@@ -3,6 +3,26 @@
 namespace Cartelera\Base;
 
 
-class BaseRepo {
+use Carbon\Carbon;
 
+class BaseRepo
+{
+
+    public function getCreatedAt()
+    {
+        $carbon = Carbon::now();
+        return $carbon->toDateTimeString();
+    }
+
+    public function getUpdateAt()
+    {
+        $carbon = Carbon::now();
+        return $carbon->toDateTimeString();
+    }
+
+    public function getDeletedAt()
+    {
+        $carbon = Carbon::now();
+        return $carbon->toDateTimeString();
+    }
 } 
