@@ -85,7 +85,7 @@ class PerfileRepo
         }
     }
 
-    public function getPerfilees()
+    public function getPerfiles()
     {
         $Perfiles = Perfile::select('id', 'descripcion')
             ->whereNull('deleted_at')

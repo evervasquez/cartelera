@@ -1,31 +1,27 @@
 <?php
+use Cartelera\Modulo\ModuloRepo;
 
-class BaseController extends Controller {
-
-	/**
-	 * Setup the layout used by the controller.
-	 *
-	 * @return void
-	 */
-	protected function setupLayout()
-	{
-		if ( ! is_null($this->layout))
-		{
-			$this->layout = View::make($this->layout);
-		}
-	}
-
-    protected function baseEditar($repositorio, $manager,$datos)
+class BaseController extends Controller
+{
+    protected function setupLayout()
     {
-        $response=null;
-        if($manager->isValid())
-        {
+        if (Auth::check()) {
+                return View::make('layout');
+        } else {
+                return View::make('login');
+        }
+    }
+
+    protected function baseEditar($repositorio, $manager, $datos)
+    {
+        $response = null;
+        if ($manager->isValid()) {
             $repositorio->editar($datos);
             return \Response::json(array(
                     "Result" => "OK"
                 )
             );
-        }else{
+        } else {
             return \Response::json(array(
                     "Result" => "ERROR",
                     "Message" => $manager->getErros()
@@ -36,16 +32,15 @@ class BaseController extends Controller {
 
     protected function baseNuevo($repositorio, $manager, $datos)
     {
-        $response=null;
-        if($manager->isValid())
-        {
+        $response = null;
+        if ($manager->isValid()) {
             $response = $repositorio->nuevo($datos);
             return \Response::json(array(
                     "Result" => "OK",
                     "Record" => $response
                 )
             );
-        }else{
+        } else {
             return \Response::json(array(
                     "Result" => "ERROR",
                     "Message" => $manager->getErros()

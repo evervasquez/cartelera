@@ -3,7 +3,6 @@ use Cartelera\Perfile\PerfileRepo;
 use Cartelera\Perfile\PerfileManager;
 class PerfilesController extends \BaseController
 {
-
     protected $perfilRepo;
 
     public function __construct(PerfileRepo $perfilRepositorio)

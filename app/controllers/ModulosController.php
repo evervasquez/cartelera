@@ -16,8 +16,7 @@ class ModulosController extends \BaseController
         return $this->moduloRepo->getModulos();
     }
 
-    public function index()
-    {
+    public function index(){
         return View::make('modulos/index');
     }
 

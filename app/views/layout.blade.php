@@ -208,7 +208,18 @@
         <div class="sidebar-scrollarea">
             <h5 class="sidebar-title">Navigation</h5>
             <ul id="sideNav" class="nav nav-pills nav-stacked show-arrows">
-
+                <li><a href="{{ url('/') }}"><i class="im-screen"></i> <span class="txt">Inicio</span></a></li>
+                    @foreach ($modulos as $modulo)
+                    <li>
+                    <a href="#"><i class="{{ $modulo['icono'] }}"></i> <span class="txt">{{ $modulo['descripcion'] }}</span></a>
+                        <ul class="sub">
+                        @foreach ($modulo['enlaces'] as $option)
+                            <li><a href="{{ $option['url'] }}"><i class="im-arrow-right3"></i> <span class="txt">{{ $option['descripcion'] }}</span></a>
+                            </li>
+                        @endforeach
+                        </ul>
+                    </li>
+                    @endforeach
             </ul>
             <div class="clearfix"></div>
         </div>
@@ -508,9 +519,8 @@
 {{ HTML::script('assets/js/fullcalendar.js') }}
 {{ HTML::script('assets/js/jquery.appStart.js') }}
 {{ HTML::script('assets/js/app.js') }}
-{{ HTML::script('assets/js/dashboard.js') }}
-{{-- HTML::script('assets/js/libs/jTable/jquery.jtable.js') --}}
-{{-- HTML::script('assets/js/libs/jTable/localization/jquery.jtable.es.js') --}}
+{{ HTML::script('assets/js/libs/jTable/jquery.jtable.js') }}
+{{ HTML::script('assets/js/libs/jTable/localization/jquery.jtable.es.js') }}
 
 </body>
 </html>

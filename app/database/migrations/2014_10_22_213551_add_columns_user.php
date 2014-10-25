@@ -14,16 +14,17 @@ class AddColumnsUser extends Migration {
 	{
         Schema::create('users', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('codigo');
+            $table->string('codigo')->nullable();
             $table->integer('idperfil')->unsigned();
-            $table->integer('idfacultad');
-            $table->integer('idescuela');
+            $table->string('idfacultad',2)->nullable();
+            $table->string('idescuela',4)->nullable();
             $table->string('nombres');
             $table->string('apellidos');
-            $table->string('telefono');
-            $table->string('email');
+            $table->string('telefono')->nullable();
+            $table->string('email')->nullable();
             $table->string('usuario', 45);
-            $table->text('clave');
+            $table->text('password');
+            $table->text('remember_token')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -8,7 +8,7 @@ class UsersTableSeeder extends Seeder {
         DB::table('users')->insert(array(
             'idperfil' => 1,
             'usuario' => 'admin',
-            'clave' => Hash::make('123'),
+            'password' => Hash::make('123'),
             'idfacultad' => 1,
             'idescuela' => 1,
             'nombres' => 'admin',

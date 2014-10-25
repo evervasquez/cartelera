@@ -18,7 +18,6 @@ class CreateModulosTable extends Migration {
             $table->string('descripcion', 45);
             $table->string('url', 200);
             $table->tinyInteger('estado')->default(1);
-            $table->foreign('idpadre')->references('id')->on('modulos');
             $table->timestamps();
             $table->softDeletes();
         });

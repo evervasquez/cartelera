@@ -1,54 +1,6 @@
 var cargando = '<div class="text-center" style="padding: 2em 0"><i class="icon-spinner icon-spin blue bigger-125"></i></div>';
 var buscador = '<form class="form-search"><span class="input-icon"><input type="text" id="search" class="nav-search-input" name="search" autocomplete="off" placeholder="Buscar..." /><i class="icon-search nav-search-icon"></i></span><button type="submit" id="LoadRecordsButton" class="hide"></button></form>';
 
-
-$(document).ready(function () {
-    // aquí creamos el menu
-    cargaMenu();
-});
-
-var cargaMenu = function () {
-    var menu = $("#sideNav");
-    $.ajax({
-        type: 'GET',
-        url: $path_base + '/menu',
-        beforeSend: function () {
-            menu.html(cargando);
-        },
-        success: function (data) {
-            menu.empty().generaMenu(data);
-            //activos();
-        }
-    })
-}
-
-$.fn.generaMenu = function (menu) {
-    this.each(function () {
-        var capaMenu = $(this);
-        var capaInicio = $('<li><a href="'+$path_base+'" ><i class="fa fa-home"></i><span class="txt"> Inicio </span></a></li>');
-        capaMenu.append(capaInicio);
-        jQuery.each(menu, function () {
-            if (this.enlaces.length > 0) {
-                var capa = $("<li class='prueb'></li>");
-                capaMenu.append(capa);
-                var capaPadre = $('<a href="#"></a>');
-                capa.append(capaPadre);
-                var enlacepadre = $('<i class="fa fa-shield"></i><span class="txt"> ' + this.descripcion + ' </span>');
-                capaPadre.append(enlacepadre);
-                var subLista = $('<ul class="sub"></ul>');
-                capa.append(subLista);
-                jQuery.each(this.enlaces, function () {
-                    var subElemento = $('<li ></li>');
-                    subLista.append(subElemento);
-                    var subEnlace = $('<a href="' + $path_base + "/"+this.url + '"><i class="im-arrow-right3"></i><span class="txt">' + this.descripcion + '</span></a>');
-                    subElemento.append(subEnlace);
-                });
-            }
-        });
-    });
-    return this;
-};
-
 //validar vacios
 $(function () {
     $.fn.required = function () {

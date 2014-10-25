@@ -77,8 +77,6 @@ class ModuloRepo extends BaseRepo{
 
     public function getModulos()
     {
-        if (\Request::ajax()) {
-
             $menupadre = Modulo::whereNull('deleted_at')
                 ->where('idpadre', '=', 1)
                 ->where('id', '<>', 1)
@@ -95,7 +93,7 @@ class ModuloRepo extends BaseRepo{
 
                 $submenu = \DB::table('modulos')
                     ->join('permisos','modulos.id','=','permisos.idmodulo')
-                    ->select('modulos.descripcion','modulos.url')
+                    ->select('modulos.descripcion','modulos.url','modulos.icono')
                     ->whereNull('modulos.deleted_at')
                     ->whereNull('permisos.deleted_at')
                     ->where('permisos.idperfil',$idperfil)
@@ -112,7 +110,8 @@ class ModuloRepo extends BaseRepo{
                     foreach ($submenu as $key) {
                         $menu[$cont]['enlaces'][$cont2] = array(
                             'descripcion' => $key->descripcion,
-                            'url' => $key->url
+                            'url' => $key->url,
+                            'icono' => $key->icono
                         );
                         $cont2++;
                     }
@@ -120,7 +119,6 @@ class ModuloRepo extends BaseRepo{
                 }
             }
             return $menu;
-        }
     }
 
     public function padres()

@@ -1,23 +1,7 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
+Route::get('/', ['as' => 'login', 'uses' => 'BaseController@setupLayout']);
 
-Route::get('/', function () {
-    if (Auth::check()) {
-        return View::make('layout');
-    } else {
-        return View::make('login');
-    }
-});
 
 //login y logout
 Route::post('login', ['as' => 'login', 'uses' => 'UserLogin@login']);
@@ -49,3 +33,14 @@ Route::get('permisos/listar', ['as' => 'permisos.listar', 'uses' => 'PermisosCon
 Route::get('permisos/getPermisos', ['as' => 'permisos.getPermisos', 'uses' => 'PermisosController@getPermisos']);
 Route::post('permisos/add', ['as' => 'permisos.add', 'uses' => 'PermisosController@add']);
 Route::post('permisos/del', ['as' => 'permisos.del', 'uses' => 'PermisosController@destroy']);
+
+
+//users
+Route::get('usuarios', ['as' => 'usuarios', 'uses' => 'UsersController@index']);
+Route::post('usuarios/list', ['as' => 'usuarios.list', 'uses' => 'UsersController@listar']);
+Route::post('usuarios/update', ['as' => 'usuarios.update', 'uses' => 'UsersController@editar']);
+Route::post('usuarios/create', ['as' => 'usuarios.create', 'uses' => 'UsersController@nuevo']);
+Route::post('usuarios/delete', ['as' => 'usuarios.delete', 'uses' => 'UsersController@eliminar']);
+Route::post('usuarios/getPerfiles', ['as' => 'usuarios.getPerfiles', 'uses' => 'PerfilesController@getPerfiles']);
+Route::post('usuarios/getFacultad', ['as' => 'usuarios.getFacultad', 'uses' => 'UsersController@eliminar']);
+
