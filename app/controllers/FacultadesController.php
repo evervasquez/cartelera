@@ -1,86 +1,23 @@
 <?php
+use Cartelera\Facultade\FacultadesRepo;
 
-class FacultadesController extends \BaseController {
+class FacultadesController extends \BaseController
+{
+    protected $facultadRepo;
 
-	/**
-	 * Display a listing of the resource.
-	 * GET /facultades
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
+    public function __construct(FacultadesRepo $facultadesRepo)
+    {
+        $this->facultadRepo = $facultadesRepo;
+    }
 
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /facultades/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
+    public function index()
+    {
+        return View::make('facultades/index');
+    }
 
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /facultades
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-	/**
-	 * Display the specified resource.
-	 * GET /facultades/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /facultades/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /facultades/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /facultades/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
+    public function listar()
+    {
+        return $this->facultadRepo->listar();
+    }
 
 }

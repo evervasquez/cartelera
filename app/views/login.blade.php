@@ -25,8 +25,11 @@
     <!-- Main stylesheets (template main css file) -->
     {{ HTML::style('assets/css/main.css'); }}
 
+    {{ HTML::style('assets/css/custom.css'); }}
+
     <meta name="msapplication-TileColor" content="#3399cc"/>
 </head>
+@section('content')
 <body class="login-page">
 <!-- Start #login -->
 <div id="login" class="animated bounceIn">
@@ -92,4 +95,5 @@
 </div>
 {{ HTML::script('assets/js/jquery-2.1.1.min.js') }}
 </body>
+@show
 </html>

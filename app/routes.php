@@ -1,14 +1,31 @@
 <?php
 
-Route::get('/', ['as' => 'login', 'uses' => 'BaseController@setupLayout']);
+Route::get('/', function () {
+    if (Auth::check()) {
+        return View::make('layout');
+    } else {
+        if(Session::has('iduser'))
+            Session::flush();
 
+        return View::make('login');
+    }
+});
 
 //login y logout
 Route::post('login', ['as' => 'login', 'uses' => 'UserLogin@login']);
 Route::get('logout', ['as' => 'logout', 'uses' => 'UserLogin@logOut']);
 
+//borramos los datos de session guardados
+Route::get('flush',function(){
+//    Session::flush();
+});
+
 //metodo para crear menu
 Route::get('menu', ['as' => 'menu', 'uses' => 'ModulosController@getModulos']);
+
+//cambiar contraseña antes de entrar
+Route::get('changepassword', ['as' => 'changepassword', 'uses' => 'UserLogin@changePassword']);
+Route::post('changepasswordpost', ['as' => 'changepasswordpost', 'uses' => 'UsersController@changePassword']);
 
 
 //mantinimiento de modulos
@@ -43,4 +60,21 @@ Route::post('usuarios/create', ['as' => 'usuarios.create', 'uses' => 'UsersContr
 Route::post('usuarios/delete', ['as' => 'usuarios.delete', 'uses' => 'UsersController@eliminar']);
 Route::post('usuarios/getPerfiles', ['as' => 'usuarios.getPerfiles', 'uses' => 'PerfilesController@getPerfiles']);
 Route::post('usuarios/getFacultad', ['as' => 'usuarios.getFacultad', 'uses' => 'UsersController@eliminar']);
+
+//facultades
+Route::get('facultades', ['as' => 'facultades', 'uses' => 'FacultadesController@index']);
+Route::post('facultades/list', ['as' => 'facultades.list', 'uses' => 'FacultadesController@listar']);
+
+//escuelaprofesional
+Route::get('escuelas', ['as' => 'facultades', 'uses' => 'EscuelasController@index']);
+Route::post('escuelas/list', ['as' => 'facultades.list', 'uses' => 'EscuelasController@listar']);
+
+//escuelaprofesional
+Route::get('alumnos', ['as' => 'alumnos', 'uses' => 'AlumnosController@index']);
+Route::post('alumnos/list', ['as' => 'alumnos.list', 'uses' => 'AlumnosController@listar']);
+
+//escuelaprofesional
+Route::get('profesores', ['as' => 'profesores', 'uses' => 'ProfesoresController@index']);
+Route::post('profesores/list', ['as' => 'profesores.list', 'uses' => 'ProfesoresController@listar']);
+
 

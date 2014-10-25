@@ -14,10 +14,10 @@ class CreateModulosTable extends Migration {
 	{
         Schema::create('modulos', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('idpadre')->unsigned();
+            $table->integer('idpadre')->unsigned()->nullable();
             $table->string('descripcion', 45);
             $table->string('url', 200);
-            $table->tinyInteger('estado')->default(1);
+            $table->string('icono')->default('im-arrow-right3');
             $table->timestamps();
             $table->softDeletes();
         });

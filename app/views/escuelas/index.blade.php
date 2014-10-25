@@ -14,15 +14,11 @@
     $(document).ready(function () {
 
         $("#tablecontainer").jtable({
-            title: "Lista de Facultades",
+            title: "Lista de Escuelas Profesionales",
             paging: true,
             sorting: true,
             actions: {
-                listAction: "facultades/list"
-            },
-            messages: {
-                addNewRecord: 'Nueva Facultad',
-                editRecord: 'Editar Facultad'
+                listAction: "escuelas/list"
             },
             toolbar: {
                 items: [{
@@ -31,26 +27,27 @@
                 }]
             },
             fields: {
-                CodigoFacultad: {
+                CodigoEscuela: {
                     key: true,
-                    title: 'Código ',
+                    title: 'Código',
                     width: '5%'
                 },
-                DescripcionFacultad: {
-                    title: 'Facultad ',
+                facultad:{
+                    title: 'Facultad',
+                    width: '28%',
+                    option: 'escuelas/getFacultades'
+                },
+                DescripcionEscuela: {
+                    title: 'Escuela',
                     width: '28%'
                 },
-                DescripcionFacultadIngles: {
-                    title: 'Facultad en Ingles',
+                DescripcionAlterna: {
+                    title: 'Escuela en Ingles',
                     width: '20%'
-                },
-                Decano: {
-                    title: 'Decano ',
-                    width: '37%'
                 },
                 Abreviatura: {
                     title: 'Abreviatura',
-                    width: '10%'
+                    width: '37%'
                 }
             }
         });

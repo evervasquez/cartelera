@@ -1,1 +1,0 @@
-E:\xampp\htdocs\cartelera\app/views/facultades/create.blade.php

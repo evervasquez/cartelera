@@ -25,3 +25,8 @@ div.jtable-main-container table.jtable tbody > tr > td .jtable-delete-command-bu
     width: 16px;
     height: 16px;
 }
+
+.error_message
+{
+    color: #ff0000;
+}

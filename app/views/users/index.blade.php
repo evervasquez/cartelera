@@ -31,7 +31,7 @@
                 items:
                     [{
                         cssClass: 'buscador',
-                        text: buscador,
+                        text: buscador
                     }]
             },
             fields: {

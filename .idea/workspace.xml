@@ -23,37 +23,66 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="2014_10_22_213551_add_columns_user.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_10_22_213551_add_columns_user.php">
+      <file leaf-file-name="validation.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/lang/es/validation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="55" selection-start="475" selection-end="475" vertical-scroll-proportion="0.38414633" vertical-offset="105" max-vertical-offset="1008">
+            <state line="69" column="38" selection-start="3927" selection-end="3927" vertical-scroll-proportion="-11.366667" vertical-offset="1108" max-vertical-offset="2646">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PerfilesTableSeeder.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/seeds/PerfilesTableSeeder.php">
+      <file leaf-file-name="login.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/login.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="2" selection-start="438" selection-end="438" vertical-scroll-proportion="-9.1" vertical-offset="0" max-vertical-offset="399">
+            <state line="90" column="18" selection-start="4414" selection-end="4414" vertical-scroll-proportion="0.6407465" vertical-offset="1478" max-vertical-offset="2184">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsersTableSeeder.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/seeds/UsersTableSeeder.php">
+      <file leaf-file-name="changePassword.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/changePassword.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="28" selection-start="185" selection-end="185" vertical-scroll-proportion="-5.6" vertical-offset="0" max-vertical-offset="609">
+            <state line="34" column="53" selection-start="1665" selection-end="1677" vertical-scroll-proportion="-21.7" vertical-offset="63" max-vertical-offset="2226">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2014_10_22_213046_create_modulos_table.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_10_22_213046_create_modulos_table.php">
+      <file leaf-file-name="UserLogin.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/UserLogin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="517" selection-end="517" vertical-scroll-proportion="-13.3" vertical-offset="0" max-vertical-offset="882">
+            <state line="72" column="69" selection-start="2672" selection-end="2672" vertical-scroll-proportion="-6.733333" vertical-offset="1310" max-vertical-offset="1953">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRepo.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Cartelera/User/UserRepo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="177" column="0" selection-start="6829" selection-end="6829" vertical-scroll-proportion="-4.410714" vertical-offset="3470" max-vertical-offset="5985">
+              <folding>
+                <element signature="e#6#97#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="2" selection-start="460" selection-end="460" vertical-scroll-proportion="-13.3" vertical-offset="0" max-vertical-offset="1806">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsersController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/UsersController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="57" column="46" selection-start="1501" selection-end="1501" vertical-scroll-proportion="-11.633333" vertical-offset="848" max-vertical-offset="1806">
               <folding />
             </state>
           </provider>
@@ -69,57 +98,57 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/Cartelera/Perfile/Perfile.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2014_10_22_214304_create_perfiles_table.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2014_10_22_214454_create_permisos_table.php" />
-        <option value="$PROJECT_DIR$/app/Cartelera/User/User.php" />
-        <option value="$PROJECT_DIR$/app/filters.php" />
-        <option value="$PROJECT_DIR$/app/views/login.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/UserLogin.php" />
-        <option value="$PROJECT_DIR$/app/config/auth.php" />
-        <option value="$PROJECT_DIR$/app/Cartelera/Base/BaseManagers.php" />
-        <option value="$PROJECT_DIR$/public/assets/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/app/Cartelera/Modulo/ModuloManager.php" />
-        <option value="$PROJECT_DIR$/app/Cartelera/Base/BaseRepo.php" />
-        <option value="$PROJECT_DIR$/public/assets/css/custom.css" />
-        <option value="$PROJECT_DIR$/public/assets/css/icons.css" />
-        <option value="$PROJECT_DIR$/public/assets/css/plugins/font-awesome/css/font-awesome.css" />
-        <option value="$PROJECT_DIR$/public/assets/js/libs/jTable/jquery.jtable.js" />
-        <option value="$PROJECT_DIR$/public/assets/js/libs/jTable/themes/lightcolor/gray/jtable.css" />
-        <option value="$PROJECT_DIR$/app/Cartelera/Perfile/PerfileManager.php" />
-        <option value="$PROJECT_DIR$/app/views/perfiles/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/PermisosController.php" />
-        <option value="$PROJECT_DIR$/app/Cartelera/Permiso/PermisoRepo.php" />
-        <option value="$PROJECT_DIR$/app/Cartelera/Permiso/PermisoManager.php" />
-        <option value="$PROJECT_DIR$/app/Cartelera/Permiso/Permiso.php" />
-        <option value="$PROJECT_DIR$/app/views/permisos/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/modulos/index.blade.php" />
-        <option value="$PROJECT_DIR$/public/assets/js/jquery.appStart.js" />
         <option value="$PROJECT_DIR$/public/assets/js/main.js" />
-        <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/app/controllers/BaseController.php" />
         <option value="$PROJECT_DIR$/app/controllers/ModulosController.php" />
         <option value="$PROJECT_DIR$/app/Cartelera/Compositores/ComposerServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Cartelera/Compositores/MenuListComposer.php" />
-        <option value="$PROJECT_DIR$/app/Cartelera/Modulo/ModuloRepo.php" />
-        <option value="$PROJECT_DIR$/app/views/layout.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/UsersController.php" />
         <option value="$PROJECT_DIR$/app/Cartelera/User/UserManagers.php" />
-        <option value="$PROJECT_DIR$/app/Cartelera/User/UserRepo.php" />
-        <option value="$PROJECT_DIR$/app/views/users/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Cartelera/Perfile/PerfileRepo.php" />
-        <option value="$PROJECT_DIR$/app/controllers/PerfilesController.php" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/Cartelera/Facultade/Facultade.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_10_25_132337_add_id_table_facultades.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_10_23_021012_create_users_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_10_22_214729_add_foreign_seguridad.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2014_10_22_213046_create_modulos_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_10_25_132214_refactor_table_users.php" />
-        <option value="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/app/database/seeds/PerfilesTableSeeder.php" />
-        <option value="$PROJECT_DIR$/app/database/seeds/UsersTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_10_22_213551_add_columns_user.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2014_10_22_213046_create_modulos_table.php" />
+        <option value="$PROJECT_DIR$/app/database/seeds/UsersTableSeeder.php" />
+        <option value="$PROJECT_DIR$/app/database/seeds/PermisosTableSeeder.php" />
+        <option value="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/app/Cartelera/Modulo/ModuloRepo.php" />
+        <option value="$PROJECT_DIR$/app/database/seeds/ModulosTableSeeder.php" />
+        <option value="$PROJECT_DIR$/app/views/facultades/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Cartelera/Escuela/Escuela.php" />
+        <option value="$PROJECT_DIR$/app/controllers/EscuelasController.php" />
+        <option value="$PROJECT_DIR$/app/Cartelera/Escuela/EscuelaRepo.php" />
+        <option value="$PROJECT_DIR$/app/views/escuelas/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Cartelera/Facultade/FacultadesRepo.php" />
+        <option value="$PROJECT_DIR$/app/controllers/FacultadesController.php" />
+        <option value="$PROJECT_DIR$/app/Cartelera/Alumno/Alumno.php" />
+        <option value="$PROJECT_DIR$/app/controllers/AlumnosController.php" />
+        <option value="$PROJECT_DIR$/app/views/alumnos/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Cartelera/Alumno/AlumnoRepo.php" />
+        <option value="$PROJECT_DIR$/app/Cartelera/Profesores/Profesore.php" />
+        <option value="$PROJECT_DIR$/app/controllers/PerfilesController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/ProfesoresController.php" />
+        <option value="$PROJECT_DIR$/app/Cartelera/Profesores/ProfesorRepo.php" />
+        <option value="$PROJECT_DIR$/app/views/profesores/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/libraries/Utils.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/app/views/users/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/layout.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/UsersController.php" />
+        <option value="$PROJECT_DIR$/app/views/changePassword.blade.php" />
+        <option value="$PROJECT_DIR$/public/assets/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/public/assets/css/custom.css" />
+        <option value="$PROJECT_DIR$/app/views/login.blade.php" />
+        <option value="$PROJECT_DIR$/app/config/app.php" />
+        <option value="$PROJECT_DIR$/app/lang/es/validation.php" />
+        <option value="$PROJECT_DIR$/app/Cartelera/User/UserRepo.php" />
+        <option value="$PROJECT_DIR$/app/config/session.php" />
+        <option value="$PROJECT_DIR$/app/controllers/UserLogin.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
       </list>
     </option>
   </component>
@@ -206,28 +235,6 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cartelera" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cartelera" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -275,11 +282,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -297,51 +300,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cartelera" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cartelera" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="seeds" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cartelera" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cartelera" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -360,18 +319,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\xampp\htdocs\cartelera\app\lang" />
+      <recent name="E:\xampp\htdocs\cartelera\app\views" />
+      <recent name="E:\xampp\htdocs\cartelera\app" />
+      <recent name="E:\xampp\htdocs\cartelera\app\database\seeds" />
       <recent name="E:\xampp\htdocs\cartelera\public\assets\css" />
-      <recent name="E:\xampp\htdocs\cartelera\public\assets\js\libs" />
-      <recent name="E:\xampp\htdocs\cartelera\public\assets\js" />
-      <recent name="E:\xampp\htdocs\cartelera\public\assets\fonts" />
-      <recent name="E:\xampp\htdocs\cartelera\public\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\xampp\htdocs\cartelera\app\Cartelera\Alumno" />
+      <recent name="E:\xampp\htdocs\cartelera\app\Cartelera\Profesores" />
+      <recent name="E:\xampp\htdocs\cartelera\app\Cartelera\Escuela" />
       <recent name="E:\xampp\htdocs\cartelera\app\Cartelera\Facultade" />
       <recent name="E:\xampp\htdocs\cartelera\public\assets\fonts" />
-      <recent name="E:\xampp\htdocs\cartelera\app\Cartelera\Permiso" />
-      <recent name="E:\xampp\htdocs\cartelera\app\Cartelera\Perfile" />
-      <recent name="E:\xampp\htdocs\cartelera\app\Cartelera\Modulo" />
     </key>
   </component>
   <component name="RunManager">
@@ -417,7 +376,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1552" height="842" extended-state="0" />
+    <frame x="-8" y="-8" width="1552" height="842" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -425,7 +384,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286517" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21848185" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23432343" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -475,171 +434,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Cartelera/Base/BaseRepo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="32" selection-start="354" selection-end="354" vertical-scroll-proportion="0.67021275" vertical-offset="21" max-vertical-offset="693" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/libs/jTable/themes/lightcolor/add.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/libs/jTable/themes/lightcolor/gray/jtable.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="342" column="33" selection-start="10601" selection-end="10601" vertical-scroll-proportion="0.30046225" vertical-offset="6987" max-vertical-offset="11130" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/libs/jTable/jquery.jtable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2554" column="68" selection-start="102250" selection-end="102250" vertical-scroll-proportion="0.3585185" vertical-offset="53392" max-vertical-offset="105924" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="82" selection-start="433" selection-end="459" vertical-scroll-proportion="0.5188953" vertical-offset="0" max-vertical-offset="688" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/icons.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3908" column="0" selection-start="58402" selection-end="58434" vertical-scroll-proportion="0.3323263" vertical-offset="81848" max-vertical-offset="113946" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/plugins/font-awesome/css/font-awesome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="18" selection-start="1044" selection-end="1044" vertical-scroll-proportion="0.38962963" vertical-offset="325" max-vertical-offset="35301" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/libs/jTable/themes/lightcolor/delete.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Cartelera/Perfile/Perfile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="27" selection-start="33" selection-end="33" vertical-scroll-proportion="0.032012194" vertical-offset="0" max-vertical-offset="656" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Cartelera/Perfile/PerfileManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="20" selection-start="274" selection-end="274" vertical-scroll-proportion="0.5762195" vertical-offset="0" max-vertical-offset="656" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/PermisosController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="43" selection-start="165" selection-end="165" vertical-scroll-proportion="-2.2332318" vertical-offset="1612" max-vertical-offset="2268" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Cartelera/Permiso/PermisoManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="1" selection-start="7" selection-end="95" vertical-scroll-proportion="0.032012194" vertical-offset="0" max-vertical-offset="656" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Cartelera/Permiso/Permiso.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="1" selection-start="7" selection-end="7" vertical-scroll-proportion="0.032012194" vertical-offset="0" max-vertical-offset="656" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/perfiles/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="45" selection-start="393" selection-end="393" vertical-scroll-proportion="0.41615853" vertical-offset="63" max-vertical-offset="1617" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Cartelera/Permiso/PermisoRepo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="34" selection-end="55" vertical-scroll-proportion="0.09603658" vertical-offset="0" max-vertical-offset="1575" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/modulos/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="0" selection-start="1634" selection-end="1634" vertical-scroll-proportion="0.75762194" vertical-offset="721" max-vertical-offset="1932" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/permisos/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="36" selection-start="318" selection-end="318" vertical-scroll-proportion="-0.7231726" vertical-offset="696" max-vertical-offset="3885" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/jRespond.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="673" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="18" selection-start="2895" selection-end="2895" vertical-scroll-proportion="-3.1248143" vertical-offset="3573" max-vertical-offset="5691" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="25" selection-start="496" selection-end="496" vertical-scroll-proportion="0.095744684" vertical-offset="294" max-vertical-offset="1617" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/jquery.appStart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1354" column="2" selection-start="64682" selection-end="64682" vertical-scroll-proportion="0.84444445" vertical-offset="14655" max-vertical-offset="15351" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="470" selection-end="470" vertical-scroll-proportion="0.15555556" vertical-offset="0" max-vertical-offset="2037" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="55" selection-start="4442" selection-end="4442" vertical-scroll-proportion="0.4893617" vertical-offset="2282" max-vertical-offset="4221" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Cartelera/Compositores/ComposerServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="174" selection-end="174" vertical-scroll-proportion="0.19148937" vertical-offset="0" max-vertical-offset="658" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Cartelera/Compositores/MenuListComposer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="37" selection-start="205" selection-end="205" vertical-scroll-proportion="0.22340426" vertical-offset="0" max-vertical-offset="658" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/ModulosController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="40" selection-start="414" selection-end="427" vertical-scroll-proportion="0.28723404" vertical-offset="189" max-vertical-offset="1197" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Cartelera/Modulo/ModuloRepo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="50" selection-start="4567" selection-end="4567" vertical-scroll-proportion="0.0" vertical-offset="2373" max-vertical-offset="4326">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/UserLogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="21" selection-start="334" selection-end="334" vertical-scroll-proportion="0.5225505" vertical-offset="0" max-vertical-offset="1260">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="82" selection-end="82" vertical-scroll-proportion="-0.69664633" vertical-offset="562" max-vertical-offset="1218">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Cartelera/User/UserManagers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="5" selection-start="853" selection-end="853" vertical-scroll-proportion="0.8643293" vertical-offset="0" max-vertical-offset="714">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="216" column="88" selection-start="11551" selection-end="11551" vertical-scroll-proportion="0.41524106" vertical-offset="4269" max-vertical-offset="11151">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="52" column="10" selection-start="1663" selection-end="1663" vertical-scroll-proportion="0.9512195" vertical-offset="468" max-vertical-offset="2730">
@@ -647,74 +441,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="35" selection-start="203" selection-end="203" vertical-scroll-proportion="-6.3" vertical-offset="0" max-vertical-offset="987">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="0" selection-start="3112" selection-end="3112" vertical-scroll-proportion="-3.6666667" vertical-offset="1759" max-vertical-offset="2415">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Cartelera/Perfile/PerfileRepo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="92" column="0" selection-start="2424" selection-end="2424" vertical-scroll-proportion="-7.6666665" vertical-offset="1597" max-vertical-offset="2310">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/PerfilesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="48" selection-start="1044" selection-end="1044" vertical-scroll-proportion="-16.266666" vertical-offset="415" max-vertical-offset="1071">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Cartelera/User/UserRepo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="176" selection-start="2409" selection-end="2409" vertical-scroll-proportion="-9.533334" vertical-offset="764" max-vertical-offset="3129">
-          <folding>
-            <element signature="e#6#97#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Cartelera/Modulo/Modulo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="27" selection-start="6" selection-end="34" vertical-scroll-proportion="0.032012194" vertical-offset="0" max-vertical-offset="656">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="36" selection-start="218" selection-end="218" vertical-scroll-proportion="0.24789207" vertical-offset="0" max-vertical-offset="1008">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="29" selection-start="183" selection-end="183" vertical-scroll-proportion="0.41042346" vertical-offset="0" max-vertical-offset="614">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Cartelera/Facultade/Facultade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="146" selection-end="146" vertical-scroll-proportion="0.19207317" vertical-offset="0" max-vertical-offset="656">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="95" selection-start="2702" selection-end="2717" vertical-scroll-proportion="0.82426125" vertical-offset="394" max-vertical-offset="1092">
           <folding />
         </state>
       </provider>
@@ -740,23 +469,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_10_22_213046_create_modulos_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="37" selection-start="322" selection-end="322" vertical-scroll-proportion="0.44817072" vertical-offset="0" max-vertical-offset="882">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/database/seeds/PerfilesTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="2" selection-start="438" selection-end="438" vertical-scroll-proportion="-9.1" vertical-offset="0" max-vertical-offset="399">
+        <state line="11" column="40" selection-start="173" selection-end="214" vertical-scroll-proportion="0.19207317" vertical-offset="0" max-vertical-offset="656">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/seeds/UsersTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="28" selection-start="185" selection-end="185" vertical-scroll-proportion="-5.6" vertical-offset="0" max-vertical-offset="609">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_10_22_213046_create_modulos_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="517" selection-end="517" vertical-scroll-proportion="-13.3" vertical-offset="0" max-vertical-offset="882">
+        <state line="12" column="32" selection-start="331" selection-end="331" vertical-scroll-proportion="0.38414633" vertical-offset="0" max-vertical-offset="656">
           <folding />
         </state>
       </provider>
@@ -764,6 +493,307 @@
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_10_22_213551_add_columns_user.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="55" selection-start="475" selection-end="475" vertical-scroll-proportion="0.38414633" vertical-offset="105" max-vertical-offset="1008">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="28" selection-start="310" selection-end="310" vertical-scroll-proportion="0.48018292" vertical-offset="0" max-vertical-offset="656">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/PermisosTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="11" selection-start="669" selection-end="669" vertical-scroll-proportion="0.5762195" vertical-offset="0" max-vertical-offset="656">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/seeds/ModulosTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="30" selection-start="1740" selection-end="1740" vertical-scroll-proportion="0.839939" vertical-offset="436" max-vertical-offset="1218">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/modulos/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="24" selection-start="0" selection-end="2559" vertical-scroll-proportion="0.5015244" vertical-offset="721" max-vertical-offset="1932">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ModulosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="5" selection-start="361" selection-end="522" vertical-scroll-proportion="0.5762195" vertical-offset="126" max-vertical-offset="1197">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Cartelera/Modulo/ModuloManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="686">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Cartelera/Modulo/Modulo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="27" selection-start="6" selection-end="34" vertical-scroll-proportion="0.032012194" vertical-offset="0" max-vertical-offset="656">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/FacultadesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="429" selection-end="429" vertical-scroll-proportion="0.6722561" vertical-offset="0" max-vertical-offset="656">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Cartelera/Escuela/EscuelaRepo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="45" selection-start="2987" selection-end="2987" vertical-scroll-proportion="1.4666667" vertical-offset="126" max-vertical-offset="1428">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/escuelas/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="24" selection-start="895" selection-end="895" vertical-scroll-proportion="-0.15243903" vertical-offset="814" max-vertical-offset="1470">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Cartelera/Escuela/Escuela.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="31" selection-start="104" selection-end="245" vertical-scroll-proportion="0.25609756" vertical-offset="0" max-vertical-offset="656">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Cartelera/Facultade/Facultade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="6" selection-end="36" vertical-scroll-proportion="0.032012194" vertical-offset="0" max-vertical-offset="656">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Cartelera/Facultade/FacultadesRepo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="5" selection-start="155" selection-end="2657" vertical-scroll-proportion="0.4265625" vertical-offset="0" max-vertical-offset="640">
+          <folding>
+            <element signature="e#6#97#0" expanded="true" />
+            <element signature="e#159#2656#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/facultades/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="21" selection-start="0" selection-end="1816" vertical-scroll-proportion="0.340625" vertical-offset="601" max-vertical-offset="1533">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/EscuelasController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="5" selection-start="238" selection-end="404" vertical-scroll-proportion="0.6930693" vertical-offset="0" max-vertical-offset="606">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Cartelera/Alumno/Alumno.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="4" selection-start="102" selection-end="173" vertical-scroll-proportion="0.19207317" vertical-offset="0" max-vertical-offset="656">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Cartelera/Profesores/Profesore.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="43" selection-start="150" selection-end="150" vertical-scroll-proportion="-5.6" vertical-offset="0" max-vertical-offset="336">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Cartelera/Alumno/AlumnoRepo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="5" selection-start="149" selection-end="3624" vertical-scroll-proportion="0.25609756" vertical-offset="0" max-vertical-offset="656">
+          <folding>
+            <element signature="e#153#3623#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AlumnosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="4" selection-start="121" selection-end="395" vertical-scroll-proportion="-3.5" vertical-offset="0" max-vertical-offset="504">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/PerfilesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="5" selection-start="367" selection-end="367" vertical-scroll-proportion="0.44817072" vertical-offset="0" max-vertical-offset="1071">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/libraries/Utils.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="50" selection-start="890" selection-end="890" vertical-scroll-proportion="1.1905512" vertical-offset="0" max-vertical-offset="1050">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="21" selection-start="399" selection-end="399" vertical-scroll-proportion="0.36377952" vertical-offset="105" max-vertical-offset="1029">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="10" selection-start="3580" selection-end="3590" vertical-scroll-proportion="0.8015748" vertical-offset="1780" max-vertical-offset="2415">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Cartelera/Profesores/ProfesorRepo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="113" selection-start="1768" selection-end="1882" vertical-scroll-proportion="0.2976378" vertical-offset="630" max-vertical-offset="1407">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/profesores/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="32" selection-start="380" selection-end="380" vertical-scroll-proportion="0.13228346" vertical-offset="252" max-vertical-offset="1365">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/alumnos/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="30" selection-start="0" selection-end="1646" vertical-scroll-proportion="0.3277439" vertical-offset="541" max-vertical-offset="1449">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ProfesoresController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="34" selection-start="401" selection-end="401" vertical-scroll-proportion="0.48018292" vertical-offset="0" max-vertical-offset="656">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Cartelera/Modulo/ModuloRepo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="28" selection-start="224" selection-end="224" vertical-scroll-proportion="0.35213414" vertical-offset="0" max-vertical-offset="4221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="47" selection-start="1251" selection-end="1299" vertical-scroll-proportion="0.6752412" vertical-offset="189" max-vertical-offset="11151">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="19" selection-start="820" selection-end="820" vertical-scroll-proportion="0.90816325" vertical-offset="7" max-vertical-offset="777">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10427" column="1" selection-start="232468" selection-end="232468" vertical-scroll-proportion="0.84398216" vertical-offset="218399" max-vertical-offset="219114">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="28" selection-start="2173" selection-end="2173" vertical-scroll-proportion="0.32012194" vertical-offset="1197" max-vertical-offset="4221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lang/es/reminders.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="5" selection-start="435" selection-end="435" vertical-scroll-proportion="0.38414633" vertical-offset="0" max-vertical-offset="656">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lang/es/pagination.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="686">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="46" selection-start="1501" selection-end="1501" vertical-scroll-proportion="-11.633333" vertical-offset="848" max-vertical-offset="1806">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Cartelera/User/UserRepo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="177" column="0" selection-start="6829" selection-end="6829" vertical-scroll-proportion="-4.410714" vertical-offset="3470" max-vertical-offset="5985">
+          <folding>
+            <element signature="e#6#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="5" selection-start="1861" selection-end="1861" vertical-scroll-proportion="0.19207317" vertical-offset="1050" max-vertical-offset="3066">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/UserLogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="69" selection-start="2672" selection-end="2672" vertical-scroll-proportion="-6.733333" vertical-offset="1310" max-vertical-offset="1953">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="2" selection-start="460" selection-end="460" vertical-scroll-proportion="-13.3" vertical-offset="0" max-vertical-offset="1806">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lang/es/validation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="38" selection-start="3927" selection-end="3927" vertical-scroll-proportion="-11.366667" vertical-offset="1108" max-vertical-offset="2646">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/changePassword.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="53" selection-start="1665" selection-end="1677" vertical-scroll-proportion="-21.7" vertical-offset="63" max-vertical-offset="2226">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="18" selection-start="4414" selection-end="4414" vertical-scroll-proportion="0.6407465" vertical-offset="1478" max-vertical-offset="2184">
           <folding />
         </state>
       </provider>

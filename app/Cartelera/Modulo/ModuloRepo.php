@@ -82,13 +82,12 @@ class ModuloRepo extends BaseRepo{
                 ->where('id', '<>', 1)
                 ->orderBy('descripcion','ASC')
                 ->get();
-
             $cont = 0;
             $menu[] = '';
 
             $idperfil = \Auth::user()->idperfil;
 
-            foreach ($menupadre as $valor) {
+        foreach ($menupadre as $valor) {
                 $idpadre = $valor->id;
 
                 $submenu = \DB::table('modulos')
@@ -100,7 +99,8 @@ class ModuloRepo extends BaseRepo{
                     ->where('modulos.idpadre',$idpadre)
                     ->orderBy('modulos.descripcion','ASC')
                     ->get();
-                if(!empty($submenu)){
+
+            if(!empty($submenu)){
                     $menu[$cont] = array(
                         'descripcion' => $valor->descripcion,
                         'icono' => $valor->icono,

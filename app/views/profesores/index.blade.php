@@ -14,15 +14,11 @@
     $(document).ready(function () {
 
         $("#tablecontainer").jtable({
-            title: "Lista de Facultades",
+            title: "Lista de Profesores",
             paging: true,
             sorting: true,
             actions: {
-                listAction: "facultades/list"
-            },
-            messages: {
-                addNewRecord: 'Nueva Facultad',
-                editRecord: 'Editar Facultad'
+                listAction: "profesores/list"
             },
             toolbar: {
                 items: [{
@@ -31,25 +27,21 @@
                 }]
             },
             fields: {
-                CodigoFacultad: {
+                CodigoProfesor: {
                     key: true,
                     title: 'Código ',
                     width: '5%'
                 },
-                DescripcionFacultad: {
-                    title: 'Facultad ',
-                    width: '28%'
-                },
-                DescripcionFacultadIngles: {
-                    title: 'Facultad en Ingles',
-                    width: '20%'
-                },
-                Decano: {
-                    title: 'Decano ',
+                fullname: {
+                    title: 'Nombre Completo ',
                     width: '37%'
                 },
-                Abreviatura: {
-                    title: 'Abreviatura',
+                Email: {
+                    title: 'Email ',
+                    width: '20%'
+                },
+                Telefono: {
+                    title: 'Telefono',
                     width: '10%'
                 }
             }

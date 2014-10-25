@@ -9,6 +9,8 @@
 namespace Cartelera\User;
 
 
+use Cartelera\Alumno\Alumno;
+
 class UserRepo
 {
     public function listar()
@@ -141,4 +143,138 @@ class UserRepo
             ));
         }
     }
+
+    /*
+     * Usuarios que no estan registrados en la tabla usuarios
+     */
+
+    public function findUsuario($usuario)
+    {
+        $count = User::whereNull('deleted_at')
+            ->where('usuario', '=', $usuario)
+            ->count();
+        return $count;
+    }
+
+    public function findPosibleUsuario($codigo, $clave)
+    {
+        $response = null;
+        $count = Alumno::where('CodAlumnoSira', '=', $codigo)
+            ->where('CodAlumnoSira', '=', $clave)
+            ->count();
+
+        if ($count > 0) {
+            $response = \DB::table('alumnos')
+                ->where('CodAlumnoSira', '=', $codigo)
+                ->where('CodAlumnoSira', '=', $clave)
+                ->select("NombreAlumno as nombre",
+                    \DB::raw('"ApellidoPaterno"||\' \'||"ApellidoMaterno" as apellido'),
+                    "CodigoEscuela",
+                    "CodigoAlumno as codigo", "CodAlumnoSira as usuario", "CodigoFacultad")
+                ->get();
+            if ($response != null) {
+                $id = $this->InsertUser(\Utils::objectToArray($response[0]), 3);
+                \Session::put('iduser', $id);
+            }
+        } else {
+            $response = \DB::table('profesores')
+                ->where('NumDocumento', '=', $codigo)
+                ->where('NumDocumento', '=', $clave)
+                ->select("NombreProfesor as nombre",
+                    \DB::raw('"ApellidoPaterno"||\' \'||"ApellidoMaterno" as apellido'),
+                    "NumDocumento as usuario", "CodigoProfesor as codigo")
+                ->get();
+            if ($response != null) {
+                $id = $this->InsertUser(\Utils::objectToArray($response[0]), 2);
+                \Session::put('iduser', $id);
+            }
+        }
+        return $response;
+    }
+
+    private function InsertUser($datos, $perfil)
+    {
+        $usuario = new User();
+        $usuario->nombres = utf8_encode(ucwords(strtolower($datos['nombre'])));
+        $usuario->apellidos = utf8_encode(ucwords(strtolower($datos['apellido'])));
+        $usuario->usuario = $datos['usuario'];
+        $usuario->password = \Hash::make($datos['usuario']);
+        $usuario->codigo = $datos['codigo'];
+        $usuario->idperfil = $perfil;
+
+        if (isset($datos['CodigoEscuela']))
+            $usuario->idfacultad = $datos['CodigoFacultad'];
+
+        if (isset($datos['CodigoEscuela']))
+            $usuario->idescuela = $datos['CodigoEscuela'];
+
+        $usuario->save();
+        $idmax = \DB::table('users')->whereNull('deleted_at')->max('id');
+        return $idmax;
+    }
+
+    public function getUsersPerfil($codigo)
+    {
+        $datos = null;
+        $count = Alumno::where('CodigoAlumno', '=', $codigo)
+            ->count();
+        if ($count > 0) {
+            $datos = \DB::table('users')
+                ->join('facultads', 'users.idfacultad', '=', 'facultads.id')
+                ->join('escuelaprofesional', 'users.idescuela', '=', 'escuelaprofesional.id')
+                ->join('alumnos', 'users.codigo', '=', 'alumnos.CodigoAlumno')
+                ->where('users.codigo', '=', $codigo)
+                ->select('users.id', 'users.codigo', 'users.username','users.email',
+                    'facultads.descripcion as facultad', 'facultads.abreviatura', 'escuelaprofesional.descripcion as escuela',
+                    'alumnos.NombreAlumno', 'alumnos.ApellidoPaterno', 'alumnos.ApellidoMaterno',
+                    \DB::raw('DATE_FORMAT(users.created_at, "%d %b %Y %h:%i %p") AS registrado'),
+                    \DB::raw('IF(users.email = "", CONCAT("<span class=\"editable red editable-click\" id=\"email\">","","actualiza tu correo</span>"), CONCAT("<span class=\"editable editable-click\" id=\"email\">",users.email,"</span>")) AS email'),
+                    'users.email as correo')
+                ->get();
+        } else {
+            $datos = \DB::table('users')
+                ->join('facultads', 'users.idfacultad', '=', 'facultads.id')
+                ->join('profesores', 'users.codigo', '=', 'profesores.CodigoProfesor')
+                ->where('users.codigo', '=', $codigo)
+                ->select('users.id', 'users.codigo', 'users.username',
+                    'facultads.descripcion as facultad', 'facultads.abreviatura',
+                    'facultads.descripcion as escuela',
+                    'profesores.NombreProfesor', 'profesores.ApellidoPaterno', 'profesores.ApellidoMaterno',
+                    \DB::raw('DATE_FORMAT(users.created_at, "%d %b %Y %h:%i %p") AS registrado'),
+                    \DB::raw('IF(users.email = "", CONCAT("<span class=\"editable red editable-click\" id=\"email\">","","actualiza tu correo</span>"), CONCAT("<span class=\"editable editable-click\" id=\"email\">",users.email,"</span>")) AS email'),
+                    'users.email as correo')
+                ->get();
+        }
+
+        return $datos;
+    }
+
+
+
+    public function changePassword($data)
+    {
+        if(\Auth::check())
+            $user = User::find(\Auth::user()->id);
+
+        if(\Session::get('iduser'))
+            $user =  User::find(\Session::get('iduser'));
+
+        $old_password = $data['old_password'];
+        $password = $data['password'];
+
+        if (\Hash::check($old_password, $user->getAuthPassword())) {
+            $user->password = \Hash::make($password);
+            return $user->save();
+        }
+    }
+
+    public function updatePerfil($data)
+    {
+        $user = User::find(\Auth::user()->id);
+        if (isset($data['email'])) {
+            $user->email = $data['email'];
+        }
+        return $user->save();
+    }
+
 } 

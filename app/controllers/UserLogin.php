@@ -19,30 +19,63 @@ class UserLogin extends \BaseController
 
         $inputCheck = Input::get('remember');
 
-        $userdata = array(
-            'usuario' => Input::get('usuario'),
-            'password' => Input::get('password')
-        );
+        $usuario = Input::get('usuario');
+        $clave = Input::get('password');
 
-        $validator = Validator::make($userdata, $rules);
+        //recuperamos el usuario
+        $user = $this->userRepo->findUsuario($usuario);
 
-        if ($validator->passes()) {
-            // Validamos los datos y además mandamos como un segundo parámetro la opción de recordar el usuario.
-            if (Auth::attempt($userdata, ($inputCheck == 'on') ? true : false)) {
+        if ($user > 0) {
+            $userdata = array(
+                'usuario' => $usuario,
+                'password' => $clave
+            );
 
-                // De ser datos válidos nos mandara a la bienvenida
-                return Redirect::to('/');
-                //return View::make('hello');
 
+            $validator = Validator::make($userdata, $rules);
+
+            if ($validator->passes()) {
+                // Validamos los datos y además mandamos como un segundo parámetro la opción de recordar el usuario.
+                if (Auth::attempt($userdata, ($inputCheck == 'on') ? true : false)) {
+
+                    // De ser datos válidos nos mandara a la bienvenida
+                    return Redirect::to('/');
+                    //return View::make('hello');
+
+                } else {
+
+                    // En caso de que la autenticación haya fallado manda un mensaje al formulario de login y también regresamos los valores enviados con withInput().
+                    //Session::flash('message', 'Datos incorrectos!');
+                    Session::flash('error', 'Datos incorrectos!');
+                    return Redirect::to('/');
+                }
             } else {
-
-                // En caso de que la autenticación haya fallado manda un mensaje al formulario de login y también regresamos los valores enviados con withInput().
-                //Session::flash('message', 'Datos incorrectos!');
+                return \Redirect::back()->withInput()->withErrors($validator->errors());
+            }
+        } else {
+            //recogemos si es un alummno o profesor
+            $datos = $this->userRepo->findPosibleUsuario($usuario, $clave);
+            if (count($datos) > 0) {
+                $datosparseados = Utils::objectToArray($datos[0]);
+                $datosparseados['c'] = sha1(implode('|', $datosparseados));
+                Session::flash('mensaje', 'Por ser primera ves que entra al sistema, se le sugiere cambiar su contraseña para mayor privacidad');
+                return Redirect::action('UserLogin@changePassword', array('datos' => Utils::dataEncriptar($datosparseados)));
+            } else {
                 Session::flash('error', 'Datos incorrectos!');
                 return Redirect::to('/');
             }
+        }
+    }
+
+    public function changePassword()
+    {
+        $datos = Utils::dataDesencriptar(Input::get('datos'));
+        $sha1 = sha1(implode('|', array_except($datos, array('c'))));
+        if ($datos['c'] == $sha1 && Session::has('iduser')) {
+            return View::make('changePassword', compact('datos'));
         } else {
-            return \Redirect::back()->withInput()->withErrors($validator->errors());
+            Session::flush();
+            return Redirect::to('/')->with('error', 'hubo un error, inicie sessión');
         }
     }
 
