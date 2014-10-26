@@ -168,7 +168,7 @@ class UserRepo
                 ->where('CodAlumnoSira', '=', $codigo)
                 ->where('CodAlumnoSira', '=', $clave)
                 ->select("NombreAlumno as nombre",
-                    \DB::raw('"ApellidoPaterno"||\' \'||"ApellidoMaterno" as apellido'),
+                    'ApellidoPaterno as apellido',
                     "CodigoEscuela",
                     "CodigoAlumno as codigo", "CodAlumnoSira as usuario", "CodigoFacultad")
                 ->get();
@@ -181,7 +181,7 @@ class UserRepo
                 ->where('NumDocumento', '=', $codigo)
                 ->where('NumDocumento', '=', $clave)
                 ->select("NombreProfesor as nombre",
-                    \DB::raw('"ApellidoPaterno"||\' \'||"ApellidoMaterno" as apellido'),
+                    'ApellidoPaterno as apellido',
                     "NumDocumento as usuario", "CodigoProfesor as codigo")
                 ->get();
             if ($response != null) {
@@ -195,8 +195,8 @@ class UserRepo
     private function InsertUser($datos, $perfil)
     {
         $usuario = new User();
-        $usuario->nombres = utf8_encode(ucwords(strtolower($datos['nombre'])));
-        $usuario->apellidos = utf8_encode(ucwords(strtolower($datos['apellido'])));
+        $usuario->nombres = \CastTexto::castUtf8(ucwords(strtolower($datos['nombre'])));
+        $usuario->apellidos = \CastTexto::castUtf8(ucwords(strtolower($datos['apellido'])));
         $usuario->usuario = $datos['usuario'];
         $usuario->password = \Hash::make($datos['usuario']);
         $usuario->codigo = $datos['codigo'];
@@ -220,32 +220,27 @@ class UserRepo
             ->count();
         if ($count > 0) {
             $datos = \DB::table('users')
-                ->join('facultads', 'users.idfacultad', '=', 'facultads.id')
-                ->join('escuelaprofesional', 'users.idescuela', '=', 'escuelaprofesional.id')
+                ->join('facultades', 'users.idfacultad', '=', 'facultades.CodigoFacultad')
+                ->join('escuelaprofesional', 'users.idescuela', '=', 'escuelaprofesional.CodigoEscuela')
                 ->join('alumnos', 'users.codigo', '=', 'alumnos.CodigoAlumno')
                 ->where('users.codigo', '=', $codigo)
-                ->select('users.id', 'users.codigo', 'users.username','users.email',
-                    'facultads.descripcion as facultad', 'facultads.abreviatura', 'escuelaprofesional.descripcion as escuela',
-                    'alumnos.NombreAlumno', 'alumnos.ApellidoPaterno', 'alumnos.ApellidoMaterno',
-                    \DB::raw('DATE_FORMAT(users.created_at, "%d %b %Y %h:%i %p") AS registrado'),
-                    \DB::raw('IF(users.email = "", CONCAT("<span class=\"editable red editable-click\" id=\"email\">","","actualiza tu correo</span>"), CONCAT("<span class=\"editable editable-click\" id=\"email\">",users.email,"</span>")) AS email'),
+                ->select('users.id', 'users.codigo', 'users.usuario','users.email',
+                    'facultades.DescripcionFacultad as facultad', 'facultades.Abreviatura',
+                    'escuelaprofesional.DescripcionEscuela as escuela',
+                    'alumnos.NombreAlumno as nombres', 'alumnos.ApellidoPaterno as apellidopaterno',
+                    'alumnos.ApellidoMaterno as apellidomaterno',
                     'users.email as correo')
                 ->get();
         } else {
             $datos = \DB::table('users')
-                ->join('facultads', 'users.idfacultad', '=', 'facultads.id')
                 ->join('profesores', 'users.codigo', '=', 'profesores.CodigoProfesor')
                 ->where('users.codigo', '=', $codigo)
-                ->select('users.id', 'users.codigo', 'users.username',
-                    'facultads.descripcion as facultad', 'facultads.abreviatura',
-                    'facultads.descripcion as escuela',
-                    'profesores.NombreProfesor', 'profesores.ApellidoPaterno', 'profesores.ApellidoMaterno',
-                    \DB::raw('DATE_FORMAT(users.created_at, "%d %b %Y %h:%i %p") AS registrado'),
-                    \DB::raw('IF(users.email = "", CONCAT("<span class=\"editable red editable-click\" id=\"email\">","","actualiza tu correo</span>"), CONCAT("<span class=\"editable editable-click\" id=\"email\">",users.email,"</span>")) AS email'),
+                ->select('users.id', 'users.codigo', 'users.usuario',
+                    'profesores.NombreProfesor as nombres', 'profesores.ApellidoPaterno as apellidopaterno',
+                    'profesores.ApellidoMaterno as apellidomaterno',
                     'users.email as correo')
                 ->get();
         }
-
         return $datos;
     }
 

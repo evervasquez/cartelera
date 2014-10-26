@@ -23,15 +23,15 @@ class UsersController extends \BaseController
     public function editar()
     {
         $datos = Input::all();
-        $manager = new UsersValidadores($this->userRepo->newUser(),$datos);
-        return $this->baseEditar($this->userRepo,$manager,$datos);
+        $manager = new UsersValidadores($this->userRepo->newUser(), $datos);
+        return $this->baseEditar($this->userRepo, $manager, $datos);
     }
 
     public function nuevo()
     {
         $datos = Input::all();
-        $manager = new UsersValidadores($this->userRepo->newUser(),$datos);
-        return $this->baseNuevo($this->userRepo,$manager,$datos);
+        $manager = new UsersValidadores($this->userRepo->newUser(), $datos);
+        return $this->baseNuevo($this->userRepo, $manager, $datos);
     }
 
     public function eliminar()
@@ -78,4 +78,11 @@ class UsersController extends \BaseController
         }
     }
 
+
+    public function show()
+    {
+        $codigo = Auth::user()->codigo;
+        $datos = $this->userRepo->getUsersPerfil($codigo);
+        return View::make('users/profile', compact('datos'));
+    }
 }

@@ -90,3 +90,7 @@ var mensajes_validador = function (data) {
 var limpiar_validaciones = function () {
     $(".mensajes_validador").html('');
 }
+
+$("#cartelera-avatar").click(function(){
+    console.log("click");
+})

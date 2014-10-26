@@ -41,9 +41,9 @@
                 <i class="fa fa-trash"></i>
             </button>
             <br/><br/>
-            <button type="button" onclick="cargaMenu()" class="btn btn-success btn-block btn-sm btn-block-md" title="Recargar Cambios">
+            <a type="button" href="{{ route('permisos') }}" class="btn btn-success btn-block btn-sm btn-block-md" title="Recargar Cambios">
                 <i class="fa fa-check"></i>
-            </button>
+            </a>
         </div>
 
         <div class="col-xs-5">

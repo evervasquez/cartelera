@@ -1,0 +1,1 @@
+E:\xampp\htdocs\cartelera\app/views/tipocomunicados/show.blade.php

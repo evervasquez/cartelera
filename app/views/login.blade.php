@@ -53,14 +53,14 @@
                     <div class="col-lg-12">
                         <input type="text" name="usuario" id="usuario" class="form-control left-icon"
                                autofocus placeholder="Tu usuario ...">
-                        <i class="im-user s16 left-input-icon"></i>
+                        <i class="fa fa-user s16 left-input-icon"></i>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-lg-12">
                         <input type="password" name="password" id="password" class="form-control left-icon"
                                placeholder="Tu contraseña">
-                        <i class="im-lock s16 left-input-icon"></i>
+                        <i class="fa fa-lock s16 left-input-icon"></i>
                     </div>
                 </div>
                 <div class="form-group">
@@ -68,7 +68,7 @@
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-7">
                         <!-- col-lg-12 start here -->
                         <label class="checkbox">
-                            <input type="checkbox" name="remember" id="remember" value="option">Recordarme ?
+                            <input type="checkbox" checked name="remember" id="remember" value="option">Recordarme ?
                         </label>
                     </div>
                     <!-- col-lg-12 end here -->

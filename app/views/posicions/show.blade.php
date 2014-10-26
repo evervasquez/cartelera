@@ -1,0 +1,1 @@
+E:\xampp\htdocs\cartelera\app/views/posicions/show.blade.php

@@ -60,6 +60,7 @@ Route::post('usuarios/create', ['as' => 'usuarios.create', 'uses' => 'UsersContr
 Route::post('usuarios/delete', ['as' => 'usuarios.delete', 'uses' => 'UsersController@eliminar']);
 Route::post('usuarios/getPerfiles', ['as' => 'usuarios.getPerfiles', 'uses' => 'PerfilesController@getPerfiles']);
 Route::post('usuarios/getFacultad', ['as' => 'usuarios.getFacultad', 'uses' => 'UsersController@eliminar']);
+Route::get('miperfil', ['as' => 'miperfil', 'uses' => 'UsersController@show']);
 
 //facultades
 Route::get('facultades', ['as' => 'facultades', 'uses' => 'FacultadesController@index']);
@@ -78,3 +79,4 @@ Route::get('profesores', ['as' => 'profesores', 'uses' => 'ProfesoresController@
 Route::post('profesores/list', ['as' => 'profesores.list', 'uses' => 'ProfesoresController@listar']);
 
 
+Route::get('comunicados', ['as' => 'comunicados', 'uses' => 'ComunicadosController@index']);

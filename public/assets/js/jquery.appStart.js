@@ -47,7 +47,7 @@
                 sounds: [ //sound list
                     'loadingscreen'
                 ],
-                loadingScreen: 'loading' //Sound for loading screen
+                loadingScreen: 'loading', //Sound for loading screen
             },
             header: {
                 fixed: true //fixed header
@@ -87,7 +87,7 @@
                 url: 'lockscreen.html' //where to redirect user after screen is lock
             },
             forms: {
-                checkAndRadioTheme: 'blue' //theme for radios - aero, blue,flat, green,gray,orange,pink,purple,red,yellow
+                checkAndRadioTheme: 'blue', //theme for radios - aero, blue,flat, green,gray,orange,pink,purple,red,yellow
             },
             tooltips: true, //activate tooltip plugin build in bootstrap
             tables: {
@@ -112,7 +112,7 @@
             },
             dropdownMenu: {
                 animation: true, //animation effect for dropdown
-                openEffect: 'flipInY'//open effect for menu see http://daneden.github.io/animate.css/
+                openEffect: 'flipInY',//open effect for menu see http://daneden.github.io/animate.css/
             }
 
         }
@@ -139,7 +139,8 @@
             this.storejs();
             //activate mousewheel plugin
             this.mouseWheel();
-
+            //activate retina ready plugin
+            //this.retinaReady();
             //toggle sidebar
             this.toggleSidebar();
             //toggle right sidebar
@@ -157,7 +158,7 @@
             //panels
             this.panels();
             //quick search
-            //this.quickSearch();
+            this.quickSearch();
             //responsive sidebar button handle 
             this.resSidebarButton();
             //fixed header
@@ -179,6 +180,12 @@
                 }
             }
 
+            //check if sounds need to be muted
+            if(store.get('sounds-mute') == 1) {
+                this.muteSounds();
+            } else if (plugin.settings.sounds.active) {
+                //this.activateSounds();
+            }
 
             //back to top
             if (plugin.settings.backToTop) {
@@ -297,6 +304,7 @@
                 e.preventDefault();
                 //sound
                 if (plugin.settings.sounds.active) {
+                    $.ionSound.play({name: plugin.settings.sounds.toggleSidebar});
                 }
                 //sidebar
                 $('#sidebar').toggleClass('collapse-sidebar');           
@@ -421,22 +429,18 @@
             var navLi = nav.find('li');
             var navLink = nav.find('a');
             var navSub = nav.find('li>ul.sub');
+
             //generate unique id for each link
             /*navLink.each(function(index) {
                 $(this).attr('id', 'spr_menu_link_' + index);
             }); */
 
-            console.log(nav.closest().length);
             //put hasSub class
+            navSub.closest('li').addClass('hasSub');
 
             //put notExpand class
-            navSub.closest().addClass('hasSub');
-
             if(!navSub.prev('a').hasClass('notExpand')) {
                 navSub.prev('a').addClass('notExpand');
-                console.log('no esta esta');
-            }else{
-                console.log('si esta esta');
             }
 
             if(plugin.settings.sideNav.showArrows) {
@@ -809,7 +813,7 @@
                 fadeout: plugin.settings.backToTop.fadeout,
                 opacity: plugin.settings.backToTop.opacity,
                 marginX: plugin.settings.backToTop.marginX,
-                marginY: plugin.settings.backToTop.marginY
+                marginY: plugin.settings.backToTop.marginY,
             });
         }
 
@@ -1009,7 +1013,10 @@ this.bind("mousewheel",fn):this.trigger("mousewheel")},unmousewheel:function(fn)
             })
         }
 
-
+        //retina ready images
+        plugin.retinaReady = function () {
+            !function(){function a(){}function b(a){return f.retinaImageSuffix+a}function c(a,c){if(this.path=a||"","undefined"!=typeof c&&null!==c)this.at_2x_path=c,this.perform_check=!1;else{if(void 0!==document.createElement){var d=document.createElement("a");d.href=this.path,d.pathname=d.pathname.replace(g,b),this.at_2x_path=d.href}else{var e=this.path.split("?");e[0]=e[0].replace(g,b),this.at_2x_path=e.join("?")}this.perform_check=!0}}function d(a){this.el=a,this.path=new c(this.el.getAttribute("src"),this.el.getAttribute("data-at2x"));var b=this;this.path.check_2x_variant(function(a){a&&b.swap()})}var e="undefined"==typeof exports?window:exports,f={retinaImageSuffix:"@2x",check_mime_type:!0,force_original_dimensions:!0};e.Retina=a,a.configure=function(a){null===a&&(a={});for(var b in a)a.hasOwnProperty(b)&&(f[b]=a[b])},a.init=function(a){null===a&&(a=e);var b=a.onload||function(){};a.onload=function(){var a,c,e=document.getElementsByTagName("img"),f=[];for(a=0;a<e.length;a+=1)c=e[a],c.getAttributeNode("data-no-retina")||f.push(new d(c));b()}},a.isRetina=function(){var a="(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx)";return e.devicePixelRatio>1?!0:e.matchMedia&&e.matchMedia(a).matches?!0:!1};var g=/\.\w+$/;e.RetinaImagePath=c,c.confirmed_paths=[],c.prototype.is_external=function(){return!(!this.path.match(/^https?\:/i)||this.path.match("//"+document.domain))},c.prototype.check_2x_variant=function(a){var b,d=this;return this.is_external()?a(!1):this.perform_check||"undefined"==typeof this.at_2x_path||null===this.at_2x_path?this.at_2x_path in c.confirmed_paths?a(!0):(b=new XMLHttpRequest,b.open("HEAD",this.at_2x_path),b.onreadystatechange=function(){if(4!==b.readyState)return a(!1);if(b.status>=200&&b.status<=399){if(f.check_mime_type){var e=b.getResponseHeader("Content-Type");if(null===e||!e.match(/^image/i))return a(!1)}return c.confirmed_paths.push(d.at_2x_path),a(!0)}return a(!1)},b.send(),void 0):a(!0)},e.RetinaImage=d,d.prototype.swap=function(a){function b(){c.el.complete?(f.force_original_dimensions&&(c.el.setAttribute("width",c.el.offsetWidth),c.el.setAttribute("height",c.el.offsetHeight)),c.el.setAttribute("src",a)):setTimeout(b,5)}"undefined"==typeof a&&(a=this.path.at_2x_path);var c=this;b()},a.isRetina()&&a.init(e)}();
+        }
 
         //countdown plugin
         plugin.countDown = function () {
@@ -1022,7 +1029,7 @@ this.bind("mousewheel",fn):this.trigger("mousewheel")},unmousewheel:function(fn)
             var oexpsubs = $('.expand-subs');
             var osearch = $('.search-in-menu');
             var oclose = $('#close-search-nav');
-            //var omute = $('.mute-sounds');
+            var omute = $('.mute-sounds');
             var lfull = $('.launch-fullscreen');
 
             //search
@@ -1043,7 +1050,7 @@ this.bind("mousewheel",fn):this.trigger("mousewheel")},unmousewheel:function(fn)
                                 if($(this).val() == '') {
                                     plugin.collapseSideBarNav(true);
                                 }
-                            }
+                            },
                         });
                     }     
                 }
@@ -1072,6 +1079,17 @@ this.bind("mousewheel",fn):this.trigger("mousewheel")},unmousewheel:function(fn)
                 }
             });
 
+            //mute sound
+            omute.click(function(){
+                _this = $(this);
+                icon = _this.find('i');
+                if (_this.hasClass('mute')) {
+                    //plugin.activateSounds();
+                } else {
+                    //mute
+                    plugin.muteSounds();
+                }
+            });
 
             //launch full screen
             lfull.click(function(){
@@ -1084,12 +1102,30 @@ this.bind("mousewheel",fn):this.trigger("mousewheel")},unmousewheel:function(fn)
         plugin.muteSounds = function() {
             var omute = $('.mute-sounds');
             icon = omute.find('i');
+            $.ionSound.destroy();
             omute.attr('title', 'Enable sounds');
             omute.attr('data-original-title', 'Enable sounds');
             icon.removeClass('im-volume-medium').addClass('im-volume-mute2');
             omute.addClass('mute');
             store.set('sounds-mute', 1);
         }
+
+        //activate sounds
+        /*plugin.activateSounds = function() {
+            var omute = $('.mute-sounds');
+            icon = omute.find('i');
+            omute.attr('title', 'Mute sounds');
+            omute.attr('data-original-title', 'Mute sounds');
+            icon.removeClass('im-volume-mute2').addClass('im-volume-medium');
+            omute.removeClass('mute');
+            store.set('sounds-mute', 0);
+            $.ionSound({
+                sounds: plugin.settings.sounds.sounds,
+                path: plugin.settings.sounds.dir,             
+                multiPlay: false,        
+                volume: plugin.settings.sounds.volume 
+            });
+        }*/
 
         plugin.rightSidebar = function() {
             var rsinner = $('#right-sidebar>.sidebar-inner');
@@ -1126,7 +1162,7 @@ this.bind("mousewheel",fn):this.trigger("mousewheel")},unmousewheel:function(fn)
             //quick search on icons
             if ($('.icon-search input').length) {
                 $('.icon-search input').val('').quicksearch('.col-lg-3', {
-                    'removeDiacritics': true
+                    'removeDiacritics': true,
                 });
             }   
 
@@ -1235,7 +1271,7 @@ this.bind("mousewheel",fn):this.trigger("mousewheel")},unmousewheel:function(fn)
                         positon: 'bottom',
                         start: 'left',
                         railVisible: true,
-                        distance: "3px"
+                        distance: "3px",
                     });
                 }
             });

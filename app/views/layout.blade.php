@@ -6,8 +6,7 @@
     <title>Cartelera - Admin</title>
     <!-- Mobile specific metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!-- Force IE9 to render in normal mode -->
-    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+
     <meta name="application-name" content="Cartelera Digital" />
     <!-- Import google fonts - Heading first/ text second -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
@@ -147,27 +146,16 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown" id="cartelera-avatar">
                         <a href="#" data-toggle="dropdown">
-                            <img class="avatar" src="assets/img/avatars/1.jpg" width="36" height="36" alt="Jonh Doe"> <span class="avatar-name">Jonh Doe</span>
+                            <img class="avatar" src="assets/img/avatars/1.jpg" width="36" height="36" alt="Jonh Doe"> <span class="avatar-name">{{ Auth::user()->nombres.' '.Auth::user()->apellidos}}</span>
                             <span class="caret ml5"></span>
                         </a>
-                        <ul class="dropdown-menu right" role="menu">
-                            <li><a href="profile.html"><i class="im-user"></i> Profile</a>
-                            </li>
-                            <li><a href="#"><i class="im-cog2"></i> Settings</a>
-                            </li>
-                            <li><a href="#"><i class="im-question3"></i> Help</a>
-                            </li>
-                            <li><a href="lockscreen.html"><i class="im-switch"></i> Logout</a>
-                            </li>
-                        </ul>
                     </li>
                     <li>
-                        <a id="toggle-right-sidebar" href="#">
-                            <i class="im-bubbles2"></i>
-                            <i class="nav-notification im-circle2"></i>
-                            <span class="sr-only">Chat</span>
+                        <a title="Cerrar Sesión" href="{{ url('/logout') }}">
+                            <i class="im-esc"></i>
+                            <span class="sr-only">Cerrar Sesión</span>
                         </a>
                     </li>
                 </ul>
@@ -521,6 +509,6 @@
 {{ HTML::script('assets/js/app.js') }}
 {{ HTML::script('assets/js/libs/jTable/jquery.jtable.js') }}
 {{ HTML::script('assets/js/libs/jTable/localization/jquery.jtable.es.js') }}
-
+{{ HTML::script('assets/js/dashboard.js') }}
 </body>
 </html>
