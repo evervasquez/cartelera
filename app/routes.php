@@ -79,4 +79,10 @@ Route::get('profesores', ['as' => 'profesores', 'uses' => 'ProfesoresController@
 Route::post('profesores/list', ['as' => 'profesores.list', 'uses' => 'ProfesoresController@listar']);
 
 
-Route::get('comunicados', ['as' => 'comunicados', 'uses' => 'ComunicadosController@index']);
+
+//BacboneJS
+Route::resource('comunicados', 'ComunicadosController');
+Route::resource('images', 'ImagesController');
+Route::resource('cursos', 'CursosController');
+
+

@@ -82,6 +82,7 @@ class UserLogin extends \BaseController
     public function logout()
     {
         Auth::logout();
+        Session::flush();
         Session::flash('global', 'Sesión finalizada ');
         return Redirect::to('/');
     }

@@ -1,86 +1,95 @@
 <?php
+use Cartelera\Comunicados\ComunicadoRepo;
 
-class ComunicadosController extends \BaseController {
+class ComunicadosController extends \BaseController
+{
+    protected $comunicadoRepo;
 
-	/**
-	 * Display a listing of the resource.
-	 * GET /comunicados
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		return View::make('comunicados/index');
-	}
+    public function __construct(ComunicadoRepo $comunicadoRepo)
+    {
+        $this->comunicadoRepo = $comunicadoRepo;
+    }
 
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /comunicados/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
+    /**
+     * Display a listing of the resource.
+     * GET /comunicados
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        return $this->comunicadoRepo->selectAll();
+    }
 
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /comunicados
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
+    /**
+     * Show the form for creating a new resource.
+     * GET /comunicados/create
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        //
+    }
 
-	/**
-	 * Display the specified resource.
-	 * GET /comunicados/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
+    /**
+     * Store a newly created resource in storage.
+     * POST /comunicados
+     *
+     * @return Response
+     */
+    public function store()
+    {
+        $datos = Input::all();
+        $this->comunicadoRepo->save($datos);
+    }
 
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /comunicados/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
+    /**
+     * Display the specified resource.
+     * GET /comunicados/{id}
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        return $this->comunicadoRepo->find($id);
+    }
 
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /comunicados/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
+    /**
+     * Show the form for editing the specified resource.
+     * GET /comunicados/{id}/edit
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        //
+    }
 
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /comunicados/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
+    /**
+     * Update the specified resource in storage.
+     * PUT /comunicados/{id}
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     * DELETE /comunicados/{id}
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 
 }

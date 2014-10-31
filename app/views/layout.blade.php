@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +6,10 @@
     <!-- Mobile specific metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="application-name" content="Cartelera Digital" />
+    <meta name="application-name" content="Cartelera Digital"/>
     <!-- Import google fonts - Heading first/ text second -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700' rel='stylesheet'
+          type='text/css'>
     <!-- Css files -->
     <script type="text/javascript">
         var $path_base = "<?php echo url('/')?>";
@@ -19,7 +19,7 @@
     {{ HTML::style('assets/css/plugins/font-awesome/css/font-awesome.css'); }}
 
     {{ HTML::style('assets/css/bootstrap.css'); }}
-    {{-- HTML::style('assets/css/jquery.ui.all.css'); --}}
+    {{ HTML::style('assets/css/jquery.ui.all.css'); }}
 
     {{ HTML::style('assets/js/libs/jTable/themes/lightcolor/gray/jtable.css'); }}
     {{ HTML::style('assets/js/libs/jTable/themes/jqueryui/jquery-ui.css'); }}
@@ -27,14 +27,15 @@
     {{ HTML::style('assets/css/plugins.css'); }}
     {{ HTML::style('assets/css/main.css'); }}
     {{ HTML::style('assets/css/custom.css'); }}
-
+    {{ HTML::style('assets/plugins/dropzone/css/dropzone.css'); }}
     {{ HTML::script('assets/js/jquery-2.1.1.min.js') }}
     {{ HTML::script('assets/js/main.js') }}
+
 
     <!-- Fav and touch icons -->
     <link rel="icon" href="assets/img/cartelera.ico" type="image/png">
     <!-- Windows8 touch icon ( http://www.buildmypinnedsite.com/ )-->
-    <meta name="msapplication-TileColor" content="#3399cc" />
+    <meta name="msapplication-TileColor" content="#3399cc"/>
 </head>
 <body class="ovh">
 <div id="preloader">
@@ -119,25 +120,29 @@
                             <li class="divider"></li>
                             <li class="clearfix">
                                 <a href="#">
-                                    <img class="avatar pull-left" src="assets/img/avatars/11.jpg" alt="Jean">Hello, please check out my account i not have abbility to ...
+                                    <img class="avatar pull-left" src="assets/img/avatars/11.jpg" alt="Jean">Hello,
+                                    please check out my account i not have abbility to ...
                                     <span class="time-ago">1 min ago</span>
                                 </a>
                             </li>
                             <li class="clearfix">
                                 <a href="#">
-                                    <img class="avatar pull-left" src="assets/img/avatars/10.jpg" alt="Jonh">I want to purchase one of your products can you help me ...
+                                    <img class="avatar pull-left" src="assets/img/avatars/10.jpg" alt="Jonh">I want to
+                                    purchase one of your products can you help me ...
                                     <span class="time-ago">3 hours ago</span>
                                 </a>
                             </li>
                             <li class="clearfix">
                                 <a href="#">
-                                    <img class="avatar pull-left" src="assets/img/avatars/6.jpg" alt="Smith">I register in formum but not have access to write ...
+                                    <img class="avatar pull-left" src="assets/img/avatars/6.jpg" alt="Smith">I register
+                                    in formum but not have access to write ...
                                     <span class="time-ago">15 hours ago</span>
                                 </a>
                             </li>
                             <li class="clearfix">
                                 <a href="#">
-                                    <img class="avatar pull-left" src="assets/img/avatars/8.jpg" alt="Jean">What`s happen with my order i already purchase it and ...
+                                    <img class="avatar pull-left" src="assets/img/avatars/8.jpg" alt="Jean">What`s
+                                    happen with my order i already purchase it and ...
                                     <span class="time-ago">3 days ago</span>
                                 </a>
                             </li>
@@ -148,12 +153,13 @@
                     </li>
                     <li class="dropdown" id="cartelera-avatar">
                         <a href="#" data-toggle="dropdown">
-                            <img class="avatar" src="assets/img/avatars/1.jpg" width="36" height="36" alt="Jonh Doe"> <span class="avatar-name">{{ Auth::user()->nombres.' '.Auth::user()->apellidos}}</span>
+                            <img class="avatar" src="assets/img/avatars/1.jpg" width="36" height="36" alt="Jonh Doe">
+                            <span class="avatar-name">{{ Auth::user()->nombres.' '.Auth::user()->apellidos}}</span>
                             <span class="caret ml5"></span>
                         </a>
                     </li>
                     <li>
-                        <a title="Cerrar Sesión" href="{{ url('/logout') }}">
+                        <a title="cerrar sesion" href="{{ url('/logout') }}">
                             <i class="im-esc"></i>
                             <span class="sr-only">Cerrar Sesión</span>
                         </a>
@@ -184,11 +190,16 @@
                     <button type="submit" class="btn">submit</button>
                     <a id="close-search-nav" class="close" aria-hidden="true" href="#">&times;</a>
                 </form>
-                <a href="#" class="search-in-menu btn btn-default btn-sm tip" title="Search in navigation"><i class="im-search3"></i></a>
-                <a href="#" class="expand-subs btn btn-default btn-sm tip" title="Expand all SubMenus"><i class="im-sort2"></i></a>
-                <a href="#" class="mute-sounds btn btn-default btn-sm tip" title="Mute template sounds"><i class="im-volume-medium"></i></a>
-                <a href="#" class="reset-layout btn btn-default btn-sm tip" title="Reset panels position"><i class="im-spinner12"></i></a>
-                <a href="#" class="launch-fullscreen btn btn-default btn-sm tip" title="Launch full screen"><i class="im-expand"></i></a>
+                <a href="#" class="search-in-menu btn btn-default btn-sm tip" title="Search in navigation"><i
+                        class="im-search3"></i></a>
+                <a href="#" class="expand-subs btn btn-default btn-sm tip" title="Expand all SubMenus"><i
+                        class="im-sort2"></i></a>
+                <a href="#" class="mute-sounds btn btn-default btn-sm tip" title="Mute template sounds"><i
+                        class="im-volume-medium"></i></a>
+                <a href="#" class="reset-layout btn btn-default btn-sm tip" title="Reset panels position"><i
+                        class="im-spinner12"></i></a>
+                <a href="#" class="launch-fullscreen btn btn-default btn-sm tip" title="Launch full screen"><i
+                        class="im-expand"></i></a>
             </div>
         </div>
         <!-- End .option-buttons -->
@@ -197,17 +208,18 @@
             <h5 class="sidebar-title">Navigation</h5>
             <ul id="sideNav" class="nav nav-pills nav-stacked show-arrows">
                 <li><a href="{{ url('/') }}"><i class="im-screen"></i> <span class="txt">Inicio</span></a></li>
-                    @foreach ($modulos as $modulo)
-                    <li>
-                    <a href="#"><i class="{{ $modulo['icono'] }}"></i> <span class="txt">{{ $modulo['descripcion'] }}</span></a>
-                        <ul class="sub">
+                @foreach ($modulos as $modulo)
+                <li>
+                    <a href="#"><i class="{{ $modulo['icono'] }}"></i> <span
+                            class="txt">{{ $modulo['descripcion'] }}</span></a>
+                    <ul class="sub">
                         @foreach ($modulo['enlaces'] as $option)
-                            <li><a href="{{ $option['url'] }}"><i class="im-arrow-right3"></i> <span class="txt">{{ $option['descripcion'] }}</span></a>
-                            </li>
+                        <li><a href="{{ $option['url'] }}"><i class="im-arrow-right3"></i> <span class="txt">{{ $option['descripcion'] }}</span></a>
+                        </li>
                         @endforeach
-                        </ul>
-                    </li>
-                    @endforeach
+                    </ul>
+                </li>
+                @endforeach
             </ul>
             <div class="clearfix"></div>
         </div>
@@ -241,7 +253,8 @@
                                 <li>
                                     <a href="#" class="chat-name">
                                         <span class="chat-notification">8</span>
-                                        <img class="chat-avatar" src="assets/img/avatars/2.jpg" alt="@chadengle">Chad Engle
+                                        <img class="chat-avatar" src="assets/img/avatars/2.jpg" alt="@chadengle">Chad
+                                        Engle
                                         <span class="status online"><i class="im-circle-small"></i></span>
                                         <span class="device"><i class="im-mobile2"></i></span>
                                     </a>
@@ -268,7 +281,8 @@
                             <ul class="in">
                                 <li>
                                     <a href="#" class="chat-name">
-                                        <img class="chat-avatar" src="assets/img/avatars/3.jpg" alt="@chadengle">Annete Swartz
+                                        <img class="chat-avatar" src="assets/img/avatars/3.jpg" alt="@chadengle">Annete
+                                        Swartz
                                         <span class="status online"><i class="im-circle-small"></i></span>
                                         <span class="device"><i class="im-mobile2"></i></span>
                                     </a>
@@ -282,14 +296,16 @@
                                 </li>
                                 <li>
                                     <a href="#" class="chat-name">
-                                        <img class="chat-avatar" src="assets/img/avatars/6.jpg" alt="@danny">Danny Jonsons
+                                        <img class="chat-avatar" src="assets/img/avatars/6.jpg" alt="@danny">Danny
+                                        Jonsons
                                         <span class="status online"><i class="im-circle-small"></i></span>
                                         <span class="device"><i class="im-screen4"></i></span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="chat-name">
-                                        <img class="chat-avatar" src="assets/img/avatars/7.jpg" alt="@steve">Steeve Sidwell
+                                        <img class="chat-avatar" src="assets/img/avatars/7.jpg" alt="@steve">Steeve
+                                        Sidwell
                                         <span class="status online"><i class="im-circle-small"></i></span>
                                         <span class="device"><i class="im-tablet"></i></span>
                                     </a>
@@ -301,21 +317,24 @@
                             <ul class="in">
                                 <li>
                                     <a href="#" class="chat-name">
-                                        <img class="chat-avatar" src="assets/img/avatars/8.jpg" alt="@jenna">Jenna Jamson
+                                        <img class="chat-avatar" src="assets/img/avatars/8.jpg" alt="@jenna">Jenna
+                                        Jamson
                                         <span class="status offline"><i class="im-circle-small"></i></span>
                                         <span class="device"><i class="im-screen4"></i></span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="chat-name">
-                                        <img class="chat-avatar" src="assets/img/avatars/9.jpg" alt="@selena">Selena Gomez
+                                        <img class="chat-avatar" src="assets/img/avatars/9.jpg" alt="@selena">Selena
+                                        Gomez
                                         <span class="status offline"><i class="im-circle-small"></i></span>
                                         <span class="device"><i class="im-mobile2"></i></span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="chat-name">
-                                        <img class="chat-avatar" src="assets/img/avatars/10.jpg" alt="@mickey">Mickey Blue
+                                        <img class="chat-avatar" src="assets/img/avatars/10.jpg" alt="@mickey">Mickey
+                                        Blue
                                         <span class="status offline"><i class="im-circle-small"></i></span>
                                         <span class="device"><i class="im-mobile2"></i></span>
                                     </a>
@@ -340,6 +359,7 @@
                             <div class="message">
                                 <p class="chat-name">Chad Engle <span class="chat-time">15 sec ago</span>
                                 </p>
+
                                 <p class="chat-txt">Hello Sugge check out the last order.</p>
                             </div>
                         </li>
@@ -350,6 +370,7 @@
                             <div class="message">
                                 <p class="chat-name">Jonh Doe <span class="chat-time">10 sec ago</span>
                                 </p>
+
                                 <p class="chat-txt">Ok i will check it out.</p>
                             </div>
                         </li>
@@ -360,6 +381,7 @@
                             <div class="message">
                                 <p class="chat-name">Chad Engle <span class="chat-time">now</span>
                                 </p>
+
                                 <p class="chat-txt">Okay, thank you very much.</p>
                             </div>
                         </li>
@@ -389,72 +411,102 @@
 <!-- Start #right-sidebar -->
 <!-- Start #content -->
 <div id="content">
-<!-- Start .content-wrapper -->
-<div class="content-wrapper">
-<div id="page-heading" class="page-header">
-    <h2><i class="icon im-home2"></i> Dashboard</h2>
-    <!-- Start .bredcrumb -->
-    <ul id="crumb" class="breadcrumb">
-    </ul>
-    <!-- End .breadcrumb -->
-</div>
-<!-- Start .content-inner -->
-<div class="content-inner">
-<!-- Start .row -->
-@section('content')
+    <!-- Start .content-wrapper -->
+    <div class="content-wrapper">
+        <div id="page-heading" class="page-header">
+            <h2><i class="icon im-home2"></i> Dashboard</h2>
+            <!-- Start .bredcrumb -->
+            <ul id="crumb" class="breadcrumb">
+            </ul>
+            <!-- End .breadcrumb -->
+        </div>
+        <!-- Start .content-inner -->
+            @section('content')
 
-<div class="shortcut-buttons">
-    <!-- Start .shortcut buttons -->
-    <a href="#" class="shortcut-btn">
-                                    <span class="shortcut-icon">
-                        <i class="im-file8"></i>
-                    </span>
-        <span class="shortcut-text">Add Page</span>
-    </a>
-    <a href="#" class="shortcut-btn">
-                                    <span class="shortcut-icon">
-                        <i class="im-upload6"></i>
-                    </span>
-        <span class="shortcut-text">Upload File</span>
-    </a>
-    <a href="#" class="shortcut-btn">
-                                    <span class="shortcut-icon">
-                        <i class="im-pencil5"></i>
-                    </span>
-        <span class="shortcut-text">Write article</span>
-    </a>
-    <a href="#" class="shortcut-btn">
-                                    <span class="shortcut-icon">
-                        <i class="im-database"></i>
-                    </span>
-        <span class="shortcut-text">Backups</span>
-    </a>
-    <a href="#" class="shortcut-btn">
-                                    <span class="shortcut-icon">
-                        <i class="im-bubbles"></i>
-                    </span>
-        <span class="shortcut-text">Comments</span>
-        <span class="label label-info">3</span>
-    </a>
-    <a href="#" class="shortcut-btn">
-                                    <span class="shortcut-icon">
-                        <i class="im-user-plus2"></i>
-                    </span>
-        <span class="shortcut-text">Add User</span>
-    </a>
-</div>
+            <div class="content-inner">
+                <div id="email-sidebar">
+                    <!-- Start #email-sidebar -->
+                    <div class="p15">
+                        <a id="write-message" href="" class="btn btn-danger btn-block">CREAR</a>
+                    </div>
+                    <ul id="email-nav" class="nav nav-pills nav-stacked">
 
-@show
-<!-- col-lg-4 end here -->
-</div>
-<!-- End .row -->
-</div>
-<!-- End .content-inner -->
+                    </ul>
+                </div>
+                <!--End #email-sidebar -->
+                <div id="email-content">
+                    <!-- Start #email-content -->
+                    <div class="email-wrapper">
+                        <div class="email-toolbar col-lg-12">
+                            <div class="pull-left" role="toolbar">
+                                <button id="email-toggle" class="email-toggle" type="button">
+                                    <span class="sr-only">Toggle email nav</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a href="#" class="btn btn-default btn-round btn-sm tip mr5"><i
+                                        class="fa fa-refresh s16"></i></a>
+                                <a href="#" class="btn btn-default btn-round btn-sm tip mr5"><i
+                                        class="im-print3 s16"></i></a>
+                            </div>
+                            <ul class="email-pager">
+                                <li class="pager-info">1-20 of 345</li>
+                                <li><a href="#" class="btn btn-default btn-round btn-sm"><i
+                                            class="fa fa-angle-left s16"></i></a>
+                                </li>
+                                <li><a href="#" class="btn btn-default btn-round btn-sm"><i
+                                            class="fa fa-angle-right s16"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="email-toolbar-search col-lg-12">
+                            <form>
+                                <input type="text" class="form-control input-xlarge" name="search"
+                                       placeholder="Search for email ...">
+                            </form>
+                        </div>
+                        <div id="comunicados" class="email-list col-lg-12">
+                            <table class="table table-striped table-hover table-fixed-layout non-responsive" id="table-messages">
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--End #email-content -->
+            </div>
+            <div class="clearfix"></div>
+
+            @show
+            <!-- col-lg-4 end here -->
+        <!-- End .row -->
+    </div>
+    <!-- End .content-inner -->
 </div>
 <!-- End .content-wrapper -->
 <div class="clearfix"></div>
 </div>
-<!-- Important javascript libs(put in all pages) -->
+
+<!-- template de comunicado -->
+<script type="text/template" id="comunicado-template">
+        <td class="email-star input-mini"><i class="im-star s20"></i>
+        </td>
+        <td class="email-subject"><a href="" class="action ver"><%= titulo %></a>
+        </td>
+        <td class="email-intro">
+            <a href="" class="action ver">
+                <span class="label label-teal mr10"><%= curso_id %></span>
+                <span class="text-muted small ml10"><%= comunicado %></span>
+            </a>
+        </td>
+        <td class="email-date text-right input-medium"><%= fechacreacion %></td>
+</script>
+
+@include('layouts.comunicado.read')
+@include('layouts.comunicado.write')
+
+
+@include('layouts.cursos.listar')
+
 
 <script>
     window.jQuery || document.write('<script src="assets/js/libs/jquery-2.1.1.min.js">\x3C/script>')
@@ -505,10 +557,34 @@
 {{ HTML::script('assets/js/jquery.easy-pie-chart.js') }}
 {{ HTML::script('assets/js/skyicons.js') }}
 {{ HTML::script('assets/js/fullcalendar.js') }}
+{{ HTML::script('assets/js/libs/forms/icheck/jquery.icheck.js') }}
+{{ HTML::script('assets/js/libs/forms/tinymce2/tinymce.min.js') }}
 {{ HTML::script('assets/js/jquery.appStart.js') }}
 {{ HTML::script('assets/js/app.js') }}
 {{ HTML::script('assets/js/libs/jTable/jquery.jtable.js') }}
 {{ HTML::script('assets/js/libs/jTable/localization/jquery.jtable.es.js') }}
-{{ HTML::script('assets/js/dashboard.js') }}
+{{ HTML::script('assets/plugins/dropzone/dropzone.js') }}
+{{ HTML::script('assets/js/jquery-ui-timepicker-addon.js') }}
+
+{{ HTML::script('assets/js/underscore.js') }}
+{{ HTML::script('assets/js/backbone.js') }}
+{{ HTML::script('assets/js/backbone/App.js') }}
+{{ HTML::script('assets/js/backbone/models/Comunicado.js') }}
+{{ HTML::script('assets/js/backbone/models/curso.js') }}
+{{ HTML::script('assets/js/backbone/collections/Comunicados.js') }}
+{{ HTML::script('assets/js/backbone/collections/cursos.js') }}
+{{ HTML::script('assets/js/backbone/views/comunicado.js') }}
+{{ HTML::script('assets/js/backbone/views/comunicados.js') }}
+{{ HTML::script('assets/js/backbone/views/curso.js') }}
+{{ HTML::script('assets/js/backbone/views/cursos.js') }}
+{{ HTML::script('assets/js/backbone/views/read.js') }}
+{{ HTML::script('assets/js/backbone/views/write.js') }}
+{{ HTML::script('assets/js/backbone/routers/Router.js') }}
+{{ HTML::script('assets/js/backbone/Main.js') }}
+{{ HTML::script('assets/js/writemessage.js') }}
+
+{{ HTML::script('assets/js/libs/moment/moment.js') }}
+{{ HTML::script('assets/js/libs/moment/moment-with-locales.js') }}
+
 </body>
 </html>

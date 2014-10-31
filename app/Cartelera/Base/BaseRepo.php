@@ -25,4 +25,12 @@ class BaseRepo
         $carbon = Carbon::now();
         return $carbon->toDateTimeString();
     }
-} 
+
+    public function getMaxSemestre()
+    {
+        $semestre = \DB::table('semestreacademico as s')
+                    ->join('matricula as a','s.CodigoSemestre','=','a.CodigoSemestre')
+                    ->max('s.CodigoSemestre');
+        return $semestre;
+    }
+}

@@ -25,8 +25,58 @@ div.jtable-main-container table.jtable tbody > tr > td .jtable-delete-command-bu
     width: 16px;
     height: 16px;
 }
+.rightPanel{
+    border: 1px solid #BAC3C3;
+    position: relative;
+    height: 180%;
+    overflow: hidden;
+    min-height:180% ;
+}
+.readcomentarios{
 
+}
+.comentarioRight{
+    display: inline-block;
+    height: 180%;
+
+
+}
+.titleultimoscomentarios{
+    margin-bottom: 1em;
+}
+.comentarioschat{
+
+
+    height:100%;
+    overflow-y: scroll;
+    /*padding-top: 3em;*/
+
+}
+.ingresecomentario{
+   /*padding-top: -5em;*/
+}
+.archivopdf{
+    position: relative;
+    top:31em;
+}
 .error_message
 {
     color: #ff0000;
+}
+
+.read-message{
+    height: 415px;
+}
+.comunicado-content
+{
+    font-family: Roboto 'Open Sans', Arial, sans-serif;
+    font-size: 1.5em;
+}
+#titulo,#comunicado{
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+.required{
+    border: 1px solid #ff0000;
 }

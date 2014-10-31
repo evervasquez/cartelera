@@ -10490,7 +10490,7 @@ namespace {
 		 }
 
 		/**
-		 * Register a new GET route with the router.
+		 * Register a new GET route with the routers.
 		 *
 		 * @param string  $uri
 		 * @param \Closure|array|string  $action
@@ -10503,7 +10503,7 @@ namespace {
 		 }
 
 		/**
-		 * Register a new POST route with the router.
+		 * Register a new POST route with the routers.
 		 *
 		 * @param string  $uri
 		 * @param \Closure|array|string  $action
@@ -10516,7 +10516,7 @@ namespace {
 		 }
 
 		/**
-		 * Register a new PUT route with the router.
+		 * Register a new PUT route with the routers.
 		 *
 		 * @param string  $uri
 		 * @param \Closure|array|string  $action
@@ -10529,7 +10529,7 @@ namespace {
 		 }
 
 		/**
-		 * Register a new PATCH route with the router.
+		 * Register a new PATCH route with the routers.
 		 *
 		 * @param string  $uri
 		 * @param \Closure|array|string  $action
@@ -10542,7 +10542,7 @@ namespace {
 		 }
 
 		/**
-		 * Register a new DELETE route with the router.
+		 * Register a new DELETE route with the routers.
 		 *
 		 * @param string  $uri
 		 * @param \Closure|array|string  $action
@@ -10555,7 +10555,7 @@ namespace {
 		 }
 
 		/**
-		 * Register a new OPTIONS route with the router.
+		 * Register a new OPTIONS route with the routers.
 		 *
 		 * @param string  $uri
 		 * @param \Closure|array|string  $action
@@ -10733,7 +10733,7 @@ namespace {
 		 }
 
 		/**
-		 * Register a new "before" filter with the router.
+		 * Register a new "before" filter with the routers.
 		 *
 		 * @param mixed  $callback
 		 * @return void
@@ -10745,7 +10745,7 @@ namespace {
 		 }
 
 		/**
-		 * Register a new "after" filter with the router.
+		 * Register a new "after" filter with the routers.
 		 *
 		 * @param mixed  $callback
 		 * @return void
@@ -10757,7 +10757,7 @@ namespace {
 		 }
 
 		/**
-		 * Register a new filter with the router.
+		 * Register a new filter with the routers.
 		 *
 		 * @param string  $name
 		 * @param mixed  $callback
@@ -10770,7 +10770,7 @@ namespace {
 		 }
 
 		/**
-		 * Register a pattern-based filter with the router.
+		 * Register a pattern-based filter with the routers.
 		 *
 		 * @param string  $pattern
 		 * @param string  $name
@@ -10783,7 +10783,7 @@ namespace {
 		 }
 
 		/**
-		 * Register a regular expression based filter with the router.
+		 * Register a regular expression based filter with the routers.
 		 *
 		 * @param string     $pattern
 		 * @param string     $name
@@ -10893,7 +10893,7 @@ namespace {
 		 }
 
 		/**
-		 * Run a callback with filters disable on the router.
+		 * Run a callback with filters disable on the routers.
 		 *
 		 * @param callable  $callback
 		 * @return void
@@ -10905,7 +10905,7 @@ namespace {
 		 }
 
 		/**
-		 * Enable route filtering on the router.
+		 * Enable route filtering on the routers.
 		 *
 		 * @return void
 		 * @static 
@@ -10916,7 +10916,7 @@ namespace {
 		 }
 
 		/**
-		 * Disable route filtering on the router.
+		 * Disable route filtering on the routers.
 		 *
 		 * @return void
 		 * @static 

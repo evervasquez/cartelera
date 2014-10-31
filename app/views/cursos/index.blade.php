@@ -1,0 +1,1 @@
+E:\xampp\htdocs\cartelera\app/views/cursos/index.blade.php

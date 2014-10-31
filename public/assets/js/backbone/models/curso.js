@@ -1,0 +1,1 @@
+Cartelera.Models.Curso = Backbone.Model.extend({})

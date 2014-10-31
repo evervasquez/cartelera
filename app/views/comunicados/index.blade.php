@@ -1,12 +1,15 @@
 @extends('layout')
 
-@section('content')
+@section('js')
 
+@overwrite
+
+@section('content')
 <div class="content-inner">
 <div id="email-sidebar">
     <!-- Start #email-sidebar -->
     <div class="p15">
-        <a id="write-email" href="email-write.html" class="btn btn-danger btn-block uppercase">compose</a>
+        <a id="write-email" href="email-write.html" class="btn btn-danger btn-block uppercase">NUEVO COMUNICADO</a>
     </div>
     <ul id="email-nav" class="nav nav-pills nav-stacked">
         <li><a href="email-inbox.html"><i class="fa fa-archive"></i> Inbox <span class="label label-teal">27</span></a>
@@ -46,12 +49,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a href="#" class="btn btn-default btn-round btn-sm tip mr5" title="Refresh inbox"><i
+        <a href="#" class="btn btn-default btn-round btn-sm tip mr5"><i
                 class="fa fa-refresh s16"></i></a>
-        <a href="#" class="btn btn-default btn-round btn-sm tip mr5" title="Reply"><i class="im-undo2 s16"></i></a>
-        <a href="#" class="btn btn-default btn-round btn-sm tip mr5" title="Forward"><i class="im-redo2 s16"></i></a>
-        <a href="#" class="btn btn-danger btn-round btn-sm tip mr5" title="Delete"><i class="fa fa-trash-o s16"></i></a>
-        <a href="#" class="btn btn-default btn-round btn-sm tip mr5" title="Print"><i class="im-print3 s16"></i></a>
+        <a href="#" class="btn btn-default btn-round btn-sm tip mr5"><i class="im-print3 s16"></i></a>
     </div>
     <ul class="email-pager">
         <li class="pager-info">1-20 of 345</li>

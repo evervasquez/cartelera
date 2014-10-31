@@ -304,7 +304,7 @@
                 e.preventDefault();
                 //sound
                 if (plugin.settings.sounds.active) {
-                    $.ionSound.play({name: plugin.settings.sounds.toggleSidebar});
+                    //$.ionSound.play({name: plugin.settings.sounds.toggleSidebar});
                 }
                 //sidebar
                 $('#sidebar').toggleClass('collapse-sidebar');           
