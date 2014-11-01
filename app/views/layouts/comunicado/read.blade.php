@@ -44,10 +44,9 @@
                                 <% if (urlarchivo1 != null) { %>
                                     <li class="list-group-item col-md-12" >
                                         <span class="label label-danger mr10">PDF</span>
-                                        <strong>Raport.pdf</strong>
+                                        <strong>Documento.pdf</strong>
                                         <div class="btn-group pull-right">
-                                            <a href="#" class="btn btn-default">View</a>
-                                            <a href="#" class="btn btn-default">Download</a>
+                                            <a href="uploads/<%= urlarchivo1 %>" target="_blank" class="btn btn-default">Descargar</a>
                                         </div>
                                     </li>
                                 <% } %>
@@ -55,10 +54,9 @@
                                 <% if (urlarchivo2 != null) { %>
                                     <li class="list-group-item" >
                                         <span class="label label-danger mr10">PDF</span>
-                                        <strong>Raport.pdf</strong>
+                                        <strong>Documento.pdf</strong>
                                         <div class="btn-group pull-right">
-                                            <a href="#" class="btn btn-default">View</a>
-                                            <a href="#" class="btn btn-default">Download</a>
+                                            <a href="uploads/<%= urlarchivo2 %>" target="_blank" class="btn btn-default">Descargar</a>
                                         </div>
                                     </li>
                                 <% } %>
