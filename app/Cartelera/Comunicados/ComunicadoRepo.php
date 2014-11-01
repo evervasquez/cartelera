@@ -10,27 +10,52 @@ namespace Cartelera\Comunicados;
 
 use Cartelera\Base\BaseRepo;
 use Cartelera\Base\BaseRepoInterface;
+use Laravelrus\LocalizedCarbon\LocalizedCarbon;
 
 class ComunicadoRepo extends BaseRepo implements BaseRepoInterface
 {
     public function selectAll()
     {
         $comunicados = \DB::table('comunicados')
+            ->join('cursos', 'comunicados.CodigoCurso', '=', 'cursos.CodigoCurso')
+            ->whereNull('deleted_at')
+            ->select('id', 'cursos.DescripcionCurso', 'comunicado', 'titulo', 'created_at', 'totalmegusta', 'totalnomegusta')
             ->get();
         return $comunicados;
     }
 
     public function find($id)
     {
-        $comunicado = \DB::table('comunicados as c')
+        $comunicado['comunicado'] = \DB::table('comunicados as c')
             ->join('users as u', 'c.user_id', '=', 'u.id')
             ->join('cursos as cu', 'c.CodigoCurso', '=', 'cu.CodigoCurso')
             ->whereNull('c.deleted_at')
             ->where('c.id', '=', $id)
             ->select('c.id', 'cu.DescripcionCurso as curso', 'c.titulo', 'c.comunicado', 'c.created_at', 'c.totalmegusta',
-                'c.totalnomegusta', 'c.urlarchivo1', 'c.urlimagen1','c.urlarchivo2', 'c.urlimagen2',
+                'c.totalnomegusta', 'c.urlarchivo1', 'c.urlimagen1', 'c.urlarchivo2', 'c.urlimagen2',
                 \DB::raw('"nombres"||\' \'||"apellidos" as usuario'))
             ->get();
+
+
+        $comunicado['comentarios'] = \DB::table('comentarios')
+            ->join('users', 'comentarios.user_id', '=', 'users.id')
+            ->where('comentarios.comunicado_id', '=', $id)
+            ->whereNull('comentarios.deleted_at')
+            ->select('comentarios.id', 'comentario', 'totalmegusta', 'totalnomegusta', 'fechahora', 'user_id',
+                \DB::raw('"nombres"||\' \'||"apellidos" as fullname'))
+            ->orderBy('comentarios.id', 'asc')
+            ->get();
+
+
+        foreach ($comunicado['comentarios'] as $key => $comentario) {
+            $last_login = new \DateTime();
+            $timestamp = $last_login->getTimestamp();
+            $tiempo = LocalizedCarbon::instance(new \DateTime($comentario->fechahora))->diffForHumans(LocalizedCarbon::createFromTimestamp($timestamp));;
+            //$datos['last_login'] = $tiempo;
+            $comentario->fechahora = $tiempo;
+            $comunicado['comentarios'][$key]->fechahora = $tiempo;
+        }
+
         return $comunicado;
     }
 
@@ -84,7 +109,7 @@ class ComunicadoRepo extends BaseRepo implements BaseRepoInterface
         $comunicado->created_at = $this->getCreatedAt();
         $comunicado->updated_at = $this->getUpdateAt();
 
-        \DB::table('temporales')->where('user_id','=',$codigo)->delete();
+        \DB::table('temporales')->where('user_id', '=', $codigo)->delete();
         return $comunicado->save();
     }
 

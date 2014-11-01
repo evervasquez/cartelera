@@ -491,17 +491,38 @@
         <td class="email-star input-mini"><i class="im-star s20"></i>
         </td>
         <td class="email-subject"><a href="" class="action ver"><%= titulo %></a>
+            &nbsp;&nbsp;&nbsp;<span><i class="im-thumbs-up2"></i>&nbsp;<%= totalmegusta %></span>
+            &nbsp;&nbsp; <span><i class="im-thumbs-down"></i>&nbsp;<%= totalnomegusta %></span>
         </td>
         <td class="email-intro">
             <a href="" class="action ver">
-                <span class="label label-teal mr10"><%= curso_id %></span>
+                <span class="label label-teal mr10"><%= curso %></span>
                 <span class="text-muted small ml10"><%= comunicado %></span>
             </a>
         </td>
-        <td class="email-date text-right input-medium"><%= fechacreacion %></td>
+        <td class="email-date text-right input-large"><%= fechacreacion %></td>
 </script>
 
 @include('layouts.comunicado.read')
+
+<script type="text/template" id="comentario-template">
+    <span class="date-time"><%= diffhumanos %></span>
+    <label class="timeline-label">
+        <i class="im-users"></i>
+    </label>
+    <h5 class="timeline-event-title"><%= fullname %>&nbsp;&nbsp;
+    <span>
+        <a href="" class="action comentario-like" style="text-decoration: none; color: #0000ff"><i class="im-thumbs-up5"></i>&nbsp;0</a>
+    </span>&nbsp;&nbsp;
+    <span>
+        <a href="" class="action comentario-notlike" style="text-decoration: none; color: #ff0000"><i class="im-thumbs-down"></i>&nbsp;0</a>
+    </span>
+    </h5>
+    <div class="timeline-event">
+        <span><%= comentario %></span>
+    </div>
+</script>
+
 @include('layouts.comunicado.write')
 
 
@@ -571,12 +592,16 @@
 {{ HTML::script('assets/js/backbone/App.js') }}
 {{ HTML::script('assets/js/backbone/models/Comunicado.js') }}
 {{ HTML::script('assets/js/backbone/models/curso.js') }}
+{{ HTML::script('assets/js/backbone/models/Comentario.js') }}
 {{ HTML::script('assets/js/backbone/collections/Comunicados.js') }}
-{{ HTML::script('assets/js/backbone/collections/cursos.js') }}
+{{ HTML::script('assets/js/backbone/collections/Cursos.js') }}
+{{ HTML::script('assets/js/backbone/collections/Comentarios.js') }}
 {{ HTML::script('assets/js/backbone/views/comunicado.js') }}
 {{ HTML::script('assets/js/backbone/views/comunicados.js') }}
 {{ HTML::script('assets/js/backbone/views/curso.js') }}
 {{ HTML::script('assets/js/backbone/views/cursos.js') }}
+{{ HTML::script('assets/js/backbone/views/comentario.js') }}
+{{ HTML::script('assets/js/backbone/views/comentarios.js') }}
 {{ HTML::script('assets/js/backbone/views/read.js') }}
 {{ HTML::script('assets/js/backbone/views/write.js') }}
 {{ HTML::script('assets/js/backbone/routers/Router.js') }}

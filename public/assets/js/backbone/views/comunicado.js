@@ -6,10 +6,7 @@ Cartelera.Views.Comunicado = Backbone.View.extend({
         'click .action.ver': 'redireccionar'
     },
     initialize:function(){
-        $("#write-message").click(function(){
-            Cartelera.app.navigate('write-menssage',{trigger:true})
-            return false;
-        });
+
         this.listenTo(this.model, "change", this.render(), this);
     },
     render: function(){

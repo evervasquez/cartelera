@@ -39,7 +39,7 @@ return array(
 	|
 	*/
 
-	'timezone' => 'UTC',
+	'timezone' => 'America/Lima',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -123,6 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
         'Cartelera\Compositores\ComposerServiceProvider',
+        'Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider',
 	),
 
 	/*
@@ -189,6 +190,8 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
+        'LocalizedCarbon'   => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
+        'DiffFormatter'     => 'Laravelrus\LocalizedCarbon\DiffFactoryFacade',
 
 	),
 

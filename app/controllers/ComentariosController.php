@@ -1,86 +1,89 @@
 <?php
+use Cartelera\Comentarios\ComentarioRepo;
 
-class ComentariosController extends \BaseController {
+class ComentariosController extends \BaseController
+{
+    protected $comentRepo;
 
-	/**
-	 * Display a listing of the resource.
-	 * GET /comentarios
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
+    public function __construct(ComentarioRepo $comentarioRepo)
+    {
+        $this->comentRepo = $comentarioRepo;
+    }
 
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /comentarios/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
+    public function index()
+    {
+        //
+    }
 
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /comentarios
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
+    /**
+     * Show the form for creating a new resource.
+     * GET /comentarios/create
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        //
+    }
 
-	/**
-	 * Display the specified resource.
-	 * GET /comentarios/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
+    /**
+     * Store a newly created resource in storage.
+     * POST /comentarios
+     *
+     * @return Response
+     */
+    public function store()
+    {
+        $datos = Input::all();
+        return $this->comentRepo->save($datos);
+    }
 
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /comentarios/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
+    /**
+     * Display the specified resource.
+     * GET /comentarios/{id}
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        //
+    }
 
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /comentarios/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
+    /**
+     * Show the form for editing the specified resource.
+     * GET /comentarios/{id}/edit
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        //
+    }
 
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /comentarios/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
+    /**
+     * Update the specified resource in storage.
+     * PUT /comentarios/{id}
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     * DELETE /comentarios/{id}
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 
 }

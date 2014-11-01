@@ -29,7 +29,7 @@ Cartelera.Views.Write = Backbone.View.extend({
     },
 
     guardar: function () {
-        bval = true;
+        var bval = true;
         bval = bval && $("#fechainicio").required();
         bval = bval && $("#fechafin").required();
         bval = bval && $("#titulo").required();
@@ -37,7 +37,6 @@ Cartelera.Views.Write = Backbone.View.extend({
 
         if (bval) {
             var datos = $("#formulario").serialize();
-            //$("#formulario").submit();
             $.ajax({
                 type: "POST",
                 url: 'comunicados',

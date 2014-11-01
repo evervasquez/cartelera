@@ -30,20 +30,6 @@ abstract class BaseManagers {
         return $isValid;
     }
 
-    //metodo para guardar
-    //no se usa en este proyecto ; metodo fill
-    /*public function save()
-    {
-        if (!$this->isValid()) {
-            return false;
-        }
-
-        $this->entity->fill($this->data);
-        $this->entity->save();
-
-        return true;
-    }*/
-
     //retornamos los errors
     public function getErros()
     {

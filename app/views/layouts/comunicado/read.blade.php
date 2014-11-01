@@ -1,10 +1,13 @@
 <script type="text/template" id="read-template">
     <div class="row read-message readcomentarios">
+
         <div class="col-lg-7 col-md-6 col-xs-12 rightPanel">
             <div class="email-read">
                 <!-- Start .email-read -->
                 <div class="email-header">
-                    <h3><%= titulo %></h3>
+                    <h3><%= titulo %><div class="pull-right">&nbsp;&nbsp;&nbsp;<span><a href="" class="action comunicado-like" style="text-decoration: none; color: #0000ff"><i class="im-thumbs-up2"></i>&nbsp;<%= totalmegusta %></a></span>
+                        &nbsp;&nbsp; <span><a href="" class="action comunicado-notlike" style="text-decoration: none; color: #ff0000"><i class="im-thumbs-down"></i>&nbsp;<%= totalnomegusta %></a></span></div></h3>
+                    <input type="hidden" id="_id" value="<%= id %>"/>
                 </div>
                 <div class="email-info-bar">
                     <div class="row">
@@ -79,61 +82,24 @@
                         <a href="#" class="panel-refresh"><i class="im-spinner12"></i></a>
                     </div>
                     <div class="ingresecomentario col-md-12">
-                        <form class="new-message" method="post" action="#" accept-charset="UTF-8">
+                        <form class="new-comentario" id="new-comentario" method="post" action="#" accept-charset="UTF-8">
                             <div class="input-group">
-                                <input type="text" class="form-control" id="message_body" name="message[body]"
+                                <input type="text" autofocus class="form-control" id="comentario" name="comentario"
                                        placeholder="Ingrese un comentario">
-                    <span class="input-group-btn">
-                        <button class="btn btn-teal" type="button"><i class="fa fa-plus"></i></button>
-                    </span>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-teal action comentario-add" type="button"><i class="im-bubbles4"></i></button>
+                                </span>
                             </div>
                         </form>
                     </div>
                 </div>
 
-
                 <div class="panel-body">
-                    <ul class="timeline timeline-advanced">
-                        <li>
-                            <span class="date-time">15 sec ago</span>
-                            <label class="timeline-label">
-                                <i class="im-image2"></i>
-                            </label>
-                            <h5 class="timeline-event-title">New picture is uploaded</h5>
-
-                            <div class="timeline-event">
-                                <img src="assets/img/gallery/1.jpg" alt="pic1" height="75px;">
-                            </div>
-                        </li>
-                        <li>
-                            <span class="date-time">2 min ago</span>
-                            <label class="timeline-label">
-                                <i class="im-users"></i>
-                            </label>
-                            <h5 class="timeline-event-title">3 users are registred</h5>
-
-                            <div class="timeline-event">
-                                <img src="assets/img/avatars/2.jpg" alt="user1" class="mr10">
-                                <img src="assets/img/avatars/3.jpg" alt="user1" class="mr10">
-                                <img src="assets/img/avatars/4.jpg" alt="user1">
-                            </div>
-                        </li>
-                        <li>
-                            <span class="date-time">1 day ago</span>
-                            <label class="timeline-label">
-                                <i class="im-database"></i>
-                            </label>
-                            <h5 class="timeline-event-title">Backup is complete</h5>
-
-                            <div class="timeline-event">
-                                <a class="btn btn-default" href="#"> Download Raport</a>
-                            </div>
-                        </li>
+                    <ul class="timeline timeline-advanced" id="comentarios">
                     </ul>
-
                 </div>
-
             </div>
         </div>
     </div>
 </script>
+

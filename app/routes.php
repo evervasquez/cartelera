@@ -82,6 +82,7 @@ Route::post('profesores/list', ['as' => 'profesores.list', 'uses' => 'Profesores
 
 //BacboneJS
 Route::resource('comunicados', 'ComunicadosController');
+Route::resource('comentario', 'ComentariosController');
 Route::resource('images', 'ImagesController');
 Route::resource('cursos', 'CursosController');
 
