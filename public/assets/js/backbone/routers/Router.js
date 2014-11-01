@@ -54,7 +54,7 @@ Cartelera.Router = Backbone.Router.extend({
         $(".email-write").remove();
         $(".read-message").remove();
         $.getJSON('comunicados/' + id).then(function (comunicados) {
-            console.log(comunicados[0].titulo);
+            console.log(comunicados[0]);
             this.ModelComunidado = new Cartelera.Models.Comunicado({
                 id: comunicados[0].id,
                 curso: comunicados[0].curso,
@@ -63,8 +63,10 @@ Cartelera.Router = Backbone.Router.extend({
                 fechacreacion: new moment(comunicados[0].created_at).locale('es').format('llll'),
                 totalmegusta: comunicados[0].totalmegusta,
                 totalnomegusta: comunicados[0].totalnomegusta,
-                urlarchivo: comunicados[0].urlarchivo,
-                urlimagen: comunicados[0].urlimagen,
+                urlarchivo1: comunicados[0].urlarchivo1,
+                urlarchivo2: comunicados[0].urlarchivo2,
+                urlimagen1: comunicados[0].urlimagen1,
+                urlimagen2: comunicados[0].urlimagen2,
                 usuario: comunicados[0].usuario
             })
             new Cartelera.Views.Read({model: this.ModelComunidado});

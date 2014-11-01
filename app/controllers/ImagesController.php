@@ -18,7 +18,7 @@ class ImagesController extends BaseController
     {
         if (!empty($_FILES)) {
             $file = Input::file('file');
-            $secureName = Hash::make($file->getClientOriginalName());
+            $secureName = md5($file->getClientOriginalName());
             $dir = public_path() . '/uploads/';
 
             $fileType = $_FILES['file']['type'];

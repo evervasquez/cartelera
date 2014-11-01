@@ -52,13 +52,14 @@ div.jtable-main-container table.jtable tbody > tr > td .jtable-delete-command-bu
     /*padding-top: 3em;*/
 
 }
+.comunicado-contenido{
+    height: 100%;
+    overflow-y: scroll;
+}
 .ingresecomentario{
    /*padding-top: -5em;*/
 }
-.archivopdf{
-    position: relative;
-    top:31em;
-}
+
 .error_message
 {
     color: #ff0000;

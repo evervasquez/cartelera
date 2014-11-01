@@ -84,7 +84,7 @@ class ComunicadoRepo extends BaseRepo implements BaseRepoInterface
         $comunicado->created_at = $this->getCreatedAt();
         $comunicado->updated_at = $this->getUpdateAt();
 
-        \DB::table('temporales')->delete();
+        \DB::table('temporales')->where('user_id','=',$codigo)->delete();
         return $comunicado->save();
     }
 

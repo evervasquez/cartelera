@@ -19,23 +19,53 @@
                 <div class="email-content">
                     <!-- Start .email-content -->
                     <!-- This is just example email text  -->
-                    <div class="text-dark comunicado-content">
-                    <%= comunicado %>
-                    </div>
-                    <div class="attached-files archivopdf">
-                        <!-- Start .attached-files -->
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <span class="label label-danger mr10">PDF</span>
-                                <strong>Raport.pdf</strong>
+                    <div class="row comunicado-contenido">
+                        <div class="col-md-12">
+                            <div class="text-dark comunicado-content" style="min-height: 10em; max-height: 11em">
+                                <%= comunicado %>
+                            </div>
+                        <div class="text-success">
+                            Imagenes relacionadas
+                        </div>
+                            <% if (urlimagen1 != null) { %>
+                            <div class="col-lg-6 col-md-6 col-xs-12" style="min-height: 15em; max-height: 15em">
+                                <img src="uploads/<%= urlimagen1 %>" alt="" class="mfp-img"/>
+                            </div>
+                            <% } %>
+                            <% if (urlimagen2 != null) { %>
+                            <div class="col-lg-6 col-md-6 col-xs-12" style="min-height: 15em; max-height: 15em">
+                                <img src="uploads/<%= urlimagen2 %>" alt="" class="mfp-img"/>
+                            </div>
+                            <% } %>
+                        </div>
+                        <div class="attached-files archivopdf" style="position: absolute; bottom: 0;max-width: 90%">
+                            <!-- Start .attached-files -->
+                            <ul class="list-group" >
+                                <% if (urlarchivo1 != null) { %>
+                                    <li class="list-group-item col-md-12" >
+                                        <span class="label label-danger mr10">PDF</span>
+                                        <strong>Raport.pdf</strong>
+                                        <div class="btn-group pull-right">
+                                            <a href="#" class="btn btn-default">View</a>
+                                            <a href="#" class="btn btn-default">Download</a>
+                                        </div>
+                                    </li>
+                                <% } %>
 
-                                <div class="btn-group pull-right">
-                                    <a href="<%= urlarchivo %>" class="btn btn-default">Descargar</a>
-                                </div>
-                            </li>
-                        </ul>
+                                <% if (urlarchivo2 != null) { %>
+                                    <li class="list-group-item" >
+                                        <span class="label label-danger mr10">PDF</span>
+                                        <strong>Raport.pdf</strong>
+                                        <div class="btn-group pull-right">
+                                            <a href="#" class="btn btn-default">View</a>
+                                            <a href="#" class="btn btn-default">Download</a>
+                                        </div>
+                                    </li>
+                                <% } %>
+                            </ul>
+                        </div>
+                        <!-- End .attached-files -->
                     </div>
-                    <!-- End .attached-files -->
                 </div>
                 <!-- End .email-content -->
             </div>
