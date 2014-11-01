@@ -1,5 +1,7 @@
 <script type="text/template" id="write-template">
     <div class="email-write">
+            <div class="error_message">
+            </div>
         <!-- Start .email-write -->
         {{ Form::open(array('url' => 'comunicados','id' => 'formulario','role'=>'form','class'=>'form-horizontal mt10'))
         }}

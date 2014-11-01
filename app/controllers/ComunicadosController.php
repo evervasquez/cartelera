@@ -1,6 +1,6 @@
 <?php
 use Cartelera\Comunicados\ComunicadoRepo;
-
+use Cartelera\Comunicados\ComunicadoManager;
 class ComunicadosController extends \BaseController
 {
     protected $comunicadoRepo;
@@ -41,7 +41,9 @@ class ComunicadosController extends \BaseController
     public function store()
     {
         $datos = Input::all();
-        $this->comunicadoRepo->save($datos);
+        $manager = new ComunicadoManager($datos);
+        $response = $this->baseNuevo($this->comunicadoRepo,$manager,$datos);
+        return $response;
     }
 
     /**

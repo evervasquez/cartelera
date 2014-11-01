@@ -29,6 +29,7 @@ Cartelera.Views.Write = Backbone.View.extend({
     },
 
     guardar: function () {
+        var validador = 1;
         var bval = true;
         bval = bval && $("#fechainicio").required();
         bval = bval && $("#fechafin").required();
@@ -37,17 +38,26 @@ Cartelera.Views.Write = Backbone.View.extend({
 
         if (bval) {
             var datos = $("#formulario").serialize();
+            if(validador ==1){
             $.ajax({
                 type: "POST",
                 url: 'comunicados',
                 data: datos,
                 contentType: "application/x-www-form-urlencoded; charset=UTF-8",
                 beforeSend: function () {
+
                 },
-                success: function () {
-                    Cartelera.app.navigate('',{trigger:true})
+                success: function (response) {
+                    if (response.Result == "ERROR") {
+                        viewMessage(response.Message);
+                        return false;
+                    } else {
+                        Cartelera.app.navigate('', {trigger: true})
+                    }
                 }
             });
+                validador = 2;
+            }
         }
         return false;
     }

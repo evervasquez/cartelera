@@ -16,7 +16,7 @@ class BaseController extends Controller
     {
         $response = null;
         if ($manager->isValid()) {
-            $repositorio->editar($datos);
+            $repositorio->update($datos);
             return \Response::json(array(
                     "Result" => "OK"
                 )
@@ -34,7 +34,7 @@ class BaseController extends Controller
     {
         $response = null;
         if ($manager->isValid()) {
-            $response = $repositorio->nuevo($datos);
+            $response = $repositorio->save($datos);
             return \Response::json(array(
                     "Result" => "OK",
                     "Record" => $response

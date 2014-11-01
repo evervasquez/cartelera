@@ -10,11 +10,11 @@ class ComunicadoManager extends BaseManagers
     public function getRules()
     {
         $rules = [
-            'posicion' => 'require|integer|min:1|max:2|',
-            'tipo' => 'require|integer|min:1|max:2|',
-            'fechainicio' => 'required|date_format:d-m-Y H:i:s',
-            'fechafin' => 'required|date_format:d-m-Y H:i:s|after:fechainicio',
-            'titulo' => 'required|alpha_dash',
+            'posicion' => 'required|integer|min:1|max:2|',
+            'tipo' => 'required|integer|min:1|max:2|',
+            'fechainicio' => 'required',
+            'fechafin' => 'required|after:fechainicio',
+            'titulo' => 'required',
             'comunicado' => 'required'
         ];
 

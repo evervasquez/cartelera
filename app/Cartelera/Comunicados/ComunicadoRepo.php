@@ -14,6 +14,8 @@ use Laravelrus\LocalizedCarbon\LocalizedCarbon;
 
 class ComunicadoRepo extends BaseRepo implements BaseRepoInterface
 {
+    private $temporizador = 1;
+
     public function selectAll()
     {
         $comunicados = \DB::table('comunicados')
@@ -61,56 +63,59 @@ class ComunicadoRepo extends BaseRepo implements BaseRepoInterface
 
     public function save($datos)
     {
-        $archivos = \DB::table('temporales')
-            ->select('type', 'urlarchivo')
-            ->get();
 
-        $codigo = \Auth::user()->id;
-        $comunicado = new Comunicado();
-        $comunicado->user_id = $codigo;
-        $comunicado->tipocomunicado_id = $datos['tipo'];
-        $comunicado->posicion_id = $datos['posicion'];
-        $comunicado->CodigoCurso = $datos['curso'];
-        $comunicado->titulo = $datos['titulo'];
-        $comunicado->comunicado = $datos['comunicado'];
-        $comunicado->fechahora_inicio = $datos['fechainicio'];
-        $comunicado->fechahora_fin = $datos['fechafin'];
+        if ($this->temporizador == 1) {
+            $archivos = \DB::table('temporales')
+                ->select('type', 'urlarchivo')
+                ->get();
 
-        if (count($archivos) > 0) {
-            $i = 0;
-            foreach ($archivos as $archivo) {
-                if ($archivo->type == 'image/jpeg') {
-                    if ($i == 0) {
-                        $comunicado->urlimagen1 = $archivo->urlarchivo;
-                    } else {
-                        $comunicado->urlimagen2 = $archivo->urlarchivo;
-                    }
-                } elseif ($archivo->type == 'image/jpg') {
-                    if ($i == 0) {
-                        $comunicado->urlimagen1 = $archivo->urlarchivo;
-                    } else {
-                        $comunicado->urlimagen2 = $archivo->urlarchivo;
-                    }
-                } elseif ($archivo->type == 'image/png') {
-                    if ($i == 0) {
-                        $comunicado->urlimagen1 = $archivo->urlarchivo;
-                    } else {
-                        $comunicado->urlimagen2 = $archivo->urlarchivo;
-                    }
-                } elseif ($archivo->type == 'application/pdf') {
-                    if ($i == 0) {
-                        $comunicado->urlarchivo1 = $archivo->urlarchivo;
-                    } else {
-                        $comunicado->urlarchivo2 = $archivo->urlarchivo;
+            $codigo = \Auth::user()->id;
+            $comunicado = new Comunicado();
+            $comunicado->user_id = $codigo;
+            $comunicado->tipocomunicado_id = $datos['tipo'];
+            $comunicado->posicion_id = $datos['posicion'];
+            $comunicado->CodigoCurso = $datos['curso'];
+            $comunicado->titulo = $datos['titulo'];
+            $comunicado->comunicado = $datos['comunicado'];
+            $comunicado->fechahora_inicio = $datos['fechainicio'];
+            $comunicado->fechahora_fin = $datos['fechafin'];
+
+            if (count($archivos) > 0) {
+                $i = 0;
+                foreach ($archivos as $archivo) {
+                    if ($archivo->type == 'image/jpeg') {
+                        if ($i == 0) {
+                            $comunicado->urlimagen1 = $archivo->urlarchivo;
+                        } else {
+                            $comunicado->urlimagen2 = $archivo->urlarchivo;
+                        }
+                    } elseif ($archivo->type == 'image/jpg') {
+                        if ($i == 0) {
+                            $comunicado->urlimagen1 = $archivo->urlarchivo;
+                        } else {
+                            $comunicado->urlimagen2 = $archivo->urlarchivo;
+                        }
+                    } elseif ($archivo->type == 'image/png') {
+                        if ($i == 0) {
+                            $comunicado->urlimagen1 = $archivo->urlarchivo;
+                        } else {
+                            $comunicado->urlimagen2 = $archivo->urlarchivo;
+                        }
+                    } elseif ($archivo->type == 'application/pdf') {
+                        if ($i == 0) {
+                            $comunicado->urlarchivo1 = $archivo->urlarchivo;
+                        } else {
+                            $comunicado->urlarchivo2 = $archivo->urlarchivo;
+                        }
                     }
                 }
             }
-        }
-        $comunicado->created_at = $this->getCreatedAt();
-        $comunicado->updated_at = $this->getUpdateAt();
+            $comunicado->created_at = $this->getCreatedAt();
+            $comunicado->updated_at = $this->getUpdateAt();
 
-        \DB::table('temporales')->where('user_id', '=', $codigo)->delete();
-        return $comunicado->save();
+            \DB::table('temporales')->where('user_id', '=', $codigo)->delete();
+            return $comunicado->save();
+        }
     }
 
 } 

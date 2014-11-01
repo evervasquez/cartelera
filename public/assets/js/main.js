@@ -91,6 +91,18 @@ var limpiar_validaciones = function () {
     $(".mensajes_validador").html('');
 }
 
-$("#cartelera-avatar").click(function(){
+$("#cartelera-avatar").click(function () {
     console.log("click");
 })
+
+var viewMessage = function (messages) {
+    var html = '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><i class="im-cancel alert-icon s24"></i>';
+        html += '<strong>Hubierón estos errores</strong>';
+    var errores="";
+        for (var item in messages) {
+            errores += '<li>'+messages[item]+"</li>";
+    }
+    html += errores;
+    $(".error_message").addClass('alert alert-danger fade in');
+    $(".error_message").html(html);
+}

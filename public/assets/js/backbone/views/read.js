@@ -8,13 +8,13 @@ Cartelera.Views.Read = Backbone.View.extend({
         'click .action.comunicado-like': 'like',
         'click .action.comunicado-notlike': 'notlike'
     },
-    initialize:function(){
-        //this.listenTo(this.model, "add", this.render(), this);
+    initialize: function () {
         this.render();
+        this.registrarVisto();
     },
 
     //renderizamos la vista
-    render: function(){
+    render: function () {
         $("#comunicados").hide();
         $(".email-toolbar-search").hide();
         var comunicado = this.model.toJSON();
@@ -23,13 +23,13 @@ Cartelera.Views.Read = Backbone.View.extend({
         return this;
     },
 
-    redireccionar: function(){
-        Cartelera.app.navigate('comunicado/'+this.model.get('id'),{trigger:true})
+    redireccionar: function () {
+        Cartelera.app.navigate('comunicado/' + this.model.get('id'), {trigger: true})
         return false;
     },
 
     //agregamos un nuevo comentario
-    comentario: function(){
+    comentario: function () {
         var comentario = $("#comentario");
         var _id = $("#_id");
         bval = true;
@@ -39,7 +39,7 @@ Cartelera.Views.Read = Backbone.View.extend({
             $.ajax({
                 type: "POST",
                 url: 'comentario',
-                data: datos+'&comunicado_id='+_id.val(),
+                data: datos + '&comunicado_id=' + _id.val(),
                 contentType: "application/x-www-form-urlencoded; charset=UTF-8",
                 beforeSend: function () {
                 },
@@ -66,13 +66,29 @@ Cartelera.Views.Read = Backbone.View.extend({
         }
         return false;
     },
-    like: function()
-    {
+    registrarVisto: function () {
+        var _id = $("#_id");
+        $.ajax({
+            type: "POST",
+            url: 'votoscomunicado',
+            data: 'comunicado_id=' + _id.val(),
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            beforeSend: function () {
+            },
+            success: function (response) {
+                if (response.Result == "OK") {
+
+                } else {
+
+                }
+            }
+        });
+    },
+    like: function () {
         alert('me gusta');
         return false;
     },
-    notlike: function()
-    {
+    notlike: function () {
         alert('no me gusta');
         return false;
     }
