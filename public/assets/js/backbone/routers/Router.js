@@ -28,7 +28,7 @@ Cartelera.Router = Backbone.Router.extend({
                     titulo: comunicados[comunicado].titulo,
                     fechacreacion: new moment(comunicados[comunicado].created_at).locale('es').format('dddd'),
                     totalmegusta: comunicados[comunicado].totalmegusta,
-                    totalnomegusta: comunicados[comunicado].totalnomegusta,
+                    totalnomegusta: comunicados[comunicado].totalnomegusta
                 }));
             }
 
@@ -56,14 +56,21 @@ Cartelera.Router = Backbone.Router.extend({
         //comunicados
         $.getJSON('comunicados/' + id).then(function (comunicados) {
             for (var comunicado in comunicados['comunicado']) {
+                var megusta = 0;
+                var nomegusta = 0;
+                if(comunicados['likes'].length > 0){
+                    megusta = comunicados['likes'][comunicado].megusta;
+                    nomegusta = comunicados['likes'][comunicado].nomegusta;
+                }
+
                 this.ModelComunidado = new Cartelera.Models.Comunicado({
                     id: comunicados['comunicado'][comunicado].id,
                     curso: comunicados['comunicado'][comunicado].curso,
                     comunicado: comunicados['comunicado'][comunicado].comunicado,
                     titulo: comunicados['comunicado'][comunicado].titulo,
                     fechacreacion: comunicados['comunicado'][comunicado].created_at,
-                    totalmegusta: comunicados['comunicado'][comunicado].totalmegusta,
-                    totalnomegusta: comunicados['comunicado'][comunicado].totalnomegusta,
+                    totalmegusta: megusta,
+                    totalnomegusta: nomegusta,
                     urlarchivo1: comunicados['comunicado'][comunicado].urlarchivo1,
                     urlarchivo2: comunicados['comunicado'][comunicado].urlarchivo2,
                     urlimagen1: comunicados['comunicado'][comunicado].urlimagen1,

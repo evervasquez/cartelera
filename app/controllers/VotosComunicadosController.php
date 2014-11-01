@@ -40,8 +40,8 @@ class VotosComunicadosController extends \BaseController
      */
     public function store()
     {
-        $comunicado_id = Input::get('comunicado_id');
-        return $this->votosComuniadoRepo->saveVisto($comunicado_id);
+        $datos = Input::all();
+        return $this->votosComuniadoRepo->saveVisto($datos);
     }
 
     /**

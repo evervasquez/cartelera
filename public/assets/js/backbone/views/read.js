@@ -85,11 +85,41 @@ Cartelera.Views.Read = Backbone.View.extend({
         });
     },
     like: function () {
-        alert('me gusta');
+        var _id = $("#_id");
+        $.ajax({
+            type: "POST",
+            url: 'votoscomunicado',
+            data: 'comunicado_id=' + _id.val() + '&megusta=' + 1,
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            beforeSend: function () {
+            },
+            success: function (response) {
+                if (response.Result == "OK") {
+                    var html = '<a class="likeado" style="text-decoration: none; color: #0000ff"><i class="im-thumbs-up2"></i>&nbsp;Te gusta</a>';
+                    $(".append-megusta").html(html);
+                    $(".append-nomegusta").remove();
+                }
+            }
+        });
         return false;
     },
     notlike: function () {
-        alert('no me gusta');
+        var _id = $("#_id");
+        $.ajax({
+            type: "POST",
+            url: 'votoscomunicado',
+            data: 'comunicado_id=' + _id.val() + '&nomegusta=' + 1,
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            beforeSend: function () {
+            },
+            success: function (response) {
+                if (response.Result == "OK") {
+                    var html = '<a class="likeado" style="text-decoration: none; color: #ff0000"><i class="im-thumbs-down"></i>&nbsp;No te gusta</a>';
+                    $(".append-nomegusta").html(html);
+                    $(".append-megusta").remove();
+                }
+            }
+        });
         return false;
     }
 });

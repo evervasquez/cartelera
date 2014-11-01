@@ -5,8 +5,37 @@
             <div class="email-read">
                 <!-- Start .email-read -->
                 <div class="email-header">
-                    <h3><%= titulo %><div class="pull-right">&nbsp;&nbsp;&nbsp;<span><a href="" class="action comunicado-like" style="text-decoration: none; color: #0000ff"><i class="im-thumbs-up2"></i>&nbsp;<%= totalmegusta %></a></span>
-                        &nbsp;&nbsp; <span><a href="" class="action comunicado-notlike" style="text-decoration: none; color: #ff0000"><i class="im-thumbs-down"></i>&nbsp;<%= totalnomegusta %></a></span></div></h3>
+                    <h3><%= titulo %>
+                        <div class="pull-right">&nbsp;&nbsp;&nbsp;
+                            <span class="append-megusta">
+                                <% if (totalmegusta == 0) { %>
+                                    <% if (totalnomegusta == 0) { %>
+                                        <a href="" class="action comunicado-like" style="text-decoration: none; color: #0000ff">
+                                        <i class="im-thumbs-up2"></i>&nbsp;<%= totalmegusta %></a>
+                                    <% } %>
+                                <% }else {%>
+                                     <% if (totalnomegusta == 0) { %>
+                                         <a class="likeado" style="text-decoration: none; color: #0000ff">
+                                         <i class="im-thumbs-up2"></i>&nbsp;Te gusta</a>
+                                     <% } %>
+                                <% } %>
+                            </span>
+                            &nbsp;&nbsp;
+                            <span class="append-nomegusta">
+                                <% if (totalnomegusta == 0) { %>
+                                    <% if (totalmegusta == 0) { %>
+                                        <a href="" class="action comunicado-notlike" style="text-decoration: none; color: #ff0000">
+                                        <i class="im-thumbs-down"></i>&nbsp;<%= totalnomegusta %></a>
+                                    <% } %>
+                                <% }else {%>
+                                    <% if (totalmegusta == 0) { %>
+                                         <a class="likeado" style="text-decoration: none; color: #ff0000">
+                                         <i class="im-thumbs-down"></i>&nbsp;No te gusta</a>
+                                     <% }%>
+                                <% } %>
+                            </span>
+                        </div>
+                    </h3>
                     <input type="hidden" id="_id" value="<%= id %>"/>
                 </div>
                 <div class="email-info-bar">

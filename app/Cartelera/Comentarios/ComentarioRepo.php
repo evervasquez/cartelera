@@ -24,7 +24,6 @@ class ComentarioRepo
         $comentario->fechahora = Carbon::now();
 
         if ($comentario->save()) {
-
             $idmax = \DB::table('comentarios')
                 ->where('comunicado_id','=',$datos['comunicado_id'])
                 ->max('id');
