@@ -512,10 +512,39 @@
     </label>
     <h5 class="timeline-event-title"><%= fullname %>&nbsp;&nbsp;
     <span>
-        <a href="" class="action comentario-like" style="text-decoration: none; color: #0000ff"><i class="im-thumbs-up5"></i>&nbsp;0</a>
+        <% if (megusta == 0) { %>
+            <% if (nomegusta == 0) { %>
+                <a href="" class="action comentario-like" style="text-decoration: none; color: #0000ff">
+                <i class="im-thumbs-up5"></i>&nbsp;<%= totalmegusta %></a>
+            <% } else{%>
+                <a style="text-decoration: none; color: #0000ff">
+                <i class="im-thumbs-up5"></i>&nbsp;<%= totalmegusta %></a>
+            <% } %>
+        <% }else {%>
+            <% if (nomegusta == 0) { %>
+            <a style="text-decoration: none; color: #0000ff">
+            <i class="im-thumbs-up5"></i>&nbsp;<%= totalmegusta %>&nbsp;Te gusta</a>
+            <% } %>
+        <% } %>
     </span>&nbsp;&nbsp;
     <span>
-        <a href="" class="action comentario-notlike" style="text-decoration: none; color: #ff0000"><i class="im-thumbs-down"></i>&nbsp;0</a>
+        <% if (nomegusta == 0) { %>
+            <% if (megusta == 0) { %>
+                <a href="" class="action comentario-notlike" style="text-decoration: none; color: #ff0000">
+                <i class="im-thumbs-down"></i>&nbsp;<%= totalnomegusta %></a>
+            <% } else{%>
+                <a style="text-decoration: none; color: #ff0000">
+                <i class="im-thumbs-down"></i>&nbsp;<%= totalnomegusta %></a>
+            <% } %>
+        <% }else {%>
+            <% if (megusta == 0) { %>
+                <a style="text-decoration: none; color: #ff0000">
+                <i class="im-thumbs-down"></i>&nbsp;<%= totalnomegusta %> No te gusta</a>
+            <% }else{%>
+                <a style="text-decoration: none; color: #0000ff">
+                <i class="im-thumbs-up5"></i>&nbsp;<%= totalmegusta %></a>
+            <% } %>
+        <% } %>
     </span>
     </h5>
     <div class="timeline-event">

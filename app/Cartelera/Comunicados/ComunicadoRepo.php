@@ -34,33 +34,37 @@ class ComunicadoRepo extends BaseRepo implements BaseRepoInterface
             ->whereNull('c.deleted_at')
             ->where('c.id', '=', $id)
             ->select('c.id', 'cu.DescripcionCurso as curso', 'c.titulo', 'c.comunicado', 'c.created_at',
-                 'c.urlarchivo1', 'c.urlimagen1', 'c.urlarchivo2', 'c.urlimagen2',
+                'c.urlarchivo1', 'c.urlimagen1', 'c.urlarchivo2', 'c.urlimagen2',
                 \DB::raw('"nombres"||\' \'||"apellidos" as usuario'))
             ->get();
 
-        $comunicado['likes'] = \DB::table('votos_comunicados')
-                ->where('user_id','=',\Auth::user()->id)
-                ->where('comunicado_id','=',$id)
-                ->select('megusta','nomegusta')
-                ->get();
+        $comunicado['likes_comunicado'] = \DB::table('votos_comunicados')
+            ->where('user_id', '=', \Auth::user()->id)
+            ->where('comunicado_id', '=', $id)
+            ->select('megusta', 'nomegusta')
+            ->get();
 
         $comunicado['comentarios'] = \DB::table('comentarios')
             ->join('users', 'comentarios.user_id', '=', 'users.id')
             ->where('comentarios.comunicado_id', '=', $id)
             ->whereNull('comentarios.deleted_at')
-            ->select('comentarios.id', 'comentario', 'totalmegusta', 'totalnomegusta', 'fechahora', 'user_id',
+            ->select('comentarios.id', 'comentario', 'fechahora', 'user_id','totalmegusta','totalnomegusta',
                 \DB::raw('"nombres"||\' \'||"apellidos" as fullname'))
             ->orderBy('comentarios.id', 'asc')
             ->get();
-
 
         foreach ($comunicado['comentarios'] as $key => $comentario) {
             $last_login = new \DateTime();
             $timestamp = $last_login->getTimestamp();
             $tiempo = LocalizedCarbon::instance(new \DateTime($comentario->fechahora))->diffForHumans(LocalizedCarbon::createFromTimestamp($timestamp));;
-            //$datos['last_login'] = $tiempo;
             $comentario->fechahora = $tiempo;
             $comunicado['comentarios'][$key]->fechahora = $tiempo;
+
+            $comunicado['comentarios'][$key]->like_comentario = \DB::table('votos_comentarios')
+                ->where('user_id', '=', \Auth::user()->id)
+                ->where('comentario_id', '=', $comentario->id)
+                ->select('megusta', 'nomegusta')
+                ->get();
         }
 
         return $comunicado;

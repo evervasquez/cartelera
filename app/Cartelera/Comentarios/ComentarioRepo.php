@@ -58,6 +58,13 @@ class ComentarioRepo
                 \DB::raw('"nombres"||\' \'||"apellidos" as fullname'))
             ->orderBy('comentarios.id','desc')
             ->get();
+
+        $comentario[0]->like_comentario = \DB::table('votos_comentarios')
+            ->where('user_id', '=', \Auth::user()->id)
+            ->where('comentario_id', '=', $id)
+            ->select('megusta', 'nomegusta')
+            ->get();
+
         return $comentario;
     }
 }

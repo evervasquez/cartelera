@@ -44,7 +44,13 @@ Cartelera.Views.Read = Backbone.View.extend({
                 beforeSend: function () {
                 },
                 success: function (response) {
-
+                    var megusta = 0;
+                    var nomegusta = 0;
+                    //verificamos los likes de los comentarios
+                    if (response.data[0].like_comentario.length > 0) {
+                        megusta = response.data[0].like_comentario[0].megusta
+                        nomegusta = response.data[0].like_comentario[0].nomegusta
+                    }
                     //instanciamos la colleción
                     this.mComentarios = new Cartelera.Collections.Comentarios();
                     this.mComentarios.add(new Cartelera.Models.Comentario({
@@ -53,6 +59,8 @@ Cartelera.Views.Read = Backbone.View.extend({
                         diffhumanos: new moment(response.data[0].fechahora).locale('es').startOf('hour').fromNow(),
                         totalmegusta: response.data[0].totalmegusta,
                         totalnomegusta: response.data[0].totalnomegusta,
+                        megusta: megusta,
+                        nomegusta: nomegusta,
                         comentario: response.data[0].comentario,
                         user_id: response.data[0].user_id
                     }))

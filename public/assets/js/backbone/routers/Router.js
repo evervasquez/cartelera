@@ -7,8 +7,8 @@ Cartelera.Router = Backbone.Router.extend({
 
     initialize: function () {
         //this.Facultades = new Cartelera.Collections.Comunicados();
-        $("#write-message").click(function(){
-            Cartelera.app.navigate('write-menssage',{trigger:true})
+        $("#write-message").click(function () {
+            Cartelera.app.navigate('write-menssage', {trigger: true})
             return false;
         });
         Backbone.history.start();
@@ -53,14 +53,14 @@ Cartelera.Router = Backbone.Router.extend({
         $(".email-write").remove();
         $(".read-message").remove();
 
-        //comunicados
+        //index comunicados
         $.getJSON('comunicados/' + id).then(function (comunicados) {
             for (var comunicado in comunicados['comunicado']) {
                 var megusta = 0;
                 var nomegusta = 0;
-                if(comunicados['likes'].length > 0){
-                    megusta = comunicados['likes'][comunicado].megusta;
-                    nomegusta = comunicados['likes'][comunicado].nomegusta;
+                if (comunicados['likes_comunicado'].length > 0) {
+                    megusta = comunicados['likes_comunicado'][comunicado].megusta;
+                    nomegusta = comunicados['likes_comunicado'][comunicado].nomegusta;
                 }
 
                 this.ModelComunidado = new Cartelera.Models.Comunicado({
@@ -82,21 +82,30 @@ Cartelera.Router = Backbone.Router.extend({
             //end comunicado
 
 
-            //comentarios
+            //recuperamos comentarios
             this.mComentarios = new Cartelera.Collections.Comentarios();
-             for (var comentario in comunicados['comentarios']) {
-             //agregamos al collection los modelos
-             this.mComentarios.add(new Cartelera.Models.Comentario({
-             id: comunicados['comentarios'][comentario].id,
-             fullname: comunicados['comentarios'][comentario].fullname,
-             diffhumanos: comunicados['comentarios'][comentario].fechahora,
-             totalmegusta: comunicados['comentarios'][comentario].totalmegusta,
-             totalnomegusta: comunicados['comentarios'][comentario].totalnomegusta,
-             comentario: comunicados['comentarios'][comentario].comentario,
-             user_id: comunicados['comentarios'][comentario].user_id
-             }));
-             }
-             new Cartelera.Views.ComentariosView({collection: this.mComentarios});
+            for (var comentario in comunicados['comentarios']) {
+                var megusta = 0;
+                var nomegusta = 0;
+                if (comunicados['comentarios'][comentario].like_comentario.length > 0) {
+                    megusta =  comunicados['comentarios'][comentario].like_comentario[0].megusta;
+                    nomegusta = comunicados['comentarios'][comentario].like_comentario[0].nomegusta;
+                }
+                //agregamos al collection los modelos
+                this.mComentarios.add(new Cartelera.Models.Comentario({
+                    id: comunicados['comentarios'][comentario].id,
+                    fullname: comunicados['comentarios'][comentario].fullname,
+                    diffhumanos: comunicados['comentarios'][comentario].fechahora,
+                    megusta: megusta,
+                    nomegusta: nomegusta,
+                    totalmegusta: comunicados['comentarios'][comentario].totalmegusta,
+                    totalnomegusta: comunicados['comentarios'][comentario].totalnomegusta,
+                    comentario: comunicados['comentarios'][comentario].comentario,
+                    user_id: comunicados['comentarios'][comentario].user_id
+                }));
+
+            }
+            new Cartelera.Views.ComentariosView({collection: this.mComentarios});
         });
 
     },
