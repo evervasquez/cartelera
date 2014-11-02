@@ -460,11 +460,10 @@
                                 </li>
                             </ul>
                         </div>
+
                         <div class="email-toolbar-search col-lg-12">
-                            <form>
-                                <input type="text" class="form-control input-xlarge" name="search"
-                                       placeholder="Search for email ...">
-                            </form>
+                                <input type="text" class="form-control input-xlarge" id="search" onkeyup="onTituloFilter()"
+                                       placeholder="Buscar por titulo ...">
                         </div>
                         <div id="comunicados" class="email-list col-lg-12">
                             <table class="table table-striped table-hover table-fixed-layout non-responsive" id="table-messages">
@@ -573,8 +572,6 @@
 <script type="text/javascript" src="assets/js/libs/respond.min.js"></script>
 <![endif]-->
 <!-- Bootstrap plugins -->
-{{ HTML::script('assets/js/bootstrap/bootstrap.js') }}
-
 {{ HTML::script('assets/js/bootstrap/bootstrap.js') }}
 
 <!-- Core plugins ( not remove ) -->

@@ -113,10 +113,10 @@
                     <div class="ingresecomentario col-md-12">
                         <form class="new-comentario" id="new-comentario" method="post" action="#" accept-charset="UTF-8">
                             <div class="input-group">
-                                <input type="text" autofocus class="form-control" id="comentario" name="comentario"
+                                <input type="text" autofocus="autofocus" class="form-control" id="comentario" onKeyDown="saltar(this,event,'addcoment');" name="comentario"
                                        placeholder="Ingrese un comentario">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-teal action comentario-add" type="button"><i class="im-bubbles4"></i></button>
+                                    <button class="btn btn-teal action comentario-add" type="button" id="addcoment"><i class="im-bubbles4"></i></button>
                                 </span>
                             </div>
                         </form>

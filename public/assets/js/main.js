@@ -97,12 +97,18 @@ $("#cartelera-avatar").click(function () {
 
 var viewMessage = function (messages) {
     var html = '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><i class="im-cancel alert-icon s24"></i>';
-        html += '<strong>Hubierón estos errores</strong>';
-    var errores="";
-        for (var item in messages) {
-            errores += '<li>'+messages[item]+"</li>";
+    html += '<strong>Hubierón estos errores</strong>';
+    var errores = "";
+    for (var item in messages) {
+        errores += '<li>' + messages[item] + "</li>";
     }
     html += errores;
     $(".error_message").addClass('alert alert-danger fade in');
     $(".error_message").html(html);
+}
+
+function saltar(me, e, t) {
+    var k = null;
+    (e.keyCode) ? k = e.keyCode : k = e.which;
+    if (k == 13 && me.value != '') document.getElementById(t).focus();
 }

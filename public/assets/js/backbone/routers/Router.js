@@ -11,6 +11,7 @@ Cartelera.Router = Backbone.Router.extend({
             Cartelera.app.navigate('write-menssage', {trigger: true})
             return false;
         });
+        $("#search").focus();
         Backbone.history.start();
     },
     index: function () {
@@ -116,5 +117,9 @@ Cartelera.Router = Backbone.Router.extend({
         $.getJSON('cursos').then(function (datos) {
             new Cartelera.Views.Write({collection: datos});
         });
+    },
+    filterComunicados: function($cadena)
+    {
+        console.log($cadena);
     }
 })

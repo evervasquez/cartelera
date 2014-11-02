@@ -10,6 +10,7 @@ Cartelera.Views.Read = Backbone.View.extend({
     },
     initialize: function () {
         this.render();
+        $('#comentario').focus();
         this.registrarVisto();
     },
 

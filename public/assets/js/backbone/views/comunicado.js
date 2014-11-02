@@ -5,19 +5,18 @@ Cartelera.Views.Comunicado = Backbone.View.extend({
     events: {
         'click .action.ver': 'redireccionar'
     },
-    initialize:function(){
-
+    initialize: function () {
         this.listenTo(this.model, "change", this.render(), this);
     },
-    render: function(){
+    render: function () {
         var comunicado = this.model.toJSON();
         var html = this.template(comunicado);
         this.$el.html(html);
         return this;
     },
 
-    redireccionar: function(){
-        Cartelera.app.navigate('comunicado/'+this.model.get('id'),{trigger:true})
+    redireccionar: function () {
+        Cartelera.app.navigate('comunicado/' + this.model.get('id'), {trigger: true})
         return false;
     }
 });
