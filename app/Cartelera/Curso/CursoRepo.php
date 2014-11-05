@@ -22,13 +22,20 @@ class CursoRepo extends BaseRepo implements BaseRepoInterface
 
         $semestre = $this->getMaxSemestre();
 
-        $cursos = \DB::table('cursos')
+        $cursosAlumnos = \DB::table('cursos')
             ->join('detalle_matricula', 'cursos.CodigoCurso', '=', 'detalle_matricula.CodigoCurso')
             ->where('detalle_matricula.CodigoAlumno', '=', $this->CodigoAlumno)
             ->where('detalle_matricula.CodigoSemestre', '=', $semestre)
+            ->select('cursos.CodigoCurso', 'cursos.DescripcionCurso', 'cursos.CodCursoSira');
+
+        $cursosTotales = \DB::table('cursos')
+                ->join('carga_academica','cursos.CodigoCurso','=','carga_academica.CodigoCurso')
+            ->where('carga_academica.CodigoProfesor', '=', $this->CodigoAlumno)
+            ->where('carga_academica.CodigoSemestre', '=', $semestre)
             ->select('cursos.CodigoCurso', 'cursos.DescripcionCurso', 'cursos.CodCursoSira')
+            ->union($cursosAlumnos)
             ->get();
-        return $cursos;
+        return $cursosTotales;
     }
 
     public function find($id)

@@ -8,8 +8,8 @@
 
     <meta name="application-name" content="Cartelera Digital"/>
     <!-- Import google fonts - Heading first/ text second -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700' rel='stylesheet'
-          type='text/css'>
+    <!--<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700' rel='stylesheet'
+          type='text/css'>-->
     <!-- Css files -->
     <script type="text/javascript">
         var $path_base = "<?php echo url('/')?>";
@@ -69,13 +69,13 @@
             </div>
             <nav id="top-nav" class="navbar-no-collapse" role="navigation">
                 <!-- navbar search form -->
-                <form class="navbar-form navbar-left hidden-sm hidden-xs" role="search">
+                <!--<form class="navbar-form navbar-left hidden-sm hidden-xs" role="search">
                     <div class="form-group">
-                        <input type="text" class="form-control input-sm" placeholder="Search for something ...">
-                        <i class="im-search3"></i>
+                        <!--<input type="text" class="form-control input-sm" placeholder="Search for something ...">-->
+                        <!--<i class="im-search3"></i>
                     </div>
                     <button type="submit" class="btn">submit</button>
-                </form>
+                </form>-->
                 <!-- Navbar nav -->
                 <ul class="nav navbar-nav pull-right">
                     <li class="hidden-lg hidden-md">
@@ -84,7 +84,7 @@
                         <!-- show search button in small screens -->
                         <a class="resSearchBtn hidden-lg hidden-md" href="#"><i class="im-search3"></i></a>
                     </li>
-                    <li class="dropdown">
+                    <!--<li class="dropdown">
                         <a href="#" data-toggle="dropdown">
                             <i class="im-earth"></i>
                             <i class="nav-notification im-circle2"></i>
@@ -109,7 +109,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <!--<li class="dropdown">
                         <a href="#" data-toggle="dropdown">
                             <i class="im-envelop2"></i>
                             <span class="sr-only">New Emails</span>
@@ -150,7 +150,7 @@
                             <li><a href="#" class="view-all">View all</a>
                             </li>
                         </ul>
-                    </li>
+                    </li>-->
                     <li class="dropdown" id="cartelera-avatar">
                         <a href="#" data-toggle="dropdown">
                             <img class="avatar" src="assets/img/avatars/1.jpg" width="36" height="36" alt="Jonh Doe">
@@ -194,8 +194,8 @@
                         class="im-search3"></i></a>
                 <a href="#" class="expand-subs btn btn-default btn-sm tip" title="Expand all SubMenus"><i
                         class="im-sort2"></i></a>
-                <a href="#" class="mute-sounds btn btn-default btn-sm tip" title="Mute template sounds"><i
-                        class="im-volume-medium"></i></a>
+                <!--<a href="#" class="mute-sounds btn btn-default btn-sm tip" title="Mute template sounds"><i
+                        class="im-volume-medium"></i></a>-->
                 <a href="#" class="reset-layout btn btn-default btn-sm tip" title="Reset panels position"><i
                         class="im-spinner12"></i></a>
                 <a href="#" class="launch-fullscreen btn btn-default btn-sm tip" title="Launch full screen"><i
@@ -240,7 +240,7 @@
                 <div class="chat-user-list">
                     <form class="form-horizontal chat-search" role="form">
                         <div class="form-group">
-                            <input type="text" class="form-control input-sm" placeholder="Search for user...">
+                            <!--<input type="text" class="form-control input-sm" placeholder="Search for user...">-->
                             <button type="submit"><i class="im-search3 s16"></i>
                             </button>
                         </div>
@@ -414,7 +414,7 @@
     <!-- Start .content-wrapper -->
     <div class="content-wrapper">
         <div id="page-heading" class="page-header">
-            <h2><i class="icon im-home2"></i> Dashboard</h2>
+            <h2><i class="icon im-home2"></i> Inicio</h2>
             <!-- Start .bredcrumb -->
             <ul id="crumb" class="breadcrumb">
             </ul>
@@ -427,7 +427,11 @@
                 <div id="email-sidebar">
                     <!-- Start #email-sidebar -->
                     <div class="p15">
+                        @if(Auth::user()->idperfil == 2 || Auth::user()->idperfil == 1)
                         <a id="write-message" href="" class="btn btn-danger btn-block">CREAR</a>
+                        @else
+                        <h4 class="text-info">Cursos</h4>
+                        @endif
                     </div>
                     <ul id="email-nav" class="nav nav-pills nav-stacked">
 
@@ -461,9 +465,7 @@
                             </ul>
                         </div>
 
-                        <div class="email-toolbar-search col-lg-12">
-                                <input type="text" class="form-control input-xlarge" id="search" onkeyup="onTituloFilter()"
-                                       placeholder="Buscar por titulo ...">
+                        <div class="email-toolbar-search col-lg-12" id="search-comunicado">
                         </div>
                         <div id="comunicados" class="email-list col-lg-12">
                             <table class="table table-striped table-hover table-fixed-layout non-responsive" id="table-messages">
@@ -500,6 +502,10 @@
             </a>
         </td>
         <td class="email-date text-right input-large"><%= fechacreacion %></td>
+</script>
+
+<script type="text/template" id="search-template">
+    <input type="text" id="search" class="form-control input-xlarge action-search" placeholder="Buscar por titulo ...">
 </script>
 
 @include('layouts.comunicado.read')
@@ -630,6 +636,7 @@
 {{ HTML::script('assets/js/backbone/views/comentarios.js') }}
 {{ HTML::script('assets/js/backbone/views/read.js') }}
 {{ HTML::script('assets/js/backbone/views/write.js') }}
+{{ HTML::script('assets/js/backbone/views/search.js') }}
 {{ HTML::script('assets/js/backbone/routers/Router.js') }}
 {{ HTML::script('assets/js/backbone/Main.js') }}
 {{ HTML::script('assets/js/writemessage.js') }}

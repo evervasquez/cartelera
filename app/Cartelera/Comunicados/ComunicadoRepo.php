@@ -22,6 +22,7 @@ class ComunicadoRepo extends BaseRepo implements BaseRepoInterface
             ->join('cursos', 'comunicados.CodigoCurso', '=', 'cursos.CodigoCurso')
             ->whereNull('deleted_at')
             ->select('id', 'cursos.DescripcionCurso', 'comunicado', 'titulo', 'created_at', 'totalmegusta', 'totalnomegusta')
+            ->orderBy('comunicados.id','desc')
             ->get();
         return $comunicados;
     }

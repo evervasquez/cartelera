@@ -20,7 +20,7 @@ Route::get('flush', function () {
 //    Session::flush();
 });
 
-Route::group(array('before' => 'auth|perfil'), function () {
+Route::group(array('before' => 'auth'), function () {
     Route::get('menu', ['as' => 'menu', 'uses' => 'ModulosController@getModulos']);
 
     //mantinimiento de modulos

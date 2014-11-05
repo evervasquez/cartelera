@@ -6,6 +6,7 @@ Cartelera.Views.ComunicadosView =  Backbone.View.extend({
         $(".email-write").hide();
         $("#table-messages").html("");
         $(".email-toolbar-search").show();
+
         this.render();
     },
     render: function () {

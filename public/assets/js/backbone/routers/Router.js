@@ -11,12 +11,14 @@ Cartelera.Router = Backbone.Router.extend({
             Cartelera.app.navigate('write-menssage', {trigger: true})
             return false;
         });
-        $("#search").focus();
+        $(".email-write").remove();
+        $(".read-message").remove();
+        $("#search").val('');
+
+        //iniciamos el history de las páginas
         Backbone.history.start();
     },
     index: function () {
-        $(".email-write").remove();
-        $(".read-message").remove();
         $.getJSON('comunicados').then(function (comunicados) {
             this.mComunicados = new Cartelera.Collections.Comunicados();
 
@@ -33,7 +35,9 @@ Cartelera.Router = Backbone.Router.extend({
                 }));
             }
 
-            new Cartelera.Views.ComunicadosView({collection: this.mComunicados});
+            //inicializamos la caja de texto de buscador
+            this.SearchView = new Cartelera.Views.SearchView({collection: this.mComunicados});
+            //new Cartelera.Views.ComunicadosView({collection: this.mComunicados});
         });
 
         $.getJSON('cursos').then(function (cursos) {
@@ -89,7 +93,7 @@ Cartelera.Router = Backbone.Router.extend({
                 var megusta = 0;
                 var nomegusta = 0;
                 if (comunicados['comentarios'][comentario].like_comentario.length > 0) {
-                    megusta =  comunicados['comentarios'][comentario].like_comentario[0].megusta;
+                    megusta = comunicados['comentarios'][comentario].like_comentario[0].megusta;
                     nomegusta = comunicados['comentarios'][comentario].like_comentario[0].nomegusta;
                 }
                 //agregamos al collection los modelos
@@ -118,8 +122,7 @@ Cartelera.Router = Backbone.Router.extend({
             new Cartelera.Views.Write({collection: datos});
         });
     },
-    filterComunicados: function($cadena)
-    {
+    filterComunicados: function ($cadena) {
         console.log($cadena);
     }
 })
