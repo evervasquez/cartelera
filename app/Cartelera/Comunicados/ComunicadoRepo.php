@@ -19,24 +19,32 @@ class ComunicadoRepo extends BaseRepo implements BaseRepoInterface
     public function selectAll()
     {
         $comunicados1 = \DB::table('comunicados')
-            ->join('users', 'comunicados.user_id', '=', 'users.id')
+            ->join('users','comunicados.user_id','=','users.id')
             ->join('cursos', 'comunicados.CodigoCurso', '=', 'cursos.CodigoCurso')
-            ->join('detalle_matricula', 'cursos.CodigoCurso', '=', 'detalle_matricula.CodigoCurso')
+            ->join('detalle_matricula','cursos.CodigoCurso','=','detalle_matricula.CodigoCurso')
             ->whereNull('comunicados.deleted_at')
-            ->where('detalle_matricula.CodigoAlumno', '=', \Auth::user()->codigo)
-            ->select('comunicados.id', 'cursos.DescripcionCurso', 'comunicado', 'titulo', 'comunicados.created_at', 'totalmegusta', 'totalnomegusta')
-            /*->orderBy('comunicados.id','desc')*/;
+            ->where('detalle_matricula.CodigoAlumno','=',\Auth::user()->codigo)
+            ->select('comunicados.id', 'cursos.DescripcionCurso', 'comunicado', 'titulo', 'comunicados.created_at', 'totalmegusta', 'totalnomegusta');
 
+
+            $comunicadosprofesor = \DB::table('comunicados')
+                ->join('cursos', 'comunicados.CodigoCurso', '=', 'cursos.CodigoCurso')
+                ->join('carga_academica','cursos.CodigoCurso','=','carga_academica.CodigoCurso')
+                ->whereNull('comunicados.deleted_at')
+                ->where('carga_academica.CodigoProfesor','=',\Auth::user()->codigo)
+                ->select('comunicados.id', 'cursos.DescripcionCurso', 'comunicado', 'titulo', 'comunicados.created_at', 'totalmegusta', 'totalnomegusta')
+                ->union($comunicados1);
 
         $comunicados = \DB::table('comunicados')
-            ->join('users', 'comunicados.user_id', '=', 'users.id')
-            ->join('cursos', 'comunicados.CodigoCurso', '=', 'cursos.CodigoCurso')
-            ->whereNull('comunicados.deleted_at')
-            ->where('comunicados.CodigoCurso', '=', '0000000000')
+                ->join('users','comunicados.user_id','=','users.id')
+                ->join('cursos', 'comunicados.CodigoCurso', '=', 'cursos.CodigoCurso')
+                ->whereNull('comunicados.deleted_at')
+                ->where('comunicados.CodigoCurso','=','0000000000')
             ->select('comunicados.id', 'cursos.DescripcionCurso', 'comunicado', 'titulo', 'comunicados.created_at', 'totalmegusta', 'totalnomegusta')
-            /*->orderBy('comunicados.id','desc')*/;
-            //
-        return $comunicados->union($comunicados1)->get();
+            ->union($comunicadosprofesor)
+            ->get();
+
+        return $comunicados;
     }
 
     public function find($id)
@@ -83,7 +91,7 @@ class ComunicadoRepo extends BaseRepo implements BaseRepoInterface
         return $comunicado;
     }
 
-    public function save($datos)
+    public function nuevo($datos)
     {
 
         if ($this->temporizador == 1) {

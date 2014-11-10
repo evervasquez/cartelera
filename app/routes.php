@@ -73,6 +73,8 @@ Route::group(array('before' => 'auth|perfil'), function () {
     Route::get('profesores', ['as' => 'profesores', 'uses' => 'ProfesoresController@index']);
     Route::post('profesores/list', ['as' => 'profesores.list', 'uses' => 'ProfesoresController@listar']);
 
+//reportes
+    Route::get('reportes', ['as' => 'reportes', 'uses' => 'PerfilesController@index']);
 });
 
 Route::group(array('before' => 'auth'), function () {

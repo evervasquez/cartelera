@@ -21,9 +21,9 @@
                 <select class="form-control" name="tipo">
                     <optgroup label="Tipo Comunicado">
                         <% _(tipos).each(function(tipo) { %>
-
+                            <% if (tipo.id != 2) { %>
                         <option value="<%= tipo.id %>"><%= tipo.descripcion %></option>
-
+                                    <% } %>
                                                 <% }); %>
                                             </optgroup>
                 </select>
@@ -48,9 +48,7 @@
                 <select class="form-control" name="curso">
                     <optgroup label="Cursos">
                         <% _(cursos).each(function(curso) { %>
-
                         <option value="<%= curso.CodigoCurso %>"><%= curso.DescripcionCurso %></option>
-
                                                 <% }); %>
                                             </optgroup>
                 </select>

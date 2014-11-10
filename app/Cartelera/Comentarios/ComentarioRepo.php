@@ -14,7 +14,7 @@ use Carbon\Carbon;
 class ComentarioRepo
 {
 
-    public function save($datos)
+    public function nuevo($datos)
     {
         $user_id = \Auth::user()->id;
         $comentario = new Comentario();

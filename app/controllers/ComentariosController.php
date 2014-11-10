@@ -35,7 +35,7 @@ class ComentariosController extends \BaseController
     public function store()
     {
         $datos = Input::all();
-        return $this->comentRepo->save($datos);
+        return $this->comentRepo->nuevo($datos);
     }
 
     /**

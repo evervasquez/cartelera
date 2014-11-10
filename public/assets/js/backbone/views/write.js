@@ -16,6 +16,7 @@ Cartelera.Views.Write = Backbone.View.extend({
         var html = this.template(datos);
         this.$el.append(html);
 
+        //inicializamos el dropzone
         Dropzone.autoDiscover = false;
         new Dropzone("form#my-dropzone", {
                 maxFiles: 2

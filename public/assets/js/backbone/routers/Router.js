@@ -20,6 +20,7 @@ Cartelera.Router = Backbone.Router.extend({
         Backbone.history.start();
     },
     index: function () {
+        $(".email-write").remove();
         $(".read-message").remove();
         $.getJSON('comunicados').then(function (comunicados) {
             this.mComunicados = new Cartelera.Collections.Comunicados();
@@ -59,6 +60,8 @@ Cartelera.Router = Backbone.Router.extend({
         });
     },
     comunicados: function (id) {
+        $(".email-write").remove();
+        $(".read-message").remove();
         //index comunicados
         $.getJSON('comunicados/' + id).then(function (comunicados) {
             for (var comunicado in comunicados['comunicado']) {
@@ -117,6 +120,8 @@ Cartelera.Router = Backbone.Router.extend({
 
     },
     writeMensaje: function () {
+        $(".email-write").remove();
+        $(".read-message").remove();
         $.getJSON('cursos').then(function (datos) {
             new Cartelera.Views.Write({collection: datos});
         });
