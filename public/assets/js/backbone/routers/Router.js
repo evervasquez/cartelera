@@ -11,15 +11,16 @@ Cartelera.Router = Backbone.Router.extend({
             Cartelera.app.navigate('write-menssage', {trigger: true})
             return false;
         });
+        this.cursos();
         $(".email-write").remove();
         $(".read-message").remove();
         $("#search").val('');
-        this.cursos();
 
         //iniciamos el history de las páginas
         Backbone.history.start();
     },
     index: function () {
+        $(".read-message").remove();
         $.getJSON('comunicados').then(function (comunicados) {
             this.mComunicados = new Cartelera.Collections.Comunicados();
 
@@ -58,9 +59,6 @@ Cartelera.Router = Backbone.Router.extend({
         });
     },
     comunicados: function (id) {
-        $(".email-write").remove();
-        $(".read-message").remove();
-
         //index comunicados
         $.getJSON('comunicados/' + id).then(function (comunicados) {
             for (var comunicado in comunicados['comunicado']) {
@@ -119,9 +117,6 @@ Cartelera.Router = Backbone.Router.extend({
 
     },
     writeMensaje: function () {
-        $(".email-write").remove();
-        $(".read-message").remove();
-
         $.getJSON('cursos').then(function (datos) {
             new Cartelera.Views.Write({collection: datos});
         });

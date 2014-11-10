@@ -77,7 +77,6 @@ Cartelera.Views.Read = Backbone.View.extend({
         return false;
     },
     registrarVisto: function () {
-        console.log('ptmr');
         var _id = $("#_id");
         $.ajax({
             type: "POST",

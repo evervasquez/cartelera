@@ -83,7 +83,7 @@ $(document).ready(function() {
         lockMode : {
             autoLock: true, //Lock automatic in iddle
             minutes: 10, //how many minutes before lock mode is activate automatic
-            url: 'lockscreen.html' //where to redirect user after screen is lock
+            url: '/' //where to redirect user after screen is lock
         },
         sidebar: {
             fixed: true,//fixed sidebar

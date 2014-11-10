@@ -58,9 +58,6 @@ Route::filter('perfil', function () {
 
     if (Auth::check()) {
 
-        $urlfull = URL::current();
-        $modulo = explode("/", $urlfull);
-
         //dd($modulo);
         $perfil = Auth::user()->idperfil;
         $permisos = DB::table('permisos')
@@ -71,11 +68,9 @@ Route::filter('perfil', function () {
             ->select('permisos.idmodulo', 'm.url as modulo')
             ->get();
 
-        //dd($permisos);
         $existe = false;
         foreach ($permisos as $permiso) {
-
-            if ($permiso->modulo == $modulo[3]) {
+            if ($permiso->modulo == Request::segment(1)) {
                 $existe = true;
             }
         }

@@ -1,5 +1,5 @@
 <script type="text/template" id="read-template">
-    <div class="row read-message readcomentarios">
+    <div class="row read-message" id="readcomentaio">
 
         <div class="col-lg-7 col-md-6 col-xs-12 rightPanel">
             <div class="email-read">
@@ -41,7 +41,7 @@
                 <div class="email-info-bar">
                     <div class="row">
                         <div class="from col-lg-8">
-                            Curso : <%= curso %> / <a href="#"><strong><%= usuario %></strong></a>
+                            Curso : <%= curso %> / <a style="text-decoration: none;"><strong><%= usuario %></strong></a>
                         </div>
                         <div class="date col-lg-4 text-right">
                             <span class="email-date"><%= fechacreacion %></span>
@@ -108,7 +108,7 @@
                     <h4 class="panel-title"><i class="im-lightning"></i> Últimos Comentarios</h4>
 
                     <div class="panel-controls col-md-12">
-                        <a href="#" class="panel-refresh"><i class="im-spinner12"></i></a>
+                        <a href="#" class="panel-refresh"></a>
                     </div>
                     <div class="ingresecomentario col-md-12">
                         <form class="new-comentario" id="new-comentario" method="post" action="#" accept-charset="UTF-8">

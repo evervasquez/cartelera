@@ -20,10 +20,10 @@ Route::get('flush', function () {
 //    Session::flush();
 });
 
-Route::group(array('before' => 'auth'), function () {
+Route::group(array('before' => 'auth|perfil'), function () {
     Route::get('menu', ['as' => 'menu', 'uses' => 'ModulosController@getModulos']);
 
-    //mantinimiento de modulos
+//mantinimiento de modulos
     Route::get('modulos', ['as' => 'modulos', 'uses' => 'ModulosController@index']);
     Route::post('modulos/list', ['as' => 'listModulos', 'uses' => 'ModulosController@listar']);
     Route::post('modulos/update', ['as' => 'updateModulos', 'uses' => 'ModulosController@editar']);
@@ -31,7 +31,7 @@ Route::group(array('before' => 'auth'), function () {
     Route::post('modulos/delete', ['as' => 'deleteModulos', 'uses' => 'ModulosController@eliminar']);
     Route::post('modulos/parents', ['as' => 'parentsModulos', 'uses' => 'ModulosController@padres']);
 
-    //perfiles
+//perfiles
     Route::get('perfiles', ['as' => 'perfiles', 'uses' => 'PerfilesController@index']);
     Route::post('perfiles/list', ['as' => 'listPerfiles', 'uses' => 'PerfilesController@listar']);
     Route::post('perfiles/update', ['as' => 'updatePerfiles', 'uses' => 'PerfilesController@editar']);
@@ -57,7 +57,7 @@ Route::group(array('before' => 'auth'), function () {
     Route::post('usuarios/getFacultad', ['as' => 'usuarios.getFacultad', 'uses' => 'UsersController@eliminar']);
     Route::get('miperfil', ['as' => 'miperfil', 'uses' => 'UsersController@show']);
 
-    //facultades
+//facultades
     Route::get('facultades', ['as' => 'facultades', 'uses' => 'FacultadesController@index']);
     Route::post('facultades/list', ['as' => 'facultades.list', 'uses' => 'FacultadesController@listar']);
 
@@ -73,23 +73,28 @@ Route::group(array('before' => 'auth'), function () {
     Route::get('profesores', ['as' => 'profesores', 'uses' => 'ProfesoresController@index']);
     Route::post('profesores/list', ['as' => 'profesores.list', 'uses' => 'ProfesoresController@listar']);
 
+});
 
+Route::group(array('before' => 'auth'), function () {
 //login con facebook
     Route::get('login/fb', ['as' => 'login.fb', 'uses' => 'UsersController@loginFb']);
     Route::get('login/fb/callback', ['as' => 'login.fb.callback', 'uses' => 'UsersController@fbCallback']);
 
+    //BacboneJS
+    Route::resource('comunicados', 'ComunicadosController');
+    Route::resource('comentario', 'ComentariosController');
+    Route::resource('votoscomentario', 'VotosComentariosController');
+    Route::resource('votoscomunicado', 'VotosComunicadosController');
+    Route::resource('images', 'ImagesController');
+    Route::resource('cursos', 'CursosController');
+
+
 });
 
-//BacboneJS
-Route::resource('comunicados', 'ComunicadosController');
-Route::resource('comentario', 'ComentariosController');
-Route::resource('votoscomentario', 'VotosComentariosController');
-Route::resource('votoscomunicado', 'VotosComunicadosController');
-Route::resource('images', 'ImagesController');
-Route::resource('cursos', 'CursosController');
 //cambiar contraseña antes de entrar
 Route::get('changepassword', ['as' => 'changepassword', 'uses' => 'UserLogin@changePassword']);
 Route::post('changepasswordpost', ['as' => 'changepasswordpost', 'uses' => 'UsersController@changePassword']);
+
 
 //error
 Route::get('error404', function () {
@@ -97,7 +102,6 @@ Route::get('error404', function () {
 });
 
 App::missing(function ($exception) {
-
     // shows an error page (app/views/error404.blade.php)
     // returns a page not found error
     if (Auth::check()) {
@@ -106,7 +110,7 @@ App::missing(function ($exception) {
         return Redirect::action('/');
     }
 });
-Route::get('login', function(){
+Route::get('login', function () {
     return Redirect::to('/');
 });
 

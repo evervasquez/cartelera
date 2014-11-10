@@ -19,9 +19,12 @@ class ComunicadoRepo extends BaseRepo implements BaseRepoInterface
     public function selectAll()
     {
         $comunicados = \DB::table('comunicados')
+            ->join('users','comunicados.user_id','=','users.id')
             ->join('cursos', 'comunicados.CodigoCurso', '=', 'cursos.CodigoCurso')
-            ->whereNull('deleted_at')
-            ->select('id', 'cursos.DescripcionCurso', 'comunicado', 'titulo', 'created_at', 'totalmegusta', 'totalnomegusta')
+            ->join('detalle_matricula','cursos.CodigoCurso','=','detalle_matricula.CodigoCurso')
+            ->whereNull('comunicados.deleted_at')
+            ->where('detalle_matricula.CodigoAlumno','=',\Auth::user()->codigo)
+            ->select('comunicados.id', 'cursos.DescripcionCurso', 'comunicado', 'titulo', 'comunicados.created_at', 'totalmegusta', 'totalnomegusta')
             ->orderBy('comunicados.id','desc')
             ->get();
         return $comunicados;

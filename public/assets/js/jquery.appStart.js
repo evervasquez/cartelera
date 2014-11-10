@@ -877,7 +877,7 @@
             var navsub = navel.closest('.nav.sub');
             //empty curmb
             breadcrumb.empty();
-            breadcrumb.append('<li>'+homeIcon+'<a href="index.html">Home</a></li>');
+            breadcrumb.append('<li>'+homeIcon+'<a href="'+$path_base+'">Home</a></li>');
 
             if (navsub.closest('li').hasClass('hasSub')) {
                 //get previous
@@ -1050,7 +1050,7 @@ this.bind("mousewheel",fn):this.trigger("mousewheel")},unmousewheel:function(fn)
                                 if($(this).val() == '') {
                                     plugin.collapseSideBarNav(true);
                                 }
-                            },
+                            }
                         });
                     }     
                 }
