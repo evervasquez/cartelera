@@ -6,6 +6,7 @@ Cartelera.Views.Write = Backbone.View.extend({
         'click .action-save': 'guardar'
     },
     initialize: function () {
+
         this.render();
     },
     render: function () {
@@ -14,9 +15,12 @@ Cartelera.Views.Write = Backbone.View.extend({
         var datos = this.collection;
         var html = this.template(datos);
         this.$el.append(html);
+
+        Dropzone.autoDiscover = false;
         new Dropzone("form#my-dropzone", {
-            maxFiles: 2
-        });
+                maxFiles: 2
+            });
+
         $('.datetimepicker').datetimepicker({
             dateFormat: 'dd-mm-yy'
         });
@@ -38,24 +42,24 @@ Cartelera.Views.Write = Backbone.View.extend({
 
         if (bval) {
             var datos = $("#formulario").serialize();
-            if(validador ==1){
-            $.ajax({
-                type: "POST",
-                url: 'comunicados',
-                data: datos,
-                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-                beforeSend: function () {
+            if (validador == 1) {
+                $.ajax({
+                    type: "POST",
+                    url: 'comunicados',
+                    data: datos,
+                    contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                    beforeSend: function () {
 
-                },
-                success: function (response) {
-                    if (response.Result == "ERROR") {
-                        viewMessage(response.Message);
-                        return false;
-                    } else {
-                        Cartelera.app.navigate('', {trigger: true})
+                    },
+                    success: function (response) {
+                        if (response.Result == "ERROR") {
+                            viewMessage(response.Message);
+                            return false;
+                        } else {
+                            Cartelera.app.navigate('', {trigger: true})
+                        }
                     }
-                }
-            });
+                });
                 validador = 2;
             }
         }

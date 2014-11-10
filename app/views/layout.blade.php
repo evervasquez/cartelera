@@ -72,10 +72,10 @@
                 <!--<form class="navbar-form navbar-left hidden-sm hidden-xs" role="search">
                     <div class="form-group">
                         <!--<input type="text" class="form-control input-sm" placeholder="Search for something ...">-->
-                        <!--<i class="im-search3"></i>
-                    </div>
-                    <button type="submit" class="btn">submit</button>
-                </form>-->
+                <!--<i class="im-search3"></i>
+            </div>
+            <button type="submit" class="btn">submit</button>
+        </form>-->
                 <!-- Navbar nav -->
                 <ul class="nav navbar-nav pull-right">
                     <li class="hidden-lg hidden-md">
@@ -425,64 +425,65 @@
             <!-- End .breadcrumb -->
         </div>
         <!-- Start .content-inner -->
-            @section('content')
+        @section('content')
 
-            <div class="content-inner">
-                <div id="email-sidebar">
-                    <!-- Start #email-sidebar -->
-                    <div class="p15">
-                        @if(Auth::user()->idperfil == 2 || Auth::user()->idperfil == 1)
-                        <a id="write-message" href="" class="btn btn-danger btn-block">CREAR</a>
-                        @else
-                        <h4 class="text-info">Cursos</h4>
-                        @endif
-                    </div>
-                    <ul id="email-nav" class="nav nav-pills nav-stacked">
-
-                    </ul>
+        <div class="content-inner">
+            <div id="email-sidebar">
+                <!-- Start #email-sidebar -->
+                <div class="p15">
+                    @if(Auth::user()->idperfil == 2 || Auth::user()->idperfil == 1)
+                    <a id="write-message" href="" class="btn btn-danger btn-block">CREAR</a>
+                    @else
+                    <h4 class="text-info">Cursos</h4>
+                    @endif
                 </div>
-                <!--End #email-sidebar -->
-                <div id="email-content">
-                    <!-- Start #email-content -->
-                    <div class="email-wrapper">
-                        <div class="email-toolbar col-lg-12">
-                            <div class="pull-left" role="toolbar">
-                                <button id="email-toggle" class="email-toggle" type="button">
-                                    <span class="sr-only">Toggle email nav</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                                <a href="{{ url('/') }}" class="btn btn-default btn-round btn-sm tip mr5"><i
-                                        class="fa fa-refresh s16"></i></a>
-                                <a href="#" class="btn btn-default btn-round btn-sm tip mr5"><i
-                                        class="im-print3 s16"></i></a>
-                            </div>
-                            <ul class="email-pager">
-                                <li class="pager-info">1-20 of 345</li>
-                                <li><a href="#" class="btn btn-default btn-round btn-sm"><i
-                                            class="fa fa-angle-left s16"></i></a>
-                                </li>
-                                <li><a href="#" class="btn btn-default btn-round btn-sm"><i
-                                            class="fa fa-angle-right s16"></i></a>
-                                </li>
-                            </ul>
-                        </div>
+                <ul id="email-nav" class="nav nav-pills nav-stacked">
 
-                        <div class="email-toolbar-search col-lg-12" id="search-comunicado">
-                        </div>
-                        <div id="comunicados" class="email-list col-lg-12">
-                            <table class="table table-striped table-hover table-fixed-layout non-responsive" id="table-messages">
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <!--End #email-content -->
+                </ul>
             </div>
-            <div class="clearfix"></div>
+            <!--End #email-sidebar -->
+            <div id="email-content">
+                <!-- Start #email-content -->
+                <div class="email-wrapper">
+                    <div class="email-toolbar col-lg-12">
+                        <div class="pull-left" role="toolbar">
+                            <button id="email-toggle" class="email-toggle" type="button">
+                                <span class="sr-only">Toggle email nav</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="{{ url('/') }}" class="btn btn-default btn-round btn-sm tip mr5"><i
+                                    class="fa fa-refresh s16"></i></a>
+                            <a href="#" class="btn btn-default btn-round btn-sm tip mr5"><i
+                                    class="im-print3 s16"></i></a>
+                        </div>
+                        <ul class="email-pager">
+                            <li class="pager-info">1-20 of 345</li>
+                            <li><a href="#" class="btn btn-default btn-round btn-sm"><i
+                                        class="fa fa-angle-left s16"></i></a>
+                            </li>
+                            <li><a href="#" class="btn btn-default btn-round btn-sm"><i
+                                        class="fa fa-angle-right s16"></i></a>
+                            </li>
+                        </ul>
+                    </div>
 
-            @show
-            <!-- col-lg-4 end here -->
+                    <div class="email-toolbar-search col-lg-12" id="search-comunicado">
+                    </div>
+                    <div id="comunicados" class="email-list col-lg-12">
+                        <table class="table table-striped table-hover table-fixed-layout non-responsive"
+                               id="table-messages">
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--End #email-content -->
+        </div>
+        <div class="clearfix"></div>
+
+        @show
+        <!-- col-lg-4 end here -->
         <!-- End .row -->
     </div>
     <!-- End .content-inner -->
@@ -493,23 +494,28 @@
 
 <!-- template de comunicado -->
 <script type="text/template" id="comunicado-template">
-        <td class="email-star input-mini"><i class="im-star s20"></i>
-        </td>
-        <td class="email-subject"><a href="" class="action ver"><%= titulo %></a>
-            &nbsp;&nbsp;&nbsp;<span><i class="im-thumbs-up2"></i>&nbsp;<%= totalmegusta %></span>
-            &nbsp;&nbsp; <span><i class="im-thumbs-down"></i>&nbsp;<%= totalnomegusta %></span>
-        </td>
-        <td class="email-intro">
-            <a href="" class="action ver">
-                <span class="label label-teal mr10"><%= curso %></span>
-                <span class="text-muted small ml10"><%= comunicado %></span>
-            </a>
-        </td>
-        <td class="email-date text-right input-large"><%= fechacreacion %></td>
+    <td class="email-star input-mini"><i class="im-star s20"></i>
+    </td>
+    <td class="email-subject"><a href="" class="action ver"><%= titulo %></a>
+        &nbsp;&nbsp;&nbsp;<span><i class="im-thumbs-up2"></i>&nbsp;<%= totalmegusta %></span>
+        &nbsp;&nbsp; <span><i class="im-thumbs-down"></i>&nbsp;<%= totalnomegusta %></span>
+    </td>
+    <td class="email-intro">
+        <a href="" class="action ver">
+                <% if (curso == 'GENERAL') { %>
+                       <span class="label label-danger mr10"><%= curso %></span>
+                <% }else {%>
+                       <span class="label label-teal mr10"><%= curso %></span>
+                <% } %>
+                    <span class="text-muted small ml10"><%= comunicado %></span>
+        </a>
+    </td>
+    <td class="email-date text-right input-large"><%= fechacreacion %></td>
 </script>
 
 <script type="text/template" id="search-template">
-    <input type="text" id="search" class="form-control input-xlarge action-search" placeholder="Buscar por titulo o curso...">
+    <input type="text" id="search" class="form-control input-xlarge action-search"
+           placeholder="Buscar por titulo o curso...">
 </script>
 
 @include('layouts.comunicado.read')
@@ -528,15 +534,15 @@
         <% if (megusta == 0) { %>
             <% if (nomegusta == 0) { %>
                 <a href="" class="action comentario-like" style="text-decoration: none; color: #0000ff">
-                <i class="im-thumbs-up5"></i>&nbsp;<%= totalmegusta %></a>
+        <i class="im-thumbs-up5"></i>&nbsp;<%= totalmegusta %></a>
             <% } else{%>
                 <a style="text-decoration: none; color: #0000ff">
-                <i class="im-thumbs-up5"></i>&nbsp;<%= totalmegusta %></a>
+        <i class="im-thumbs-up5"></i>&nbsp;<%= totalmegusta %></a>
             <% } %>
         <% }else {%>
             <% if (nomegusta == 0) { %>
             <a style="text-decoration: none; color: #0000ff">
-            <i class="im-thumbs-up5"></i>&nbsp;<%= totalmegusta %>&nbsp;Te gusta</a>
+        <i class="im-thumbs-up5"></i>&nbsp;<%= totalmegusta %>&nbsp;Te gusta</a>
             <% } %>
         <% } %>
     </span>&nbsp;&nbsp;
@@ -544,18 +550,18 @@
         <% if (nomegusta == 0) { %>
             <% if (megusta == 0) { %>
                 <a href="" class="action comentario-notlike" style="text-decoration: none; color: #ff0000">
-                <i class="im-thumbs-down"></i>&nbsp;<%= totalnomegusta %></a>
+        <i class="im-thumbs-down"></i>&nbsp;<%= totalnomegusta %></a>
             <% } else{%>
                 <a style="text-decoration: none; color: #ff0000">
-                <i class="im-thumbs-down"></i>&nbsp;<%= totalnomegusta %></a>
+        <i class="im-thumbs-down"></i>&nbsp;<%= totalnomegusta %></a>
             <% } %>
         <% }else {%>
             <% if (megusta == 0) { %>
                 <a style="text-decoration: none; color: #ff0000">
-                <i class="im-thumbs-down"></i>&nbsp;<%= totalnomegusta %> No te gusta</a>
+        <i class="im-thumbs-down"></i>&nbsp;<%= totalnomegusta %> No te gusta</a>
             <% }else{%>
                 <a style="text-decoration: none; color: #0000ff">
-                <i class="im-thumbs-up5"></i>&nbsp;<%= totalmegusta %></a>
+        <i class="im-thumbs-up5"></i>&nbsp;<%= totalmegusta %></a>
             <% } %>
         <% } %>
     </span>

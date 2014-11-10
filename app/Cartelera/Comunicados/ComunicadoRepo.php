@@ -18,16 +18,25 @@ class ComunicadoRepo extends BaseRepo implements BaseRepoInterface
 
     public function selectAll()
     {
-        $comunicados = \DB::table('comunicados')
-            ->join('users','comunicados.user_id','=','users.id')
+        $comunicados1 = \DB::table('comunicados')
+            ->join('users', 'comunicados.user_id', '=', 'users.id')
             ->join('cursos', 'comunicados.CodigoCurso', '=', 'cursos.CodigoCurso')
-            ->join('detalle_matricula','cursos.CodigoCurso','=','detalle_matricula.CodigoCurso')
+            ->join('detalle_matricula', 'cursos.CodigoCurso', '=', 'detalle_matricula.CodigoCurso')
             ->whereNull('comunicados.deleted_at')
-            ->where('detalle_matricula.CodigoAlumno','=',\Auth::user()->codigo)
+            ->where('detalle_matricula.CodigoAlumno', '=', \Auth::user()->codigo)
             ->select('comunicados.id', 'cursos.DescripcionCurso', 'comunicado', 'titulo', 'comunicados.created_at', 'totalmegusta', 'totalnomegusta')
-            ->orderBy('comunicados.id','desc')
-            ->get();
-        return $comunicados;
+            /*->orderBy('comunicados.id','desc')*/;
+
+
+        $comunicados = \DB::table('comunicados')
+            ->join('users', 'comunicados.user_id', '=', 'users.id')
+            ->join('cursos', 'comunicados.CodigoCurso', '=', 'cursos.CodigoCurso')
+            ->whereNull('comunicados.deleted_at')
+            ->where('comunicados.CodigoCurso', '=', '0000000000')
+            ->select('comunicados.id', 'cursos.DescripcionCurso', 'comunicado', 'titulo', 'comunicados.created_at', 'totalmegusta', 'totalnomegusta')
+            /*->orderBy('comunicados.id','desc')*/;
+            //
+        return $comunicados->union($comunicados1)->get();
     }
 
     public function find($id)
@@ -52,8 +61,8 @@ class ComunicadoRepo extends BaseRepo implements BaseRepoInterface
             ->join('users', 'comentarios.user_id', '=', 'users.id')
             ->where('comentarios.comunicado_id', '=', $id)
             ->whereNull('comentarios.deleted_at')
-            ->select('comentarios.id', 'comentario', 'fechahora', 'user_id','totalmegusta','totalnomegusta',
-                \DB::raw('"nombres"||\' \'||"apellidos" as fullname'),'fotoperfil')
+            ->select('comentarios.id', 'comentario', 'fechahora', 'user_id', 'totalmegusta', 'totalnomegusta',
+                \DB::raw('"nombres"||\' \'||"apellidos" as fullname'), 'fotoperfil')
             ->orderBy('comentarios.id', 'asc')
             ->get();
 
