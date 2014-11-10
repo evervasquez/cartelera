@@ -10,20 +10,18 @@
                 <div class="panel-body pt20">
                     <div class="profile-cover">
                         <img class="img-responsive" src="assets/img/profile-cover.jpg" alt="Profile cover">
-                        <a href="#" id="change-cover" class="btn btn-white btn-alt btn-sm">
-                            <span class="color-white"><i class="im-image2"></i> change cover</span>
+                        <a href="{{ route('login.fb') }}" id="change-cover" class="btn btn-white btn-alt btn-sm">
+                            <span class="color-white"><i class="im-image2"></i> Login con Facebook</span>
                         </a>
-                        <form class="change-cover">
-                            <input type="file">
-                        </form>
                         <div class="profile">
+                            @if(Auth::user()->fotoperfil == null)
                             <img src="assets/img/avatars/128.jpg" alt="Jonh Doe">
+                            @else
+                            {{HTML::image('assets/img/facebook/'.Auth::user()->fotoperfil,'profile',array('width' => '160px','height'=>'120px'))}}
+                            @endif
                             <a href="#" id="change-profile-image" class="btn btn-white btn-round btn-sm">
                                 <i class="im-camera3"></i>
                             </a>
-                            <form class="change-profile-image">
-                                <input type="file">
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -36,7 +34,7 @@
             <div class="panel panel-default plain toggle panelRefresh" id="jst_1">
                 <!-- Start .panel -->
                 <div class="panel-heading">
-                    <h4 class="panel-title">Basic information</h4>
+                    <h4 class="panel-title">Información Básica</h4>
                     <div class="panel-controls"><a href="#" class="panel-refresh"><i class="im-spinner12"></i></a><a href="#" class="toggle panel-minimize"><i class="im-minus"></i></a></div></div>
                 <div class="panel-body">
                     <ul class="list-unstyled">
@@ -82,7 +80,11 @@
                             </label>
                             <h5 class="timeline-event-title">New picture is uploaded</h5>
                             <div class="timeline-event">
-                                <img src="assets/img/gallery/1.jpg" alt="pic1" height="75px;">
+                                @if(Auth::user()->fotoperfil == null)
+                                <img src="assets/img/avatars/1.jpg" alt="pic1" height="75px;">
+                                @else
+                                {{HTML::image('assets/img/facebook/'.Auth::user()->fotoperfil,'profile',array('height'=>'75px'))}}
+                                @endif
                             </div>
                         </li>
                         <li>

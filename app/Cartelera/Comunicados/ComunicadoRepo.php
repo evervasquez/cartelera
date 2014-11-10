@@ -50,7 +50,7 @@ class ComunicadoRepo extends BaseRepo implements BaseRepoInterface
             ->where('comentarios.comunicado_id', '=', $id)
             ->whereNull('comentarios.deleted_at')
             ->select('comentarios.id', 'comentario', 'fechahora', 'user_id','totalmegusta','totalnomegusta',
-                \DB::raw('"nombres"||\' \'||"apellidos" as fullname'))
+                \DB::raw('"nombres"||\' \'||"apellidos" as fullname'),'fotoperfil')
             ->orderBy('comentarios.id', 'asc')
             ->get();
 

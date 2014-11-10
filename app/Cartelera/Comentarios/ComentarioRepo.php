@@ -55,7 +55,7 @@ class ComentarioRepo
             ->where('comentarios.id','=',$id)
             ->whereNull('comentarios.deleted_at')
             ->select('comentarios.id','comentario','totalmegusta','totalnomegusta','fechahora','user_id',
-                \DB::raw('"nombres"||\' \'||"apellidos" as fullname'))
+                \DB::raw('"nombres"||\' \'||"apellidos" as fullname'),'users.fotoperfil')
             ->orderBy('comentarios.id','desc')
             ->get();
 

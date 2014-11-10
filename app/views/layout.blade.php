@@ -153,7 +153,11 @@
                     </li>-->
                     <li class="dropdown" id="cartelera-avatar">
                         <a href="#" data-toggle="dropdown">
-                            <img class="avatar" src="assets/img/avatars/1.jpg" width="36" height="36" alt="Jonh Doe">
+                            @if(Auth::user()->fotoperfil == null)
+                            <img src="assets/img/avatars/1.jpg" alt="pic1" width="35px" height="35px;">
+                            @else
+                            {{HTML::image('assets/img/facebook/'.Auth::user()->fotoperfil,'profile',array('width'=>'35px','height'=>'35px'))}}
+                            @endif
                             <span class="avatar-name">{{ Auth::user()->nombres.' '.Auth::user()->apellidos}}</span>
                             <span class="caret ml5"></span>
                         </a>
@@ -513,7 +517,11 @@
 <script type="text/template" id="comentario-template">
     <span class="date-time"><%= diffhumanos %></span>
     <label class="timeline-label">
-        <i class="im-users"></i>
+        <% if (fotoperfil == null) { %>
+        <img class="img-circle" src="assets/img/avatars/1.jpg" alt="pic1" width="35px" height="35px;">
+        <% } else{%>
+        {{HTML::image('assets/img/facebook/'.Auth::user()->fotoperfil,'profile',array('class'=>'photo-coment','width'=>'35px','height'=>'35px'))}}
+        <% } %>
     </label>
     <h5 class="timeline-event-title"><%= fullname %>&nbsp;&nbsp;
     <span>

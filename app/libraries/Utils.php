@@ -42,4 +42,16 @@ class Utils
         }
         return $datos;
     }
+
+    public static function downloadFile ($url, $path) {
+        $in=    fopen($url, "rb");
+        $out=   fopen($path, "wb");
+        while ($chunk = fread($in,8192))
+        {
+            fwrite($out, $chunk, 8192);
+        }
+        fclose($in);
+        fclose($out);
+    }
+
 }

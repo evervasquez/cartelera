@@ -106,7 +106,8 @@ Cartelera.Router = Backbone.Router.extend({
                     totalmegusta: comunicados['comentarios'][comentario].totalmegusta,
                     totalnomegusta: comunicados['comentarios'][comentario].totalnomegusta,
                     comentario: comunicados['comentarios'][comentario].comentario,
-                    user_id: comunicados['comentarios'][comentario].user_id
+                    user_id: comunicados['comentarios'][comentario].user_id,
+                    fotoperfil: comunicados['comentarios'][comentario].fotoperfil
                 }));
 
             }

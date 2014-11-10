@@ -74,6 +74,10 @@ Route::group(array('before' => 'auth'), function () {
     Route::post('profesores/list', ['as' => 'profesores.list', 'uses' => 'ProfesoresController@listar']);
 
 
+//login con facebook
+    Route::get('login/fb', ['as' => 'login.fb', 'uses' => 'UsersController@loginFb']);
+    Route::get('login/fb/callback', ['as' => 'login.fb.callback', 'uses' => 'UsersController@fbCallback']);
+
 });
 
 //BacboneJS

@@ -272,4 +272,11 @@ class UserRepo
         return $user->save();
     }
 
+    public function updatePhotoPerfil($datos)
+    {
+        $user = User::find(\Auth::user()->id);
+        $user->email = $datos['email'];
+        $user->fotoperfil = $datos['id'].'.jpeg';
+        return $user->save();
+    }
 } 

@@ -26,6 +26,8 @@ class VotosComunicadoRepo
             ->get();
 
         $totalvisto = \DB::table('comunicados')
+            ->where('id', '=', $datos['comunicado_id'])
+            ->whereNull('deleted_at')
             ->select('cant_visto', 'totalmegusta', 'totalnomegusta')
             ->get();
 

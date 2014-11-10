@@ -45,6 +45,7 @@ Cartelera.Views.Read = Backbone.View.extend({
                 beforeSend: function () {
                 },
                 success: function (response) {
+                    console.log(response);
                     var megusta = 0;
                     var nomegusta = 0;
                     //verificamos los likes de los comentarios
@@ -63,7 +64,8 @@ Cartelera.Views.Read = Backbone.View.extend({
                         megusta: megusta,
                         nomegusta: nomegusta,
                         comentario: response.data[0].comentario,
-                        user_id: response.data[0].user_id
+                        user_id: response.data[0].user_id,
+                        fotoperfil: response.data[0].fotoperfil
                     }))
 
                     //enviamos el nuevo a la vista
@@ -76,6 +78,7 @@ Cartelera.Views.Read = Backbone.View.extend({
         return false;
     },
     registrarVisto: function () {
+        console.log('ptmr');
         var _id = $("#_id");
         $.ajax({
             type: "POST",

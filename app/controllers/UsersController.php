@@ -85,4 +85,41 @@ class UsersController extends \BaseController
         $datos = $this->userRepo->getUsersPerfil($codigo);
         return View::make('users/profile', compact('datos'));
     }
+
+
+    //login facebook - ruta para la asiganción de permisos
+    public function loginFb()
+    {
+        $facebook = new Facebook(Config::get('facebook'));
+        $params = array(
+            'redirect_uri' => url('/login/fb/callback'),
+            'scope' => 'email',
+        );
+        return Redirect::to($facebook->getLoginUrl($params));
+    }
+
+    public function fbCallback()
+    {
+        $code = Input::get('code');
+        if (strlen($code) == 0) {
+            return Redirect::to('miperfil')->with('message', 'There was an error communicating with Facebook');
+        }
+        $facebook = new Facebook(Config::get('facebook'));
+        $uid = $facebook->getUser();
+
+        if ($uid == 0) {
+            return Redirect::to('miperfil')->with('message', 'There was an error');
+        }
+        $me = $facebook->api('/me');
+
+        $url = "https://graph.facebook.com/".$me['id']."/picture?type=normal";
+
+        $directory = 'assets/img/facebook/'.$me['id'].'.jpeg';
+
+        Utils::downloadFile($url,$directory);
+
+        $this->userRepo->updatePhotoPerfil($me);
+
+        return Redirect::to('miperfil');
+    }
 }

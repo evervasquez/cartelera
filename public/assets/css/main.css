@@ -2157,7 +2157,7 @@ body.full-screen #header {
   display: block;
   border-radius: 50%;
   background-color: #ffffff;
-  border: 2px solid #1bbc9b;
+  /*border: 2px solid #1bbc9b;*/
 }
 .timeline li .timeline-label:after {
   content: "";
@@ -2168,7 +2168,7 @@ body.full-screen #header {
   position: absolute;
   display: block;
   border-radius: 50%;
-  border: 2px solid #ffffff;
+  /*border: 2px solid #ffffff;*/
 }
 .timeline li .date-time {
   float: left;
@@ -2193,8 +2193,8 @@ body.full-screen #header {
   position: absolute;
   display: block;
   border-radius: 50%;
-  background-color: #1bbc9b;
-  border: 2px solid #1bbc9b;
+  /*background-color: #1bbc9b;
+  border: 2px solid #1bbc9b;*/
 }
 .timeline-advanced li .timeline-label:after {
   content: "";
