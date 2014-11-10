@@ -14,6 +14,7 @@ Cartelera.Router = Backbone.Router.extend({
         $(".email-write").remove();
         $(".read-message").remove();
         $("#search").val('');
+        this.cursos();
 
         //iniciamos el history de las páginas
         Backbone.history.start();
@@ -40,6 +41,8 @@ Cartelera.Router = Backbone.Router.extend({
             //new Cartelera.Views.ComunicadosView({collection: this.mComunicados});
         });
 
+    },
+    cursos: function(){
         $.getJSON('cursos').then(function (cursos) {
             this.mCursos = new Cartelera.Collections.Cursos();
 
@@ -122,8 +125,5 @@ Cartelera.Router = Backbone.Router.extend({
         $.getJSON('cursos').then(function (datos) {
             new Cartelera.Views.Write({collection: datos});
         });
-    },
-    filterComunicados: function ($cadena) {
-        console.log($cadena);
     }
 })

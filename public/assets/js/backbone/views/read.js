@@ -23,7 +23,6 @@ Cartelera.Views.Read = Backbone.View.extend({
         this.$el.append(html);
         return this;
     },
-
     redireccionar: function () {
         Cartelera.app.navigate('comunicado/' + this.model.get('id'), {trigger: true})
         return false;

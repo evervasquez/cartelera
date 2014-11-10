@@ -453,7 +453,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a href="#" class="btn btn-default btn-round btn-sm tip mr5"><i
+                                <a href="{{ url('/') }}" class="btn btn-default btn-round btn-sm tip mr5"><i
                                         class="fa fa-refresh s16"></i></a>
                                 <a href="#" class="btn btn-default btn-round btn-sm tip mr5"><i
                                         class="im-print3 s16"></i></a>
